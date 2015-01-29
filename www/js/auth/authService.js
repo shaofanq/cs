@@ -32,7 +32,8 @@ app.service('authService', function(){
   this.register = function(user, cb){
     firebaseLogin.createUser({
       email: user.email,
-      password: user.password
+      password: user.password,
+      bio: ''
     }, function(error) {
       if (error === null) {
         console.log("User created successfully");
@@ -42,8 +43,11 @@ app.service('authService', function(){
           }, function(err, authData) {
           if (authData) {
             authData.name = user.name;
+            authData.bio = '';
+            authData.cancer = '';
+            authData.level = '';
             authData.timestamp = new Date().toISOString();
-            firebaseLogin.child('users').child(authData.uid.replace('simplelogin:', '')).set(authData);
+            firebaseLogin.child('users').child(authData.uid).set(authData);
             cb(authData);
           } else {
             console.log('something went wrong');

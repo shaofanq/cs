@@ -4,7 +4,7 @@ app.controller('AuthController', function ($scope, authService, $location, ipCoo
   
   $scope.login = function (user) {
     return authService.login(user, function(user){
-      user.uid = user.uid.replace('simplelogin:', '');
+      console.log('ean look over here!', user)
       $scope.$apply(function(){
         $location.path('/explore/' + user.uid)
       });
@@ -12,10 +12,11 @@ app.controller('AuthController', function ($scope, authService, $location, ipCoo
   };
 
   $scope.register = function (user) {
+    user.bio = '';
     return authService.register(user, function(user){
       user.uid = user.uid.replace('simplelogin:', '');
       $scope.$apply(function(){
-        $location.path('/explore/' + user.uid)
+        $location.path('/edit')
       });
     });
   };

@@ -1,6 +1,16 @@
 <ion-content class="container">
-  {{user}}
-  <hr>
 
-  {{userData}}
+    <label class="item item-input">
+      <span class="input-label">Your Name</span>
+      <input type="text" ng-model="userData.name" placeholder="{{userData.name}}">
+    </label>
+    <label class="item item-input">
+      <span class="input-label">Bio</span>
+      <textarea type="text" ng-model="userData.bio"></textarea>
+    </label>
+    <label class="item item-input">
+      <span class="input-label">Cancer</span>
+      <input type="text" ng-model="userData.cancer">
+    </label>
+    <button class="button button-block button-positive" ng-click="addData(userData)">Update Info!</button>
 </ion-content>

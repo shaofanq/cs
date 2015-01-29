@@ -1,7 +1,7 @@
 var app = angular.module('cs', ['ionic', 'firebase', 'ipCookie'])
 
 app.config(function($stateProvider, $urlRouterProvider) {
-  $urlRouterProvider.otherwise("/explore/");
+  $urlRouterProvider.otherwise("/explore");
   $stateProvider
     .state('main', {
       url: "/main",
@@ -18,7 +18,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
       controller: 'AuthController'
     })
     .state('explore', {
-      url: '/explore/:userId',
+      url: '/explore',
       templateUrl: '../templates/explore.html',
       controller: 'ExploreController'
     })
