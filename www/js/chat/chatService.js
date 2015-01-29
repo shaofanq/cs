@@ -1,4 +1,6 @@
-.factory('messageService', function($firebase, $q){
+var app = angular.module('cs');
+
+app.factory('messageService', function($firebase, $q){
   var fireUrl = 'https://cancer-spot.firebaseio.com/';
   var fireSync = new Firebase(fireUrl);
 

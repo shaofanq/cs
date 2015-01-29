@@ -1,8 +1,13 @@
-.controller('messagesController', function($scope, messageService, $state, $stateParams, firebaseService){
+var app = angular.module('cs');
+app.controller('messagesController', function($scope, messageService, $state, $stateParams, firebaseService, $location){
 
-	var me = firebaseService.getUser();
-	$scope.messages = messageService.getMyChats(me.facebook.id);
-	console.log($scope.messages);
+    $scope.isActive = function(route) {
+        return route === $location.path();
+    }
+
+	// var me = firebaseService.getUser();
+	// $scope.messages = messageService.getMyChats(me.user.id);
+	// console.log($scope.messages);
 
 
 })
