@@ -26,5 +26,15 @@ app.config(function($stateProvider, $urlRouterProvider) {
       url: '/edit',
       templateUrl: '../templates/edit-user.html',
       controller: 'UserController'
+    })
+    .state('messages', {
+      url: '/messages',
+      templateUrl: '../templates/messages.html',
+      controller: 'messagesController'
+    })
+    .state('chat', {
+      url: '/chat/:cid',
+      templateUrl: '../templates/chat.html',
+      controller: 'chatController'
     });
 });
