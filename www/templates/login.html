@@ -1,4 +1,7 @@
 <ion-content class="container">
+    <div class="text-center container" ng-if="!currentUser">
+      <img class="logo" src="http://cancerspot.co/img/lone_icon.png">
+    </div>
     <label class="item item-input">
       <span class="input-label">Email</span>
       <input type="text" ng-model="user.email">

@@ -1,12 +1,12 @@
 var app = angular.module('cs');
 
-app.controller('AuthController', function ($scope, authService, $location, ipCookie) {
+app.controller('AuthController', function ($scope, authService, $location, ipCookie, $state) {
   
   $scope.login = function (user) {
     return authService.login(user, function(user){
       console.log('ean look over here!', user)
       $scope.$apply(function(){
-        $location.path('/explore/' + user.uid)
+        $state.go('explore', {}, {reload: true})
       });
     });
   };
@@ -16,7 +16,7 @@ app.controller('AuthController', function ($scope, authService, $location, ipCoo
     return authService.register(user, function(user){
       user.uid = user.uid.replace('simplelogin:', '');
       $scope.$apply(function(){
-        $location.path('/edit')
+        $location.path('/edit', {}, {reload: true})
       });
     });
   };
