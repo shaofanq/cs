@@ -1,4 +1,7 @@
 <ion-content class="container">
+    <div class="text-center container">
+      <img class="logo" src="http://cancerspot.co/img/lone_icon.png">
+    </div>
     <label class="item item-input">
       <span class="input-label">Email</span>
       <input type="text" ng-model="user.email">
@@ -8,4 +11,7 @@
       <input type="password" ng-model="user.password">
     </label>
     <button class="button button-block button-positive" ng-click="login(user)">Login</button>
+    <div class="text-center">
+      <a ui-sref="register">Register</a>
+    </div>
 </ion-content>

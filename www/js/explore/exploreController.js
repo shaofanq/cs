@@ -1,6 +1,9 @@
 var app = angular.module('cs');
 
 app.controller('ExploreController', function($scope, authService, $location, $firebase, firebaseService, $ionicSideMenuDelegate) {
+  $scope.toggleLeft = function() {
+    $ionicSideMenuDelegate.toggleLeft();
+  };
   var exploreRef = new Firebase('https://cancer.firebaseio.com/');
   var sync = $firebase(exploreRef);
 
@@ -13,7 +16,7 @@ app.controller('ExploreController', function($scope, authService, $location, $fi
   };
 
   $scope.editUser = function() {
-    $location.path('/edit');
+    $location.path('/edit', {}, {reload: true});
   }
 
   $scope.isActive = function (viewLocation) {
@@ -22,23 +25,21 @@ app.controller('ExploreController', function($scope, authService, $location, $fi
   };
 
     $scope.users = firebaseService.getUsers();
-    console.log('fu', $scope.users)
+
 
 
   $scope.logout = function() {
     authService.logout();
-    $location.path('/main');
+    $location.path('/login', {}, {reload: true});
   }
 
-  $scope.getCurrentUser = function() {
-    return authService.getCurrentUser();
-  }
+
+
   $scope.currentUser = '';
-  $scope.currentUser = $scope.getCurrentUser();
-  console.log($scope.currentUser);
+  $scope.currentUser = authService.getCurrentUser();
 
   if(!$scope.currentUser) {
-    $location.path('/login');
+    $location.path('/login', {}, {reload: true});
   }
 
 });

@@ -11,7 +11,8 @@ app.controller('UserController', function($scope, firebaseService, authService, 
       sync.$update({
         bio: user.bio,
         cancer: user.cancer,
-        name: user.name
+        name: user.name,
+        level: user.level
       });
       $location.path('/explore')
     }    
