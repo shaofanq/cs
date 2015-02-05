@@ -10,45 +10,46 @@
   <body ng-app="cs">
   <ion-side-menus>
     <ion-side-menu-content  ng-controller="ExploreController">
-    <div ng-if="currentUser">
-      <div class="bar bar-header">
-        <button class="button button-icon icon ion-navicon" ng-click="toggleLeft()"></button>
-        <div class="h1 title">Cancer Spot</div>
-        <button class="button button-icon icon ion-gear-b" ng-click="editUser()"></button>
-      </div>
-    </div>
-    <ion-nav-view></ion-nav-view>
-    <div ng-if="currentUser" class="tabs-striped tabs-color-assertive">
-      <div class="tabs">
-        <a class="tab-item" ng-controller="ExploreController" ng-class="{active:isActive('/explore')}" href="#/explore">
-          <i class="icon ion-home"></i>
-          Test
-        </a>
-        <a class="tab-item" ng-controller="messagesController" ng-class="{active:isActive('/messages')}" href="#/messages">
-          <i class="icon ion-chatbubble"></i>
-          Favorites
-        </a>
-        <a class="tab-item" ng-controller="ExploreController" ng-class="{ active: nothing }" href="#">
-          <i class="icon ion-navicon-round"></i>
-          Settings
-        </a>
-      </div>
-    </div>
-    </ion-side-menu-content>
-    <ion-side-menu side="left" ng-controller="ExploreController">
-      <div class="list">
-        <div class="item item-divider">
-          Settings
+      <navbar></navbar>
+      <ion-nav-view></ion-nav-view>
+      <div class="tabs-striped tabs-color-assertive">
+        <div class="tabs">
+          <a class="tab-item" ng-controller="ExploreController" ng-class="{active:isActive('/explore')}" href="#/explore">
+            <i class="icon ion-home"></i>
+            Test
+          </a>
+          <a class="tab-item" ng-controller="messagesController" ng-class="{active:isActive('/messages')}" href="#/messages">
+            <i class="icon ion-chatbubble"></i>
+            Favorites
+          </a>
+          <a class="tab-item" ng-controller="ExploreController" ng-class="{ active: nothing }" href="#">
+            <i class="icon ion-navicon-round"></i>
+            Settings
+          </a>
         </div>
-        <a ng-click="logout()" class="item item-icon-left item-icon-right" href="#">
-          <i class="icon ion-power"></i>
-          Logout
-          <i class="icon"></i>
-        </a>
       </div>
-    </ion-side-menu>
+      </ion-side-menu-content>
+      <ion-side-menu side="left" ng-controller="ExploreController">
+        <div class="list">
+          <div>
+            <a menu-close ng-click="logout()" class="item item-icon-left item-icon-right" href="#">
+              <i class="icon ion-power"></i>
+              Logout
+              <i class="icon"></i>
+            </a>
+          </div>
+          <div>
+            <a class="item item-icon-left item-icon-right" href="#">
+              <i class="icon ion-information-circled"></i>
+              About
+              <i class="icon"></i>
+            </a>
+          </div>
+        </div>
+      </ion-side-menu>
+    </ion-side-menus>
+  </ion-side-menu>
     
-  </ion-side-menus>
 
 
 
@@ -68,6 +69,8 @@
   <script src="js/user/userController.js"></script>
   <script src="js/chat/messagesController.js"></script>
   <script src="js/chat/chatService.js"></script>
+  <script src="js/navbar/topNav.js"></script>
+  <script src="js/navbar/navbarController.js"></script>
   <script src="js/firebaseService.js"></script>
   </body>
 </html>

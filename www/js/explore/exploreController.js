@@ -33,11 +33,10 @@ app.controller('ExploreController', function($scope, authService, $location, $fi
     $location.path('/login', {}, {reload: true});
   }
 
-  $scope.getCurrentUser = function() {
-    return authService.getCurrentUser();
-  }
+
+
   $scope.currentUser = '';
-  $scope.currentUser = $scope.getCurrentUser();
+  $scope.currentUser = authService.getCurrentUser();
 
   if(!$scope.currentUser) {
     $location.path('/login', {}, {reload: true});
