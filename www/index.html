@@ -2,8 +2,19 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta name="viewport" content="maximum-scale=1.0">
+    <meta name="viewport" content="user-scalable=no">
+    <meta name="viewport" content="width=device-width">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link rel="apple-touch-icon-precomposed" href="http://i1352.photobucket.com/albums/q655/eanplatter/ScreenShot2014-03-30at14706PM_zpsb7a3870b.png">
+    <link rel="apple-touch-startup-image" href="http://i1352.photobucket.com/albums/q655/eanplatter/ScreenShot2014-03-21at35451PM_zpse0cc9b96.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, minimal-ui" />
+
     <title>Cancer Spot</title>
+    <link rel="stylesheet" type="text/css" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <link rel="stylesheet" type="text/css" href="lib/ionic/css/ionic.css">
     <link href="css/style.css" rel="stylesheet">
   </head>
@@ -16,15 +27,15 @@
         <div class="tabs">
           <a class="tab-item" ng-controller="ExploreController" ng-class="{active:isActive('/explore')}" href="#/explore">
             <i class="icon ion-home"></i>
-            Test
+            Explore
           </a>
           <a class="tab-item" ng-controller="messagesController" ng-class="{active:isActive('/messages')}" href="#/messages">
             <i class="icon ion-chatbubble"></i>
-            Favorites
+            Messages
           </a>
-          <a class="tab-item" ng-controller="ExploreController" ng-class="{ active: nothing }" href="#">
+          <a class="tab-item" ng-controller="FloorController" ng-class="{active:isActive('/floor')}" href="#/floor">
             <i class="icon ion-navicon-round"></i>
-            Settings
+            Floor
           </a>
         </div>
       </div>
@@ -79,7 +90,7 @@
   <script src="js/navbar/topNav.js"></script>
   <script src="js/navbar/navbarController.js"></script>
   <script src="js/firebaseService.js"></script>
-  <script src="js/profile/profileController.js"></script>
+  <script src="js/floor/floorController.js"></script>
   <script src="js/profile/userDetailController.js"></script>
   </body>
 </html>

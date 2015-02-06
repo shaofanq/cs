@@ -1,10 +1,11 @@
 var app = angular.module('cs');
 
 app.controller('UserDetailController', function($scope, authService, $location, $firebase, firebaseService, $ionicSideMenuDelegate, $stateParams, $ionicHistory) {
+
   $scope.toggleLeft = function() {
     $ionicSideMenuDelegate.toggleLeft();
   };
-  var exploreRef = new Firebase('https://cancer.firebaseio.com/');
+  var exploreRef = new Firebase('https://cancer.firebaseio.com/app/');
   var sync = $firebase(exploreRef);
 
     $scope.isActive = function(route) {
@@ -30,7 +31,7 @@ app.controller('UserDetailController', function($scope, authService, $location, 
   }
 
   $scope.user = firebaseService.getUser($stateParams.id);
-  console.log($scope.user)
+
 
   $scope.currentUser = '';
   $scope.currentUser = authService.getCurrentUser();
