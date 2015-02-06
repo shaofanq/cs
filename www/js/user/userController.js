@@ -1,6 +1,6 @@
 var app = angular.module('cs');
 
-app.controller('UserController', function($scope, firebaseService, authService, ipCookie, $firebase, $location) {
+app.controller('UserController', function($scope, firebaseService, authService, ipCookie, $firebase, $location, $state) {
     $scope.user = authService.getCurrentUser();
     var userRef = new Firebase('https://cancer.firebaseio.com/users/' + $scope.user.uid);
     var sync = $firebase(userRef);
@@ -15,7 +15,15 @@ app.controller('UserController', function($scope, firebaseService, authService, 
         level: user.level
       });
       $location.path('/explore')
-    }    
+    }  
+
+    $scope.fss = function(item, link){
+        sync.$update({
+          level: item, 
+        })
+        
+        $state.go(link);
+    }  
 
 
   

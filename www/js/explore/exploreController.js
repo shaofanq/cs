@@ -30,7 +30,7 @@ app.controller('ExploreController', function($scope, authService, $location, $fi
 
   $scope.logout = function() {
     authService.logout();
-    $location.path('/login', {}, {reload: true});
+    $location.path('/splash', {}, {reload: true});
   }
 
 
@@ -39,7 +39,7 @@ app.controller('ExploreController', function($scope, authService, $location, $fi
   $scope.currentUser = authService.getCurrentUser();
 
   if(!$scope.currentUser) {
-    $location.path('/login', {}, {reload: true});
+    $location.path('/splash', {}, {reload: true});
   }
 
   $scope.goTo = function(id) {

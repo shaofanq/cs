@@ -13,7 +13,7 @@ app.controller('messagesController', function($scope, messageService, $state, $s
   $scope.currentUser = authService.getCurrentUser();
 
   if(!$scope.currentUser) {
-    $location.path('/login', {}, {reload: true});
+    $location.path('/splash', {}, {reload: true});
   }
 
 })
