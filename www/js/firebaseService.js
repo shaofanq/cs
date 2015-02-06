@@ -12,18 +12,19 @@ app.service('firebaseService', function ($firebase) {
   }
 
   this.getFloor = function(userId) {
-    return $firebase(new Firebase(firebaseUrl + 'users/' + userId + '/floorPosts'))
+    return $firebase(new Firebase(firebaseUrl + '/floorPosts')).$asObject();
   }
 
 
 // ADD USERS
 
-  this.addFriend = function(userId, otherId, theStatus) {
-      var conRef = new Firebase('https://cancer.firebaseio.com/users/' + userId + '/friends' + '/' + otherId);
+  this.addFriend = function(userId, otherId, theStatus, theName) {
+      var conRef = new Firebase('https://cancer.firebaseio.com/app/users/' + userId + '/friends/' + otherId);
       var conSync = $firebase(conRef); 
 
         conSync.$set({
           friendId: otherId,
+          name: theName,
           status: theStatus
         })
   }

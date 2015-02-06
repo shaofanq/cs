@@ -12,6 +12,7 @@ app.controller('AuthController', function ($scope, authService, $location, ipCoo
 
   $scope.register = function (user) {
     user.bio = '';
+    user.friends = '';
     return authService.register(user, function(user){
       $scope.$apply(function(){
         $location.path('/fss', {}, {reload: true})

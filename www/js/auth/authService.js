@@ -46,6 +46,7 @@ app.service('authService', function(){
             authData.bio = '';
             authData.cancer = '';
             authData.level = '';
+            authData.friends = '';
             authData.timestamp = new Date().toISOString();
             firebaseLogin.child('users').child(authData.uid).set(authData);
             cb(authData);
