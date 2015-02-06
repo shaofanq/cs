@@ -1,14 +1,9 @@
 0 info it worked if it ends with ok
-1 verbose cli [ 'node',
-1 verbose cli   '/usr/local/bin/npm',
-1 verbose cli   'install',
-1 verbose cli   '-g',
-1 verbose cli   'cordova',
-1 verbose cli   'ionic' ]
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install', 'ngrok', '-g' ]
 2 info using npm@1.4.28
 3 info using node@v0.10.32
-4 verbose cache add [ 'cordova', null ]
-5 verbose cache add name=undefined spec="cordova" args=["cordova",null]
+4 verbose cache add [ 'ngrok', null ]
+5 verbose cache add name=undefined spec="ngrok" args=["ngrok",null]
 6 verbose parsed url { protocol: null,
 6 verbose parsed url   slashes: null,
 6 verbose parsed url   auth: null,
@@ -18,412 +13,146 @@
 6 verbose parsed url   hash: null,
 6 verbose parsed url   search: null,
 6 verbose parsed url   query: null,
-6 verbose parsed url   pathname: 'cordova',
-6 verbose parsed url   path: 'cordova',
-6 verbose parsed url   href: 'cordova' }
-7 verbose cache add [ 'ionic', null ]
-8 verbose cache add name=undefined spec="ionic" args=["ionic",null]
-9 verbose parsed url { protocol: null,
-9 verbose parsed url   slashes: null,
-9 verbose parsed url   auth: null,
-9 verbose parsed url   host: null,
-9 verbose parsed url   port: null,
-9 verbose parsed url   hostname: null,
-9 verbose parsed url   hash: null,
-9 verbose parsed url   search: null,
-9 verbose parsed url   query: null,
-9 verbose parsed url   pathname: 'ionic',
-9 verbose parsed url   path: 'ionic',
-9 verbose parsed url   href: 'ionic' }
-10 silly lockFile a98f2055-cordova cordova
-11 verbose lock cordova /Users/spencerwise/.npm/a98f2055-cordova.lock
-12 silly lockFile 00d10074-ionic ionic
-13 verbose lock ionic /Users/spencerwise/.npm/00d10074-ionic.lock
-14 silly lockFile 00d10074-ionic ionic
-15 silly lockFile 00d10074-ionic ionic
-16 silly lockFile a98f2055-cordova cordova
-17 silly lockFile a98f2055-cordova cordova
-18 verbose addNamed [ 'ionic', '' ]
-19 verbose addNamed [ null, '*' ]
-20 silly lockFile 966fc04a-ionic ionic@
-21 verbose lock ionic@ /Users/spencerwise/.npm/966fc04a-ionic.lock
-22 verbose addNamed [ 'cordova', '' ]
-23 verbose addNamed [ null, '*' ]
-24 silly lockFile de8d9fad-cordova cordova@
-25 verbose lock cordova@ /Users/spencerwise/.npm/de8d9fad-cordova.lock
-26 silly addNameRange { name: 'ionic', range: '*', hasData: false }
-27 silly addNameRange { name: 'cordova', range: '*', hasData: false }
-28 verbose request where is /ionic
-29 verbose request registry https://registry.npmjs.org/
-30 verbose request id f36a8fa2ff1ac314
-31 verbose url raw /ionic
-32 verbose url resolving [ 'https://registry.npmjs.org/', './ionic' ]
-33 verbose url resolved https://registry.npmjs.org/ionic
-34 verbose request where is https://registry.npmjs.org/ionic
-35 info trying registry request attempt 1 at 13:43:30
-36 http GET https://registry.npmjs.org/ionic
-37 verbose request where is /cordova
-38 verbose request registry https://registry.npmjs.org/
-39 verbose url raw /cordova
-40 verbose url resolving [ 'https://registry.npmjs.org/', './cordova' ]
-41 verbose url resolved https://registry.npmjs.org/cordova
-42 verbose request where is https://registry.npmjs.org/cordova
-43 info trying registry request attempt 1 at 13:43:30
-44 verbose etag "DXQ71UDATENIG81Y202CLYCL6"
-45 http GET https://registry.npmjs.org/cordova
-46 http 200 https://registry.npmjs.org/ionic
-47 silly registry.get cb [ 200,
-47 silly registry.get   { date: 'Thu, 05 Feb 2015 20:43:31 GMT',
-47 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
-47 silly registry.get     etag: '"3Q246Z126R9HY2JY9D9S7KIBF"',
-47 silly registry.get     'content-type': 'application/json',
-47 silly registry.get     'cache-control': 'max-age=60',
-47 silly registry.get     'content-length': '197902',
-47 silly registry.get     'accept-ranges': 'bytes',
-47 silly registry.get     via: '1.1 varnish',
-47 silly registry.get     age: '0',
-47 silly registry.get     'x-served-by': 'cache-sjc3133-SJC',
-47 silly registry.get     'x-cache': 'HIT',
-47 silly registry.get     'x-cache-hits': '1',
-47 silly registry.get     'x-timer': 'S1423169011.504266,VS0,VE152',
-47 silly registry.get     vary: 'Accept',
-47 silly registry.get     'keep-alive': 'timeout=10, max=50',
-47 silly registry.get     connection: 'Keep-Alive' } ]
-48 silly addNameRange number 2 { name: 'ionic', range: '*', hasData: true }
-49 silly addNameRange versions [ 'ionic',
-49 silly addNameRange   [ '0.9.6',
-49 silly addNameRange     '0.9.8',
-49 silly addNameRange     '0.9.9',
-49 silly addNameRange     '0.9.10',
-49 silly addNameRange     '0.9.11',
-49 silly addNameRange     '0.9.12',
-49 silly addNameRange     '0.9.13',
-49 silly addNameRange     '0.9.14',
-49 silly addNameRange     '0.9.15',
-49 silly addNameRange     '0.9.16',
-49 silly addNameRange     '1.0.0-beta.1',
-49 silly addNameRange     '1.0.0-beta',
-49 silly addNameRange     '1.0.1-beta',
-49 silly addNameRange     '1.0.3-beta',
-49 silly addNameRange     '1.0.4',
-49 silly addNameRange     '1.0.5',
-49 silly addNameRange     '1.0.6',
-49 silly addNameRange     '1.0.7',
-49 silly addNameRange     '1.0.8',
-49 silly addNameRange     '1.0.9',
-49 silly addNameRange     '1.0.10',
-49 silly addNameRange     '1.0.11',
-49 silly addNameRange     '1.0.12',
-49 silly addNameRange     '1.0.13',
-49 silly addNameRange     '1.0.14',
-49 silly addNameRange     '1.0.15',
-49 silly addNameRange     '1.0.16',
-49 silly addNameRange     '1.0.17',
-49 silly addNameRange     '1.1.0-beta1',
-49 silly addNameRange     '1.1.0-beta2',
-49 silly addNameRange     '1.1.0-beta3',
-49 silly addNameRange     '1.1.0-beta4',
-49 silly addNameRange     '1.1.0-beta5',
-49 silly addNameRange     '1.1.0-beta6',
-49 silly addNameRange     '1.1.0',
-49 silly addNameRange     '1.1.1-beta1',
-49 silly addNameRange     '1.1.1-beta2',
-49 silly addNameRange     '1.1.1-beta3',
-49 silly addNameRange     '1.1.1',
-49 silly addNameRange     '1.1.3',
-49 silly addNameRange     '1.1.4',
-49 silly addNameRange     '1.1.5-beta1',
-49 silly addNameRange     '1.1.5-beta2',
-49 silly addNameRange     '1.1.5-beta3',
-49 silly addNameRange     '1.1.5-beta4',
-49 silly addNameRange     '1.1.5-beta5',
-49 silly addNameRange     '1.1.5',
-49 silly addNameRange     '1.1.6',
-49 silly addNameRange     '1.1.7-beta1',
-49 silly addNameRange     '1.1.7',
-49 silly addNameRange     '1.1.8-beta1',
-49 silly addNameRange     '1.1.8-beta2',
-49 silly addNameRange     '1.1.8-beta3',
-49 silly addNameRange     '1.1.8-beta4',
-49 silly addNameRange     '1.1.8-beta5',
-49 silly addNameRange     '1.1.8',
-49 silly addNameRange     '1.1.9-beta1',
-49 silly addNameRange     '1.1.9',
-49 silly addNameRange     '1.1.10',
-49 silly addNameRange     '1.1.11-beta1',
-49 silly addNameRange     '1.1.11-beta2',
-49 silly addNameRange     '1.1.11',
-49 silly addNameRange     '1.1.12-beta1',
-49 silly addNameRange     '1.1.12-beta2',
-49 silly addNameRange     '1.1.12-beta3',
-49 silly addNameRange     '1.1.12',
-49 silly addNameRange     '1.1.13',
-49 silly addNameRange     '1.1.14-beta1',
-49 silly addNameRange     '1.1.14-beta2',
-49 silly addNameRange     '1.1.14-beta3',
-49 silly addNameRange     '1.2.0-beta1',
-49 silly addNameRange     '1.2.0',
-49 silly addNameRange     '1.2.1-beta1',
-49 silly addNameRange     '1.2.1-beta2',
-49 silly addNameRange     '1.2.1-beta3',
-49 silly addNameRange     '1.2.1-beta4',
-49 silly addNameRange     '1.2.1',
-49 silly addNameRange     '1.2.2',
-49 silly addNameRange     '1.2.3-beta1',
-49 silly addNameRange     '1.2.3-beta2',
-49 silly addNameRange     '1.2.3-beta3',
-49 silly addNameRange     '1.2.3',
-49 silly addNameRange     '1.2.4-beta1',
-49 silly addNameRange     '1.2.4-beta2',
-49 silly addNameRange     '1.2.4-beta3',
-49 silly addNameRange     '1.2.4',
-49 silly addNameRange     '1.2.5-beta1',
-49 silly addNameRange     '1.2.5-beta2',
-49 silly addNameRange     '1.2.5-beta3',
-49 silly addNameRange     '1.2.5',
-49 silly addNameRange     '1.2.6-beta1',
-49 silly addNameRange     '1.2.6-beta2',
-49 silly addNameRange     '1.2.6-beta3',
-49 silly addNameRange     '1.2.6',
-49 silly addNameRange     '1.2.7',
-49 silly addNameRange     '1.2.8-beta1',
-49 silly addNameRange     '1.2.8-beta2',
-49 silly addNameRange     '1.2.8',
-49 silly addNameRange     '1.2.9',
-49 silly addNameRange     '1.2.10',
-49 silly addNameRange     '1.2.11',
-49 silly addNameRange     '1.2.12',
-49 silly addNameRange     '1.2.13',
-49 silly addNameRange     '1.2.14-beta1',
-49 silly addNameRange     '1.2.14-beta2',
-49 silly addNameRange     '1.2.14-beta3',
-49 silly addNameRange     '1.2.14-beta4',
-49 silly addNameRange     '1.2.14-beta5',
-49 silly addNameRange     '1.2.14-beta6',
-49 silly addNameRange     '1.2.14',
-49 silly addNameRange     '1.3.0-beta1',
-49 silly addNameRange     '1.3.0',
-49 silly addNameRange     '1.3.1',
-49 silly addNameRange     '1.3.2',
-49 silly addNameRange     '1.3.3',
-49 silly addNameRange     '1.3.4',
-49 silly addNameRange     '1.3.5',
-49 silly addNameRange     '1.3.6',
-49 silly addNameRange     '1.3.7',
-49 silly addNameRange     '1.3.8' ] ]
-50 verbose addNamed [ 'ionic', '1.3.8' ]
-51 verbose addNamed [ '1.3.8', '1.3.8' ]
-52 silly lockFile 1bd4aba2-ionic-1-3-8 ionic@1.3.8
-53 verbose lock ionic@1.3.8 /Users/spencerwise/.npm/1bd4aba2-ionic-1-3-8.lock
-54 silly lockFile b784347b--npmjs-org-ionic-ionic-1-3-8-tgz https://registry.npmjs.org/ionic/-/ionic-1.3.8.tgz
-55 verbose lock https://registry.npmjs.org/ionic/-/ionic-1.3.8.tgz /Users/spencerwise/.npm/b784347b--npmjs-org-ionic-ionic-1-3-8-tgz.lock
-56 verbose addRemoteTarball [ 'https://registry.npmjs.org/ionic/-/ionic-1.3.8.tgz',
-56 verbose addRemoteTarball   '9edc645a2702417bd20679177c195fad0d015766' ]
-57 info retry fetch attempt 1 at 13:43:47
-58 verbose fetch to= /var/folders/28/ch1y9sm11bsct7q9y29k7x480000gn/T/npm-10497-70YNELJe/registry.npmjs.org/ionic/-/ionic-1.3.8.tgz
-59 http GET https://registry.npmjs.org/ionic/-/ionic-1.3.8.tgz
-60 http 200 https://registry.npmjs.org/ionic/-/ionic-1.3.8.tgz
-61 silly lockFile b784347b--npmjs-org-ionic-ionic-1-3-8-tgz https://registry.npmjs.org/ionic/-/ionic-1.3.8.tgz
-62 silly lockFile b784347b--npmjs-org-ionic-ionic-1-3-8-tgz https://registry.npmjs.org/ionic/-/ionic-1.3.8.tgz
-63 silly lockFile 1bd4aba2-ionic-1-3-8 ionic@1.3.8
-64 silly lockFile 1bd4aba2-ionic-1-3-8 ionic@1.3.8
-65 silly lockFile 966fc04a-ionic ionic@
-66 silly lockFile 966fc04a-ionic ionic@
-67 http 200 https://registry.npmjs.org/cordova
-68 silly registry.get cb [ 200,
-68 silly registry.get   { date: 'Thu, 05 Feb 2015 20:43:31 GMT',
-68 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
-68 silly registry.get     etag: '"S4DI5KUBLS0YLHBAGH4C2WY6"',
-68 silly registry.get     'content-type': 'application/json',
-68 silly registry.get     'cache-control': 'max-age=60',
-68 silly registry.get     'content-length': '337795',
-68 silly registry.get     'accept-ranges': 'bytes',
-68 silly registry.get     via: '1.1 varnish',
-68 silly registry.get     age: '0',
-68 silly registry.get     'x-served-by': 'cache-sjc3125-SJC',
-68 silly registry.get     'x-cache': 'HIT',
-68 silly registry.get     'x-cache-hits': '1',
-68 silly registry.get     'x-timer': 'S1423169011.263384,VS0,VE153',
-68 silly registry.get     vary: 'Accept',
-68 silly registry.get     'keep-alive': 'timeout=10, max=50',
-68 silly registry.get     connection: 'Keep-Alive' } ]
-69 silly addNameRange number 2 { name: 'cordova', range: '*', hasData: true }
-70 silly addNameRange versions [ 'cordova',
-70 silly addNameRange   [ '0.0.1',
-70 silly addNameRange     '0.0.2',
-70 silly addNameRange     '0.0.3',
-70 silly addNameRange     '0.0.4',
-70 silly addNameRange     '0.0.5',
-70 silly addNameRange     '0.0.6',
-70 silly addNameRange     '0.0.7',
-70 silly addNameRange     '0.0.8',
-70 silly addNameRange     '0.0.9',
-70 silly addNameRange     '0.1.0',
-70 silly addNameRange     '0.1.1',
-70 silly addNameRange     '0.1.2',
-70 silly addNameRange     '0.1.3',
-70 silly addNameRange     '0.1.4',
-70 silly addNameRange     '0.1.5',
-70 silly addNameRange     '0.1.6',
-70 silly addNameRange     '0.1.7',
-70 silly addNameRange     '0.1.8',
-70 silly addNameRange     '0.1.9',
-70 silly addNameRange     '0.1.10',
-70 silly addNameRange     '0.1.11',
-70 silly addNameRange     '0.1.12',
-70 silly addNameRange     '0.1.13',
-70 silly addNameRange     '0.1.14',
-70 silly addNameRange     '2.2.0',
-70 silly addNameRange     '2.3.0',
-70 silly addNameRange     '2.3.1',
-70 silly addNameRange     '2.3.2',
-70 silly addNameRange     '2.3.3',
-70 silly addNameRange     '2.3.5',
-70 silly addNameRange     '2.3.6',
-70 silly addNameRange     '2.4.0',
-70 silly addNameRange     '2.4.1',
-70 silly addNameRange     '2.4.2',
-70 silly addNameRange     '2.4.3',
-70 silly addNameRange     '2.4.4',
-70 silly addNameRange     '2.4.5',
-70 silly addNameRange     '2.4.6',
-70 silly addNameRange     '2.4.7',
-70 silly addNameRange     '2.4.8',
-70 silly addNameRange     '2.4.9',
-70 silly addNameRange     '2.4.10',
-70 silly addNameRange     '2.5.0',
-70 silly addNameRange     '2.5.2',
-70 silly addNameRange     '2.5.3',
-70 silly addNameRange     '2.5.4',
-70 silly addNameRange     '2.5.5',
-70 silly addNameRange     '2.6.0',
-70 silly addNameRange     '2.6.1',
-70 silly addNameRange     '2.6.2',
-70 silly addNameRange     '2.7.0-rc.1',
-70 silly addNameRange     '2.7.1-rc.1',
-70 silly addNameRange     '2.7.2',
-70 silly addNameRange     '2.7.3',
-70 silly addNameRange     '2.7.4',
-70 silly addNameRange     '2.8.0',
-70 silly addNameRange     '2.8.1',
-70 silly addNameRange     '2.8.2',
-70 silly addNameRange     '2.8.3',
-70 silly addNameRange     '2.8.4',
-70 silly addNameRange     '2.8.5',
-70 silly addNameRange     '2.8.6',
-70 silly addNameRange     '2.8.7',
-70 silly addNameRange     '2.8.8',
-70 silly addNameRange     '2.8.9',
-70 silly addNameRange     '2.8.10',
-70 silly addNameRange     '2.8.11',
-70 silly addNameRange     '2.8.12',
-70 silly addNameRange     '2.8.13',
-70 silly addNameRange     '2.8.14',
-70 silly addNameRange     '2.8.15',
-70 silly addNameRange     '2.8.16',
-70 silly addNameRange     '2.8.17',
-70 silly addNameRange     '2.8.18',
-70 silly addNameRange     '2.8.19',
-70 silly addNameRange     '2.8.20',
-70 silly addNameRange     '2.8.21',
-70 silly addNameRange     '2.8.22',
-70 silly addNameRange     '2.8.23',
-70 silly addNameRange     '2.8.24',
-70 silly addNameRange     '2.8.25',
-70 silly addNameRange     '2.9.0',
-70 silly addNameRange     '2.9.1',
-70 silly addNameRange     '2.9.2',
-70 silly addNameRange     '2.9.3',
-70 silly addNameRange     '2.9.4',
-70 silly addNameRange     '2.9.5',
-70 silly addNameRange     '2.9.6',
-70 silly addNameRange     '2.9.7',
-70 silly addNameRange     '3.0.0-rc1',
-70 silly addNameRange     '3.0.0-rc1-1',
-70 silly addNameRange     '3.0.0-rc1-3',
-70 silly addNameRange     '3.0.0',
-70 silly addNameRange     '3.0.1',
-70 silly addNameRange     '3.0.2',
-70 silly addNameRange     '3.0.3',
-70 silly addNameRange     '3.0.4',
-70 silly addNameRange     '3.0.5',
-70 silly addNameRange     '3.0.6',
-70 silly addNameRange     '3.0.7',
-70 silly addNameRange     '3.0.8',
-70 silly addNameRange     '3.0.9',
-70 silly addNameRange     '3.0.10',
-70 silly addNameRange     '3.1.0-0.1.0',
-70 silly addNameRange     '3.1.0-0.2.0',
-70 silly addNameRange     '3.2.0-rc.1',
-70 silly addNameRange     '3.2.0-0.1.0',
-70 silly addNameRange     '3.2.0-0.2.0',
-70 silly addNameRange     '3.2.0-0.3.0',
-70 silly addNameRange     '3.2.0-0.4.0',
-70 silly addNameRange     '3.3.0-rc.1',
-70 silly addNameRange     '3.3.0-0.1.1',
-70 silly addNameRange     '3.3.1-0.1.2',
-70 silly addNameRange     '2.9.0-rc1',
-70 silly addNameRange     '3.3.1-0.3.0',
-70 silly addNameRange     '3.3.1-0.3.1',
-70 silly addNameRange     '3.3.1-0.4.1',
-70 silly addNameRange     '3.3.1-0.4.2',
-70 silly addNameRange     '3.4.0-0.1.0',
-70 silly addNameRange     '3.4.0-0.1.1',
-70 silly addNameRange     '3.4.0-0.1.2',
-70 silly addNameRange     '3.4.0-0.1.3',
-70 silly addNameRange     '0.0.0-fake',
-70 silly addNameRange     '3.4.1-0.1.0',
-70 silly addNameRange     '3.5.0-0.2.0',
-70 silly addNameRange     '3.5.0-0.2.1',
-70 silly addNameRange     '3.5.0-0.2.2',
-70 silly addNameRange     '3.5.0-0.2.3',
-70 silly addNameRange     '3.5.0-0.2.4',
-70 silly addNameRange     '3.5.0-0.2.6',
-70 silly addNameRange     '3.5.0-0.2.7',
-70 silly addNameRange     '3.6.0-0.2.8',
-70 silly addNameRange     '3.6.0-0.2.9',
-70 silly addNameRange     '3.6.1-0.2.10',
-70 silly addNameRange     '3.6.3-0.2.11',
-70 silly addNameRange     '3.6.3-0.2.12',
-70 silly addNameRange     '3.6.3-0.2.13',
-70 silly addNameRange     '4.0.0',
-70 silly addNameRange     '4.0.1',
-70 silly addNameRange     '4.1.0',
-70 silly addNameRange     '4.1.1',
-70 silly addNameRange     '4.1.2',
-70 silly addNameRange     '4.1.3-nightly.2014.10.21',
-70 silly addNameRange     '4.2.0' ] ]
-71 verbose addNamed [ 'cordova', '4.2.0' ]
-72 verbose addNamed [ '4.2.0', '4.2.0' ]
-73 silly lockFile ab86ab8c-cordova-4-2-0 cordova@4.2.0
-74 verbose lock cordova@4.2.0 /Users/spencerwise/.npm/ab86ab8c-cordova-4-2-0.lock
-75 silly lockFile baf9be59-js-org-cordova-cordova-4-2-0-tgz https://registry.npmjs.org/cordova/-/cordova-4.2.0.tgz
-76 verbose lock https://registry.npmjs.org/cordova/-/cordova-4.2.0.tgz /Users/spencerwise/.npm/baf9be59-js-org-cordova-cordova-4-2-0-tgz.lock
-77 verbose addRemoteTarball [ 'https://registry.npmjs.org/cordova/-/cordova-4.2.0.tgz',
-77 verbose addRemoteTarball   'e4519197040b09b1bd131ecebc847716a2a7d7d0' ]
-78 info retry fetch attempt 1 at 13:43:57
-79 verbose fetch to= /var/folders/28/ch1y9sm11bsct7q9y29k7x480000gn/T/npm-10497-70YNELJe/registry.npmjs.org/cordova/-/cordova-4.2.0.tgz
-80 http GET https://registry.npmjs.org/cordova/-/cordova-4.2.0.tgz
-81 http 200 https://registry.npmjs.org/cordova/-/cordova-4.2.0.tgz
-82 silly lockFile baf9be59-js-org-cordova-cordova-4-2-0-tgz https://registry.npmjs.org/cordova/-/cordova-4.2.0.tgz
-83 silly lockFile baf9be59-js-org-cordova-cordova-4-2-0-tgz https://registry.npmjs.org/cordova/-/cordova-4.2.0.tgz
-84 silly lockFile ab86ab8c-cordova-4-2-0 cordova@4.2.0
-85 silly lockFile ab86ab8c-cordova-4-2-0 cordova@4.2.0
-86 silly lockFile de8d9fad-cordova cordova@
-87 silly lockFile de8d9fad-cordova cordova@
-88 error Error: EACCES, mkdir '/Users/spencerwise/.npm/cordova/4.2.0'
-88 error  { [Error: EACCES, mkdir '/Users/spencerwise/.npm/cordova/4.2.0']
-88 error   errno: 3,
-88 error   code: 'EACCES',
-88 error   path: '/Users/spencerwise/.npm/cordova/4.2.0' }
-89 error Please try running this command again as root/Administrator.
-90 error System Darwin 14.1.0
-91 error command "node" "/usr/local/bin/npm" "install" "-g" "cordova" "ionic"
-92 error cwd /Users/spencerwise/Dropbox/projects:builds/cs
-93 error node -v v0.10.32
-94 error npm -v 1.4.28
-95 error path /Users/spencerwise/.npm/cordova/4.2.0
-96 error code EACCES
-97 error errno 3
-98 error stack Error: EACCES, mkdir '/Users/spencerwise/.npm/cordova/4.2.0'
-99 verbose exit [ 3, true ]
+6 verbose parsed url   pathname: 'ngrok',
+6 verbose parsed url   path: 'ngrok',
+6 verbose parsed url   href: 'ngrok' }
+7 silly lockFile 893a9e06-ngrok ngrok
+8 verbose lock ngrok /Users/spencerwise/.npm/893a9e06-ngrok.lock
+9 silly lockFile 893a9e06-ngrok ngrok
+10 silly lockFile 893a9e06-ngrok ngrok
+11 verbose addNamed [ 'ngrok', '' ]
+12 verbose addNamed [ null, '*' ]
+13 silly lockFile ccf7dd4b-ngrok ngrok@
+14 verbose lock ngrok@ /Users/spencerwise/.npm/ccf7dd4b-ngrok.lock
+15 silly addNameRange { name: 'ngrok', range: '*', hasData: false }
+16 verbose request where is /ngrok
+17 verbose request registry https://registry.npmjs.org/
+18 verbose request id 668c3306526db29b
+19 verbose url raw /ngrok
+20 verbose url resolving [ 'https://registry.npmjs.org/', './ngrok' ]
+21 verbose url resolved https://registry.npmjs.org/ngrok
+22 verbose request where is https://registry.npmjs.org/ngrok
+23 info trying registry request attempt 1 at 22:02:57
+24 http GET https://registry.npmjs.org/ngrok
+25 http 200 https://registry.npmjs.org/ngrok
+26 silly registry.get cb [ 200,
+26 silly registry.get   { date: 'Fri, 06 Feb 2015 05:02:57 GMT',
+26 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+26 silly registry.get     etag: '"F3ZIS36SBSZD3UO75X6SPT75B"',
+26 silly registry.get     'content-type': 'application/json',
+26 silly registry.get     'cache-control': 'max-age=60',
+26 silly registry.get     'content-length': '21659',
+26 silly registry.get     'accept-ranges': 'bytes',
+26 silly registry.get     via: '1.1 varnish',
+26 silly registry.get     age: '0',
+26 silly registry.get     'x-served-by': 'cache-ord1726-ORD',
+26 silly registry.get     'x-cache': 'MISS',
+26 silly registry.get     'x-cache-hits': '0',
+26 silly registry.get     'x-timer': 'S1423198977.947720,VS0,VE28',
+26 silly registry.get     vary: 'Accept',
+26 silly registry.get     'keep-alive': 'timeout=10, max=50',
+26 silly registry.get     connection: 'Keep-Alive' } ]
+27 silly addNameRange number 2 { name: 'ngrok', range: '*', hasData: true }
+28 silly addNameRange versions [ 'ngrok',
+28 silly addNameRange   [ '0.1.0',
+28 silly addNameRange     '0.1.1',
+28 silly addNameRange     '0.1.2',
+28 silly addNameRange     '0.1.3',
+28 silly addNameRange     '0.1.4',
+28 silly addNameRange     '0.1.5',
+28 silly addNameRange     '0.1.6',
+28 silly addNameRange     '0.1.7',
+28 silly addNameRange     '0.1.8',
+28 silly addNameRange     '0.1.9',
+28 silly addNameRange     '0.1.91',
+28 silly addNameRange     '0.1.92',
+28 silly addNameRange     '0.1.93',
+28 silly addNameRange     '0.1.94',
+28 silly addNameRange     '0.1.95',
+28 silly addNameRange     '0.1.96',
+28 silly addNameRange     '0.1.97',
+28 silly addNameRange     '0.1.98' ] ]
+29 verbose addNamed [ 'ngrok', '0.1.98' ]
+30 verbose addNamed [ '0.1.98', '0.1.98' ]
+31 silly lockFile c593a582-ngrok-0-1-98 ngrok@0.1.98
+32 verbose lock ngrok@0.1.98 /Users/spencerwise/.npm/c593a582-ngrok-0-1-98.lock
+33 silly lockFile 95f1bbbc-npmjs-org-ngrok-ngrok-0-1-98-tgz https://registry.npmjs.org/ngrok/-/ngrok-0.1.98.tgz
+34 verbose lock https://registry.npmjs.org/ngrok/-/ngrok-0.1.98.tgz /Users/spencerwise/.npm/95f1bbbc-npmjs-org-ngrok-ngrok-0-1-98-tgz.lock
+35 verbose addRemoteTarball [ 'https://registry.npmjs.org/ngrok/-/ngrok-0.1.98.tgz',
+35 verbose addRemoteTarball   '109635c1fb1092e17f5beda1a87a67baf04e3d2b' ]
+36 info retry fetch attempt 1 at 22:02:58
+37 verbose fetch to= /var/folders/28/ch1y9sm11bsct7q9y29k7x480000gn/T/npm-13423-MM1JyAXv/registry.npmjs.org/ngrok/-/ngrok-0.1.98.tgz
+38 http GET https://registry.npmjs.org/ngrok/-/ngrok-0.1.98.tgz
+39 http 200 https://registry.npmjs.org/ngrok/-/ngrok-0.1.98.tgz
+40 silly lockFile 95f1bbbc-npmjs-org-ngrok-ngrok-0-1-98-tgz https://registry.npmjs.org/ngrok/-/ngrok-0.1.98.tgz
+41 silly lockFile 95f1bbbc-npmjs-org-ngrok-ngrok-0-1-98-tgz https://registry.npmjs.org/ngrok/-/ngrok-0.1.98.tgz
+42 silly lockFile c593a582-ngrok-0-1-98 ngrok@0.1.98
+43 silly lockFile c593a582-ngrok-0-1-98 ngrok@0.1.98
+44 silly lockFile ccf7dd4b-ngrok ngrok@
+45 silly lockFile ccf7dd4b-ngrok ngrok@
+46 silly resolved [ { name: 'ngrok',
+46 silly resolved     version: '0.1.98',
+46 silly resolved     description: 'node wrapper for ngrok',
+46 silly resolved     main: 'index.js',
+46 silly resolved     scripts:
+46 silly resolved      { test: 'node ./node_modules/mocha/bin/_mocha',
+46 silly resolved        postinstall: 'node ./postinstall.js',
+46 silly resolved        postupdate: 'node ./postinstall.js' },
+46 silly resolved     repository: { type: 'git', url: 'git://github.com/bubenshchykov/ngrok.git' },
+46 silly resolved     keywords: [ 'ngrok', 'localhost', 'tunneling', 'localtunnel', 'webhook' ],
+46 silly resolved     author: { name: 'bubenshchykov' },
+46 silly resolved     license: 'BSD-2-Clause',
+46 silly resolved     bugs: { url: 'https://github.com/bubenshchykov/ngrok/issues' },
+46 silly resolved     devDependencies: { mocha: '~1.14.0', chai: '~1.8.1', request: '~2.27.0' },
+46 silly resolved     dependencies: { 'decompress-zip': '0.0.7' },
+46 silly resolved     bin: { ngrok: './bin/ngrok' },
+46 silly resolved     homepage: 'https://github.com/bubenshchykov/ngrok',
+46 silly resolved     _id: 'ngrok@0.1.98',
+46 silly resolved     dist:
+46 silly resolved      { shasum: '109635c1fb1092e17f5beda1a87a67baf04e3d2b',
+46 silly resolved        tarball: 'http://registry.npmjs.org/ngrok/-/ngrok-0.1.98.tgz' },
+46 silly resolved     _from: 'ngrok@',
+46 silly resolved     _npmVersion: '1.4.3',
+46 silly resolved     _npmUser: { name: 'bubenshchykov', email: 'a.bubenshchykov@gmail.com' },
+46 silly resolved     maintainers: [ [Object] ],
+46 silly resolved     directories: {},
+46 silly resolved     _shasum: '109635c1fb1092e17f5beda1a87a67baf04e3d2b',
+46 silly resolved     _resolved: 'https://registry.npmjs.org/ngrok/-/ngrok-0.1.98.tgz' } ]
+47 info install ngrok@0.1.98 into /usr/local/lib
+48 info installOne ngrok@0.1.98
+49 verbose lib/node_modules/ngrok unbuild
+50 verbose tar unpack /Users/spencerwise/.npm/ngrok/0.1.98/package.tgz
+51 silly lockFile 2b350bb0-usr-local-lib-node-modules-ngrok tar:///usr/local/lib/node_modules/ngrok
+52 verbose lock tar:///usr/local/lib/node_modules/ngrok /Users/spencerwise/.npm/2b350bb0-usr-local-lib-node-modules-ngrok.lock
+53 silly lockFile 71715930-ise-npm-ngrok-0-1-98-package-tgz tar:///Users/spencerwise/.npm/ngrok/0.1.98/package.tgz
+54 verbose lock tar:///Users/spencerwise/.npm/ngrok/0.1.98/package.tgz /Users/spencerwise/.npm/71715930-ise-npm-ngrok-0-1-98-package-tgz.lock
+55 silly gunzTarPerm modes [ '755', '644' ]
+56 error Error: EACCES, mkdir '/usr/local/lib/node_modules/ngrok'
+56 error  { [Error: EACCES, mkdir '/usr/local/lib/node_modules/ngrok']
+56 error   errno: 3,
+56 error   code: 'EACCES',
+56 error   path: '/usr/local/lib/node_modules/ngrok',
+56 error   fstream_type: 'Directory',
+56 error   fstream_path: '/usr/local/lib/node_modules/ngrok',
+56 error   fstream_class: 'DirWriter',
+56 error   fstream_stack:
+56 error    [ '/usr/local/lib/node_modules/npm/node_modules/fstream/lib/dir-writer.js:36:23',
+56 error      '/usr/local/lib/node_modules/npm/node_modules/mkdirp/index.js:46:53',
+56 error      'Object.oncomplete (fs.js:107:15)' ] }
+57 error Please try running this command again as root/Administrator.
+58 error System Darwin 14.1.0
+59 error command "node" "/usr/local/bin/npm" "install" "ngrok" "-g"
+60 error cwd /Users/spencerwise/Dropbox/projects:builds/cs
+61 error node -v v0.10.32
+62 error npm -v 1.4.28
+63 error path /usr/local/lib/node_modules/ngrok
+64 error fstream_path /usr/local/lib/node_modules/ngrok
+65 error fstream_type Directory
+66 error fstream_class DirWriter
+67 error code EACCES
+68 error errno 3
+69 error stack Error: EACCES, mkdir '/usr/local/lib/node_modules/ngrok'
+70 error fstream_stack /usr/local/lib/node_modules/npm/node_modules/fstream/lib/dir-writer.js:36:23
+70 error fstream_stack /usr/local/lib/node_modules/npm/node_modules/mkdirp/index.js:46:53
+70 error fstream_stack Object.oncomplete (fs.js:107:15)
+71 verbose exit [ 3, true ]
