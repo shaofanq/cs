@@ -1,8 +1,8 @@
   <div class="bar bar-header">
 
     <button ng-if="isActive('/explore')" class="button button-icon icon ion-navicon" ng-click="toggleLeft()"></button>
-    <button ng-if="!isActive('/explore')" class="button button-icon icon ion-arrow-left-c"  ng-click="goBack()"></button>
+    <button ng-if="!isActive('/explore')" class="button button-icon icon ion-arrow-left-c" ng-click="goBack()"></button>
 
-    <div class="h1 title">Cancer Spot</div>
-    <button class="button button-icon icon ion-gear-b" ng-click="editUser()"></button>
+    <div class="h1 title" ng-click="goBack()">Cancer Spot</div>
+    <button class="button button-icon icon ion-android-more-vertical" ng-click="editUser()"></button>
   </div>

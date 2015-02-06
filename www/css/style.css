@@ -35,3 +35,7 @@ a {
 .logo {
   max-width: 100px;
 }
+
+.fuck {
+  content: "\f397";
+}

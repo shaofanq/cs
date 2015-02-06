@@ -1,6 +1,7 @@
 var app = angular.module('cs');
 
 app.controller('UserDetailController', function($scope, authService, $location, $firebase, firebaseService, $ionicSideMenuDelegate, $stateParams, $ionicHistory) {
+
   $scope.toggleLeft = function() {
     $ionicSideMenuDelegate.toggleLeft();
   };
@@ -30,7 +31,7 @@ app.controller('UserDetailController', function($scope, authService, $location, 
   }
 
   $scope.user = firebaseService.getUser($stateParams.id);
-  console.log($scope.user)
+
 
   $scope.currentUser = '';
   $scope.currentUser = authService.getCurrentUser();
