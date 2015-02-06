@@ -52,11 +52,11 @@ app.config(function($stateProvider, $urlRouterProvider) {
       templateUrl: '../templates/chat.html',
       controller: 'chatController'
     })
-    .state('profile', {
-        url: '/profile',
-        templateUrl: '../templates/profile.html',
-        controller: 'ProfileController'      
-    })
+    // .state('profile', {
+    //     url: '/profile',
+    //     templateUrl: '../templates/profile.html',
+    //     controller: 'ProfileController'      
+    // })
     .state('user-detail', {
         url: '/userDetail/:id',
         templateUrl: '../templates/user-detail.html',

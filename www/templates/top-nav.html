@@ -1,5 +1,8 @@
   <div class="bar bar-header">
-    <button class="button button-icon icon ion-navicon" ng-click="toggleLeft()"></button>
+
+    <button ng-if="isActive('/explore')" class="button button-icon icon ion-navicon" ng-click="toggleLeft()"></button>
+    <button ng-if="!isActive('/explore')" class="button button-icon icon ion-arrow-left-c"  ng-click="goBack()"></button>
+
     <div class="h1 title">Cancer Spot</div>
     <button class="button button-icon icon ion-gear-b" ng-click="editUser()"></button>
   </div>
