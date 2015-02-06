@@ -40,4 +40,12 @@ app.controller('UserDetailController', function($scope, authService, $location, 
   }
 
 
+  // ADD FRIENDS AND SHIT
+
+    $scope.addFriend = function() {
+        firebaseService.addFriend($scope.currentUser.uid, $stateParams.id, "sent");
+        firebaseService.addFriend($stateParams.id, $scope.currentUser.uid, "received");  
+    }
+
+
 });

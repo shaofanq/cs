@@ -14,4 +14,19 @@ app.service('firebaseService', function ($firebase) {
   this.getThings = function(userId){
     return $firebase(new Firebase(firebaseUrl + 'users/' + userId + '/things')).$asArray(); 
   }
+
+
+// ADD USERS
+
+  this.addFriend = function(userId, otherId, theStatus) {
+      var conRef = new Firebase('https://cancer.firebaseio.com/users/' + userId + '/friends' + '/' + otherId);
+      var conSync = $firebase(conRef); 
+
+        conSync.$set({
+          friendId: otherId,
+          status: theStatus
+        })
+  }
+
+
 });

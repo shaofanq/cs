@@ -25,7 +25,7 @@ app.controller('UserController', function($scope, firebaseService, authService, 
         $state.go(link);
     }  
 
-
   
   
 });
+
