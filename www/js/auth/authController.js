@@ -14,7 +14,7 @@ app.controller('AuthController', function ($scope, authService, $location, ipCoo
     user.bio = '';
     return authService.register(user, function(user){
       $scope.$apply(function(){
-        $location.path('/edit', {}, {reload: true})
+        $location.path('/fss', {}, {reload: true})
       });
     });
   };

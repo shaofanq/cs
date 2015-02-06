@@ -1,6 +1,6 @@
 var app = angular.module('cs');
 
-app.controller('ExploreController', function($scope, authService, $location, $firebase, firebaseService, $ionicSideMenuDelegate) {
+app.controller('ExploreController', function($scope, authService, $location, $firebase, firebaseService, $ionicSideMenuDelegate, $state) {
   $scope.toggleLeft = function() {
     $ionicSideMenuDelegate.toggleLeft();
   };
@@ -30,7 +30,7 @@ app.controller('ExploreController', function($scope, authService, $location, $fi
 
   $scope.logout = function() {
     authService.logout();
-    $location.path('/login', {}, {reload: true});
+    $location.path('/splash', {}, {reload: true});
   }
 
 
@@ -39,7 +39,11 @@ app.controller('ExploreController', function($scope, authService, $location, $fi
   $scope.currentUser = authService.getCurrentUser();
 
   if(!$scope.currentUser) {
-    $location.path('/login', {}, {reload: true});
+    $location.path('/splash', {}, {reload: true});
+  }
+
+  $scope.goTo = function(id) {
+    $state.go('userDetail/' + id);   
   }
 
 });

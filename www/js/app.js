@@ -7,14 +7,29 @@ app.config(function($stateProvider, $urlRouterProvider) {
       url: "/main",
       templateUrl: "../templates/main.html"
     })
-    .state('login', {
-      url: '/login',
-      templateUrl: '../templates/login.html',
+    .state('splash', {
+      url: '/splash',
+      templateUrl: '../templates/splash.html',
       controller: 'AuthController'
     })
     .state('register', {
       url: '/register',
       templateUrl: '../templates/register.html',
+      controller: 'AuthController'
+    })
+    .state('fss', {
+      url: '/fss',
+      templateUrl: '../templates/fss.html',
+      controller: 'UserController'
+    })
+    .state('typeInfo', {
+      url: '/typeInfo',
+      templateUrl: '../templates/typeInfo.html',
+      controller: 'UserController'
+    })
+    .state('login', {
+      url: '/login',
+      templateUrl: '../templates/login.html',
       controller: 'AuthController'
     })
     .state('explore', {
@@ -36,5 +51,15 @@ app.config(function($stateProvider, $urlRouterProvider) {
       url: '/chat/:cid',
       templateUrl: '../templates/chat.html',
       controller: 'chatController'
+    })
+    // .state('profile', {
+    //     url: '/profile',
+    //     templateUrl: '../templates/profile.html',
+    //     controller: 'ProfileController'      
+    // })
+    .state('user-detail', {
+        url: '/userDetail/:id',
+        templateUrl: '../templates/user-detail.html',
+        controller: 'UserDetailController'      
     });
 });

@@ -1,0 +1,17 @@
+<ion-content class="container">
+
+    <h3>What Kind of cancer are you fighting?</h3>
+    <label class="item item-input">
+      <span class="input-label">Cancer</span>
+      <input type="text" ng-model="userData.cancer">
+    </label>
+
+    <label class="item item-input">
+      <span class="input-label">Bio</span>
+      <textarea type="text" ng-model="userData.bio"></textarea>
+    </label>
+
+
+    <button class="button button-block button-positive" ng-click="addData(userData)">DONE!</button>
+
+</ion-content>

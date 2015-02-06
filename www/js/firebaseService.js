@@ -8,7 +8,7 @@ app.service('firebaseService', function ($firebase) {
   };
 
   this.getUser = function(userId) {
-    return $firebase(new Firebase(firebaseUrl + 'user/' + userId)).$asObject();
+    return $firebase(new Firebase(firebaseUrl + 'users/' + userId)).$asObject();
   }
 
   this.getThings = function(userId){
