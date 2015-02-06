@@ -27,15 +27,15 @@
         <div class="tabs">
           <a class="tab-item" ng-controller="ExploreController" ng-class="{active:isActive('/explore')}" href="#/explore">
             <i class="icon ion-home"></i>
-            Test
+            Explore
           </a>
           <a class="tab-item" ng-controller="messagesController" ng-class="{active:isActive('/messages')}" href="#/messages">
             <i class="icon ion-chatbubble"></i>
-            Favorites
+            Messages
           </a>
-          <a class="tab-item" ng-controller="ExploreController" ng-class="{ active: nothing }" href="#">
+          <a class="tab-item" ng-controller="FloorController" ng-class="{active:isActive('/floor')}" href="#/floor">
             <i class="icon ion-navicon-round"></i>
-            Settings
+            Floor
           </a>
         </div>
       </div>
@@ -83,7 +83,7 @@
   <script src="js/navbar/topNav.js"></script>
   <script src="js/navbar/navbarController.js"></script>
   <script src="js/firebaseService.js"></script>
-  <script src="js/profile/profileController.js"></script>
+  <script src="js/floor/floorController.js"></script>
   <script src="js/profile/userDetailController.js"></script>
   </body>
 </html>
