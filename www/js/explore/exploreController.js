@@ -33,6 +33,9 @@ app.controller('ExploreController', function($scope, authService, $location, $fi
     $location.path('/splash', {}, {reload: true});
   }
 
+  $scope.notifications = function() {
+    $location.path('/notifications', {}, {reload: true});
+  }
 
 
   $scope.currentUser = '';

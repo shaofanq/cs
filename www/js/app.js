@@ -7,11 +7,6 @@ app.config(function($stateProvider, $urlRouterProvider) {
       url: "/main",
       templateUrl: "../templates/main.html"
     })
-    .state('notifications', {
-      url: "/notifications",
-      templateUrl: "../templates/notifications.html",
-      controller: "UserDetailController"
-    })
     .state('splash', {
       url: '/splash',
       templateUrl: '../templates/splash.html',
@@ -61,6 +56,11 @@ app.config(function($stateProvider, $urlRouterProvider) {
         url: '/floor',
         templateUrl: '../templates/floor.html',
         controller: 'FloorController'      
+    })
+    .state('notifications', {
+      url: "/notifications",
+      templateUrl: "../templates/notifications.html",
+      controller: "UserDetailController"
     })
     .state('user-detail', {
         url: '/userDetail/:id',
