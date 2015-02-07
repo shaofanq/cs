@@ -1,6 +1,7 @@
 var app = angular.module('cs', ['ionic', 'firebase', 'ipCookie'])
 
-app.config(function($stateProvider, $urlRouterProvider) {
+app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
+  $ionicConfigProvider.views.transition('none');
   $urlRouterProvider.otherwise("/explore");
   $stateProvider
     .state('main', {
