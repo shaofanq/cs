@@ -1,13 +1,13 @@
 <ion-content>
   <div class="container">
-    
-      <div ng-repeat="message in messages" class="bubble-container" ng-class="{left: userId !== message.senderId}" >
+    HERE IS A CHAT
+      <!-- <div ng-repeat="message in messages" class="bubble-container" ng-class="{left: userId !== message.senderId}" >
           <div class="textBox">
               {{message.text}}<br>
               <span class="timestamp">{{message.timestamp | date:"EEE 'at' h:mma"}}</span>
               <!-- <span ng-non-bindable>{{10204394861424752 | date:"MM/dd/yyyy 'at' h:mma"}}</span> -->
           </div>            
-      </div>
+      </div> -->
 
       <div class="row-chat">
         <form novalidate name="form" ng-submit="sendMessage(messageText)">

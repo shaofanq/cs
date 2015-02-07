@@ -1,7 +1,7 @@
 var app = angular.module('cs');
 
-app.factory('messageService', function($firebase, $q){
-  var fireUrl = 'https://cancer-spot.firebaseio.com/';
+app.factory('chatService', function($firebase, $q){
+  var fireUrl = 'https://cancer.firebaseio.com/app/';
   var fireSync = new Firebase(fireUrl);
 
     function createChatNode(chatNodeId, userId){
@@ -29,15 +29,19 @@ app.factory('messageService', function($firebase, $q){
       var myChatsSync = $firebase(myChatsRef);
 
       myChatsSync.$set(chatNodeId, {
-        cid: chatNodeId,
-        chatters: [{id: friendUserId, name: friendName}]
+          cid: chatNodeId,
+          chatters: {
+            id: friendUserId, 
+            name: friendName
+          }
       });
     } 
 
 
     return{
       createChat: function(myId, friendId, myName, friendName){
-        var chatNodeId = myId + friendId
+        var chatNodeId = myId + friendId;
+        
         createChatNode(chatNodeId, myId).then(function(data){
           addChatToUser(myId, friendId, chatNodeId, friendName);
           addChatToUser(friendId, myId, chatNodeId, myName);
@@ -56,9 +60,6 @@ app.factory('messageService', function($firebase, $q){
         return $firebase(new Firebase(fireUrl + 'users/' + userId + '/myChats')).$asArray();
       }
 
-      // getChatRoom: function(chatRoomId){
-      //   return $firebase(new Firebase(firebaseUrl + '/chatrooms/' + chatRoomId + '/messages')); 
-      // }
 
     }
 

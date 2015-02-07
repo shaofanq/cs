@@ -1,5 +1,5 @@
 var app = angular.module('cs');
-app.controller('messagesController', function($scope, messageService, $state, $stateParams, firebaseService, $location, authService){
+app.controller('messagesController', function($scope, $state, $stateParams, firebaseService, $location, authService){
     $scope.isActive = function(route) {
         return route === $location.path();
     }
