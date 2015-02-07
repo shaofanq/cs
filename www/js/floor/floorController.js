@@ -12,8 +12,8 @@ app.controller('FloorController', function($scope, authService, $firebase, fireb
   var sync = $firebase(floorRef);
 
   $scope.addPost = function() {
-    var d = new Date();
-    $scope.post.timestamp = d.toString();
+    var d = Date.now();
+    $scope.post.timestamp = d;
     $scope.post.user = $scope.user.name;
     $scope.post.likes = 0;
     $scope.post.comments = [];
@@ -24,6 +24,7 @@ app.controller('FloorController', function($scope, authService, $firebase, fireb
 
 
     $scope.floor = firebaseService.getFloor();
+      console.log($scope.floor.timestamp);
 
   $scope.like = function(index) {
     if(!$scope.user.favorites) {
