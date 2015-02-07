@@ -11,8 +11,20 @@ app.service('firebaseService', function ($firebase) {
     return $firebase(new Firebase(firebaseUrl + 'users/' + userId)).$asObject();
   }
 
-  this.getFloor = function(userId) {
-    return $firebase(new Firebase(firebaseUrl + '/floorPosts')).$asObject();
+  this.getFloor = function() {
+    return $firebase(new Firebase(firebaseUrl + '/floorPosts')).$asArray();
+  }
+
+  this.addLike = function(postId, newLikes, userId) {
+    var userSync = $firebase(new Firebase(firebaseUrl + 'users/' + userId + '/favorites'));
+    var floorSync = $firebase(new Firebase(firebaseUrl + 'floorPosts/' + postId));
+    userSync.$push(postId);
+    floorSync.$update({likes: newLikes});
+  }
+
+  this.addComment = function(postId, newComment) {
+   var sync = $firebase(new Firebase(firebaseUrl + '/floorPosts/' + postId + '/comments'));
+   sync.$add(newComment);
   }
 
 
