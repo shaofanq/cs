@@ -27,23 +27,16 @@ app.controller('FloorController', function($scope, authService, $firebase, fireb
 
   $scope.like = function(index) {
     if(!$scope.user.favorites) {
-      console.log('first like!');
       $scope.floor[index].likes = $scope.floor[index].likes + 1;
       firebaseService.addLike($scope.floor[index].$id, $scope.floor[index].likes, id);
     }
-    var flag = false;
+    var flag = true;
     for(key in $scope.user.favorites) {
-      console.log('my favs', $scope.user.favorites[key]);
-      console.log('the one i favorited', $scope.floor[index].$id);
       if($scope.user.favorites[key] === $scope.floor[index].$id) {
         flag = false;
-        console.log('you can not do that!');
-      } else {
-        flag = true;
       }
     };
     if(flag) {
-      flag = false;
       $scope.floor[index].likes = $scope.floor[index].likes + 1;
       firebaseService.addLike($scope.floor[index].$id, $scope.floor[index].likes, id);
     }
