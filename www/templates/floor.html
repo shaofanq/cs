@@ -1,18 +1,40 @@
 <ion-content>
   <div class="container">
-    {{user.name}}
     <label class="item item-input">
       <span class="input-label">Post</span>
       <input type="text" ng-model="post.text">
     </label>
     <button class="button button-block button-positive" ng-click="addPost()">New Post</button>
-  </div>
-  <div ng-repeat="item in floor">
-    <div class="card">
-      <div class="item item-text-wrap">
-        <h1>{{item.text}}</h1>
-        <h1>{{item.user}}</h1>
+
+    <div ng-repeat="item in floor">
+      <div class="list card">
+        <div class="item item-avatar">
+          <img src="img/avatar.jpg">
+          <h2>{{item.user}}</h2>
+          <p>November 05, 1955</p>
+        </div>
+        <div class="item item-body">
+          <p>{{item.text}}</p>
+          <p>
+            <a href="#" class="subdued">{{item.likes}} Likes</a>
+            <a href="#" class="subdued">{{item.commentsCount}} Comments</a>
+          </p>
+        </div>
+        <div class="item tabs tabs-secondary tabs-icon-left">
+          <a class="tab-item" ng-click="like($index)">
+            <i class="icon ion-thumbsup"></i>
+            Like
+          </a>
+          <a class="tab-item" href="#">
+            <i class="icon ion-chatbox"></i>
+            Comment
+          </a>
+          <a class="tab-item" href="#">
+            <i class="icon ion-share"></i>
+            Share
+          </a>
+        </div>
       </div>
     </div>
-  </div>
+  </div>  
 </ion-content>
