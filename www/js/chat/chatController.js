@@ -1,9 +1,11 @@
-.controller('chatCtrl', function($scope, chatService, firebaseService, $stateParams, $rootScope, $state){
+var app = angular.module('cs');
+app.controller('chatController', function($scope, chatService, firebaseService, $stateParams, $rootScope, $state, authService){
 	
-	$scope.messages = messageService.getChat($stateParams.cid);
+	$scope.messages = chatService.getChat($stateParams.cid);
+    $scope.authData = authService.getCurrentUser();
 
-	var me = firebaseService.getUser();
-	$scope.friend = messageService.getMyChats(me.facebook.id);
+	var me = firebaseService.getUser($scope.authData.uid);
+	$scope.friend = chatService.getMyChats(me.$id);
 	console.log($scope.friend);
 
 	$scope.timeStamp = function() {
@@ -13,7 +15,7 @@
 	console.log($scope.messages)
     var side = 'left';
     $scope.me = firebaseService.getUser();
-    $scope.userId = $scope.me.facebook.id;
+    $scope.userId = me.$id;
     $scope.messageText = '';
     console.log('userId:', $scope.userId);   
     

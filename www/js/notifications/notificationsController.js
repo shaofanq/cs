@@ -75,7 +75,7 @@ app.controller('notificationsController', function($scope, authService, $locatio
   $scope.createChat = function(friendId, friendName){
       chatService.createChat($scope.currentUser.auth.uid, friendId, $scope.currentUser.name, friendName);
       var cid = $scope.currentUser.auth.uid + friendId;
-      $state.go('chat/' + cid); 
+      $location.path('chat/' + cid); 
   };
 
    

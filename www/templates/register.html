@@ -1,4 +1,4 @@
-<ion-content class="container">
+<ion-content class="container containerFullWidth">
     <label class="item item-input">
       <span class="input-label">Email</span>
       <input type="text" ng-model="user.email">
@@ -11,5 +11,7 @@
       <span class="input-label">Password</span>
       <input type="password" ng-model="user.password">
     </label>
-    <button class="button button-block csRed whiteText" ng-click="register(user)">CREATE ACCOUNT</button>
+    <div class="text-center">
+    <a class="button button-block csRed whiteText noBorder bigRaisedButton" ng-click="register(user)">CREATE ACCOUNT</a>
+    </div>
 </ion-content>
