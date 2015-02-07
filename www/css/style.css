@@ -105,6 +105,18 @@ a {
 
 }
 
+.buttonRound {
+	background-color: #B3B3B3;
+	display:inline-block;
+	width:40px;
+	height:40px;
+	border-radius:20px;
+	font-size:26px;
+	color:#fff;
+	text-align:center;
+	padding: 8px;
+}
+
 .noBorder {
 	border:none;
 }
@@ -113,3 +125,6 @@ a {
 	float: right;
 }
 
+.headerColor {
+	background-color: 
+}
