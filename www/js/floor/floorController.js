@@ -12,8 +12,8 @@ app.controller('FloorController', function($scope, authService, $firebase, fireb
   var sync = $firebase(floorRef);
 
   $scope.addPost = function() {
-    var d = new Date();
-    $scope.post.timestamp = d.toString();
+    var d = Date.now();
+    $scope.post.timestamp = d;
     $scope.post.user = $scope.user.name;
     $scope.post.likes = 0;
     $scope.post.comments = [];
@@ -24,26 +24,20 @@ app.controller('FloorController', function($scope, authService, $firebase, fireb
 
 
     $scope.floor = firebaseService.getFloor();
+      console.log($scope.floor.timestamp);
 
   $scope.like = function(index) {
     if(!$scope.user.favorites) {
-      console.log('first like!');
       $scope.floor[index].likes = $scope.floor[index].likes + 1;
       firebaseService.addLike($scope.floor[index].$id, $scope.floor[index].likes, id);
     }
-    var flag = false;
+    var flag = true;
     for(key in $scope.user.favorites) {
-      console.log('my favs', $scope.user.favorites[key]);
-      console.log('the one i favorited', $scope.floor[index].$id);
       if($scope.user.favorites[key] === $scope.floor[index].$id) {
         flag = false;
-        console.log('you can not do that!');
-      } else {
-        flag = true;
       }
     };
     if(flag) {
-      flag = false;
       $scope.floor[index].likes = $scope.floor[index].likes + 1;
       firebaseService.addLike($scope.floor[index].$id, $scope.floor[index].likes, id);
     }
