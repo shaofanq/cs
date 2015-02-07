@@ -1,16 +1,17 @@
 <ion-content>
   <div class="container">
     <div class="list">
-      You have NO new notifications. 
-    	<a ng-repeat="connection in pendingReqs" class="item item-button">
-            <h3>{{connection.friendId}}</h3>
-            <button class="button csRed notiButt" ng-click="acceptReq({{connection.friendId}})">
+
+    	<a ng-repeat="friend in reqs | filter: {status: 'received'}" class="item item-button">
+            <h3>{{friend.name}}</h3>
+            <button class="button csRed rightButt" ng-click="acceptReq(friend.$id)">
                <i class="icon ion-person-add"></i>
             </button>
-            <button class="button csGrey notiButt" ng-click="declineReq({{connection.friendId}})">
+            <button class="button button-light rightButt" ng-click="rejectReq(friend.$id)">
                 <i class="icon ion-close-circled"></i>
             </button>
-      	</a>
+      </a>
+
     </div>
   </div>
 

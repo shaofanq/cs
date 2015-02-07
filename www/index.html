@@ -42,27 +42,39 @@
       </ion-side-menu-content>
       <ion-side-menu side="left" ng-controller="ExploreController">
         <div class="list">
-          <div>
-            <a menu-close ng-click="logout()" class="item item-icon-left item-icon-right" href="#">
-              <i class="icon ion-power"></i>
-              Logout
-              <i class="icon"></i>
-            </a>
-          </div>
-          <div>
-            <a menu-close ui-sref="notifications" class="item item-icon-left item-icon-right">
-              <i class="icon ion-information-circled"></i>
-              Notifications
-              <i class="icon"></i>
-            </a>
-          </div>
-          <div>
-            <a class="item item-icon-left item-icon-right" href="#">
-              <i class="icon ion-information-circled"></i>
-              About
-              <i class="icon"></i>
-            </a>
-          </div>
+           
+            <div>
+              <a menu-close ui-sref="notifications" class="item item-icon-left item-icon-right">
+                <i class="icon ion-information-circled"></i>
+                Notifications
+                <i class="icon"></i>
+              </a>
+            </div>
+
+            <div>
+              <a menu-close ui-sref="friends" class="item item-icon-left item-icon-right">
+                <i class="icon ion-information-circled"></i>
+                Friends
+                <i class="icon"></i>
+              </a>
+            </div>
+            
+            <div>
+              <a class="item item-icon-left item-icon-right" href="#">
+                <i class="icon ion-information-circled"></i>
+                About
+                <i class="icon"></i>
+              </a>
+            </div>
+
+             <div>
+              <a menu-close ng-click="logout()" class="item item-icon-left item-icon-right" href="#">
+                <i class="icon ion-power"></i>
+                Logout
+                <i class="icon"></i>
+              </a>
+            </div>
+            
         </div>
       </ion-side-menu>
     </ion-side-menus>
@@ -88,5 +100,6 @@
   <script src="js/firebaseService.js"></script>
   <script src="js/floor/floorController.js"></script>
   <script src="js/profile/userDetailController.js"></script>
+  <script src="js/notifications/notificationsController.js"></script>
   </body>
 </html>

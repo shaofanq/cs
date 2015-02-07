@@ -1,0 +1,14 @@
+<ion-content>
+  <div class="container">
+    <div ng-repeat="friend in reqs | filter: {status: 'accepted'}">
+      <a href="/#/userDetail/{{friend.auth.uid}}">
+        <div class="card">
+          <div class="item item-text-wrap">
+            <h1>{{friend.name}}</h1>
+            <p>{{friend.cancer}}</p>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</ion-content>

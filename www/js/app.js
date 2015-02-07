@@ -7,6 +7,9 @@ app.config(function($stateProvider, $urlRouterProvider) {
       url: "/main",
       templateUrl: "../templates/main.html"
     })
+    
+// ONBOARDING
+
     .state('splash', {
       url: '/splash',
       templateUrl: '../templates/splash.html',
@@ -32,15 +35,14 @@ app.config(function($stateProvider, $urlRouterProvider) {
       templateUrl: '../templates/login.html',
       controller: 'AuthController'
     })
+
+
+// EXPLORE/FLOOR/MESSAGES
+
     .state('explore', {
       url: '/explore',
       templateUrl: '../templates/explore.html',
       controller: 'ExploreController'
-    })
-    .state('edit-user', {
-      url: '/edit',
-      templateUrl: '../templates/edit-user.html',
-      controller: 'UserController'
     })
     .state('messages', {
       url: '/messages',
@@ -57,14 +59,29 @@ app.config(function($stateProvider, $urlRouterProvider) {
         templateUrl: '../templates/floor.html',
         controller: 'FloorController'      
     })
-    .state('notifications', {
-      url: "/notifications",
-      templateUrl: "../templates/notifications.html",
-      controller: "UserDetailController"
-    })
+
+
+// PROFILES & FRIENDS
+
     .state('user-detail', {
         url: '/userDetail/:id',
         templateUrl: '../templates/user-detail.html',
         controller: 'UserDetailController'      
+    })
+    .state('edit-user', {
+      url: '/edit',
+      templateUrl: '../templates/edit-user.html',
+      controller: 'UserController'
+    })
+    .state('notifications', {
+      url: "/notifications",
+      templateUrl: "../templates/notifications.html",
+      controller: "notificationsController"
+    })
+    .state('friends', {
+      url: "/friends",
+      templateUrl: "../templates/friends.html",
+      controller: "notificationsController"
     });
+    
 });

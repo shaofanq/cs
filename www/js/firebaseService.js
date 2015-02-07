@@ -29,5 +29,29 @@ app.service('firebaseService', function ($firebase) {
         })
   }
 
+// CONNECTIONS & NOTIFICATIONS
+
+  this.getFriends = function(id) {
+      return $firebase(new Firebase(firebaseUrl + 'users/' + id + '/friends')).$asArray();
+  }
+
+  this.updateFriend = function(userId, otherId, theStatus) {
+      var upRef = new Firebase('https://cancer.firebaseio.com/app/users/' + userId + '/friends/' + otherId);
+      var upSync = $firebase(upRef); 
+
+      upSync.$update({
+        status: theStatus
+      })
+  }
+
+  this.deleteFriend = function(userId, otherId) {
+      var delRef = new Firebase('https://cancer.firebaseio.com/app/users/' + userId + '/friends/' + otherId);
+      var delSync = $firebase(delRef); 
+
+      delSync.$remove();
+  }
+
+
+
 
 });
