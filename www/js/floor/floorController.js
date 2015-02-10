@@ -27,10 +27,6 @@ app.controller('FloorController', function($scope, authService, $firebase, fireb
       console.log($scope.floor.timestamp);
 
   $scope.like = function(index) {
-    if(!$scope.user.favorites) {
-      $scope.floor[index].likes = $scope.floor[index].likes + 1;
-      firebaseService.addLike($scope.floor[index].$id, $scope.floor[index].likes, id);
-    }
     var flag = true;
     for(key in $scope.user.favorites) {
       if($scope.user.favorites[key] === $scope.floor[index].$id) {
