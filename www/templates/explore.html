@@ -3,9 +3,10 @@
   <div class="container">
     <div ng-repeat="user in users">
       <a href="/#/userDetail/{{user.auth.uid}}">
-        <div class="card">
-          <div class="item item-text-wrap">
-            <h1>{{user.name}}</h1>
+        <div class="list">
+          <div class="item item-avatar">
+            <img class="exploreAvatar"src="img/avatar.jpg">
+            <h2>{{user.name}}</h2>
             <p>{{user.level}}</p>
             <p>{{user.cancer}}</p>
             <a class="buttonRound rightButt" ng-click="addFriend()">

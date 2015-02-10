@@ -2,17 +2,15 @@
 <ion-content>
   <div class="container">
     <div ng-repeat="message in messages">
-      <a href="#ok">
-        <div class="card" href="/#/chat/{{message.cid}}">
-          <div class="item item-text-wrap">
-            <h5>{{message.cid}}</h5>
-            <h2>{{message.chatters.name}}</h2>
+      <a href="/#/chat/{{message.cid}}">
+          <div class="card">
+            <div class="item item-text-wrap">
+              <h2>{{message.chatters.name}}</h2>
+              <h6>{{message.cid}}</h6>
+            </div>
           </div>
-        </div>
       </a>
     </div>
-<!--     <button class="button button-block button-positive" ng-click="logout()">Logout</button>
- -->
   </div>
 
 

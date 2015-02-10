@@ -1,6 +1,6 @@
 var app = angular.module('cs');
 
-app.controller('notificationsController', function($scope, authService, $location, $firebase, firebaseService, $ionicSideMenuDelegate, $stateParams, $ionicHistory) {
+app.controller('notificationsController', function($scope, authService, $location, $firebase, firebaseService, $ionicSideMenuDelegate, $stateParams, $ionicHistory, chatService, $state) {
 
   $scope.toggleLeft = function() {
     $ionicSideMenuDelegate.toggleLeft();
@@ -37,19 +37,21 @@ app.controller('notificationsController', function($scope, authService, $locatio
   $scope.authInfo = authService.getCurrentUser();
 
   $scope.currentUser = firebaseService.getUser($scope.authInfo.uid);
+  console.log($scope.currentUser.name);
+  console.log($scope.currentUser);
 
   if(!$scope.authInfo) {
     $location.path('/login', {}, {reload: true});
   }
  
-  //GET REQUESTS
+
+
+//GET REQUESTS
 
 
   $scope.reqs = [];
-
-
   $scope.reqs = firebaseService.getFriends($scope.authInfo.uid);
-  console.log($scope.reqs);
+  
 
   // ACCEPT AND REJECT REQUESTS 
 
@@ -65,6 +67,16 @@ app.controller('notificationsController', function($scope, authService, $locatio
       firebaseService.deleteFriend($scope.authInfo.uid, id);
       firebaseService.deleteFriend(id, $scope.authInfo.uid);
   }
+
+
+
+// CREATING A CHAT
+
+  $scope.createChat = function(friendId, friendName){
+      chatService.createChat($scope.currentUser.auth.uid, friendId, $scope.currentUser.name, friendName);
+      var cid = $scope.currentUser.auth.uid + friendId;
+      $location.path('chat/' + cid); 
+  };
 
    
 

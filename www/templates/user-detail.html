@@ -1,10 +1,18 @@
 <ion-content>
   <div class="container">
-    <h1>{{user.name}}</h1>
-    <h3>{{user.level}}</h3>
-    <p>{{user.bio}}</p>
-  	<a class="button button-block bigRaisedButton noBorder supGreen whiteText" ng-click="addFriend()">
-    	ADD
+    <div class="profilePicBox text-center">
+    	<h3>{{user.name}}</h3>
+    </div>
+    <div>
+    	<h5>{{user.level}}</h5>
+    	<h5>Location, US</h5>
+    </div>
+    <div class="card noBorder text-center">
+    	<h3>About</h3>
+    	<div class="item item-text-wrap">{{user.bio}}</div>
+    </div>
+  	<a class="buttonRound noBorder supGreen whiteText" ng-click="addFriend()">
+    	+
     </a>
   </div>
 </ion-content>
