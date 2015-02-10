@@ -25,7 +25,6 @@ app.controller('chatController', function($scope, chatService, firebaseService, 
         	senderId: $scope.userId,
         	timestamp: Firebase.ServerValue.TIMESTAMP
         });
-    console.log($scope.form)
         };
 
     $scope.reset = function(textMessage) {
