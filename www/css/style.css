@@ -30,7 +30,7 @@ body {
   height: 100%;
   width: 95%;
   margin: auto;
-  padding: 50px 0 50px 0;
+  padding: 30px 0 0 0;
 }
 
 .containerFullWidth {
@@ -95,17 +95,18 @@ a {
 .bigRaisedButton {
 	margin: 0 auto;
 	border-radius: 2px;
-	width: 94%;
+	/*width: 100%;*/
 	transition: box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     transition-delay: 0.2s;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
     padding: 8px 0px;
+    margin: 0 10px;
 }
 
 .smallRaisedButton {
 	border-radius: 2px;
 	/*width: 40%;*/
-	margin: 0 8px;
+	margin: 0 10px;
 	transition: box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     transition-delay: 0.2s;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
@@ -138,6 +139,12 @@ a {
 	background-color: 
 }
 
+/*EXPLORE*/
+
+.exploreAvatar {
+	height: 20%;
+	width: 20%;
+}
 
 /*PROFILES*/
 
@@ -161,4 +168,52 @@ a {
 
 p {
 	font-size: 16px;
+}
+
+
+/*CHAT*/
+
+.bubble-container {
+	display:block;
+	clear: both;
+	position:relative;
+	float: right;
+	margin-bottom:10px;
+	min-height: 40px;
+	padding: 7px;
+	background-color: #fff;
+	width: 60%;
+	color: #000;
+	border-radius: 2px;
+}
+
+.row-chat{
+	bottom: 20px;
+	margin: 0;
+	width: 100%;
+}
+
+.left {
+	background-color: #418bc5 !important;
+	float: left !important;
+	color: #fff !important;
+}
+
+.right {
+	float: right;
+}
+
+.right .timestamp {
+	color: #94928f !important;
+}
+
+.timestamp {
+	font-size: 6pt;
+	padding-top: 1px;
+	color: #fff;
+	float: left;
+}
+
+span .timestamp .ng-binding {
+	color: #94928f;
 }
