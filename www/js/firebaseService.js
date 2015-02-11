@@ -15,6 +15,10 @@ app.service('firebaseService', function ($firebase) {
     return $firebase(new Firebase(firebaseUrl + '/floorPosts')).$asArray();
   }
 
+  this.getFloorPost = function(id) {
+    return $firebase(new Firebase(firebaseUrl + '/floorPosts/' + id)).$asObject();
+  }
+
   this.addLike = function(postId, newLikes, userId) {
     var userSync = $firebase(new Firebase(firebaseUrl + 'users/' + userId + '/favorites'));
     var floorSync = $firebase(new Firebase(firebaseUrl + 'floorPosts/' + postId));

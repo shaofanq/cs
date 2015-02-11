@@ -1,0 +1,16 @@
+<navbar></navbar>
+<ion-content>
+  <div class="container">
+    <div class="profilePicBox text-center card">
+      <h3>{{currentPost.user}}</h3>
+      <h5>{{currentPost.text}}</h5>
+      <h5>Location, US</h5>
+      <p>{{ currentPost.timestamp | date : format : timezone}}</p>
+      <a href="#" class="subdued">{{currentPost.likes}} Likes</a>
+      <a href="#" class="subdued">{{currentPost.commentsCount}} Comments</a>
+    </div>  
+    <button class="button button-block button-positive" ng-click="addPost()">Comment</button>
+
+  </div>
+</ion-content>
+<tabs></tabs>

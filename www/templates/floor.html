@@ -7,8 +7,8 @@
     </label>
     <button class="button button-block button-positive" ng-click="addPost()">New Post</button>
 
-    <div ng-repeat="item in floor">
-      <div class="list card">
+    <div ng-repeat="item in floor" >
+      <div class="list card" ng-click="postDetails($index)">
         <div class="item item-avatar">
           <img src="img/avatar.jpg">
           <h2>{{item.user}}</h2>
@@ -16,12 +16,14 @@
         </div>
         <div class="item item-body">
           <p>{{item.text}}</p>
+          <button class="button button-block button-positive ion-heart" ng-click="like($index)"></button>
+
           <p>
             <a href="#" class="subdued">{{item.likes}} Likes</a>
             <a href="#" class="subdued">{{item.commentsCount}} Comments</a>
           </p>
         </div>
-        <div class="item tabs tabs-secondary tabs-icon-left">
+<!--         <div class="item tabs tabs-secondary tabs-icon-left">
           <a class="tab-item" ng-click="like($index)">
             <i class="icon ion-thumbsup"></i>
             
@@ -34,7 +36,7 @@
             <i class="icon ion-share"></i>
             
           </a>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>  

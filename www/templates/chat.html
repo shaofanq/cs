@@ -1,25 +1,18 @@
 <navbar></navbar>
-<ion-content title="Friend">
+<ion-content onLoad="moveWin();" title="Friend">
   <div class="container">
-
     <div ng-repeat="message in messages" class="bubble-container" ng-class="{left: userId !== message.senderId}" >
         <div class="textBox">
             {{message.text}}<br>
             <span class="timestamp">{{message.timestamp | date:"EEE 'at' h:mma"}}</span>
           </div>            
     </div>
-
-    <!-- <label class="item item-input">
-      <span class="input-label">Type Message</span>
-      <input type="text" ng-model="messageText">
-    </label> -->
-
     <div class="row-chat">
       <form id="fuck" novalidate name="form" ng-submit="sendMessage(messageText)">
         <input name="mess" type="text" class="msgInput" ng-model="messageText" placeholder="Type your message" />
           <button type="submit" class="button button-positive" ng-click="reset(messageText)">Send</button>
       </form>
     </div>
-
   </div>
 </ion-content>
+<tabs></tabs>

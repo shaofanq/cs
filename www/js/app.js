@@ -83,6 +83,11 @@ app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
       url: "/friends",
       templateUrl: "../templates/friends.html",
       controller: "notificationsController"
+    })
+    .state('floor-detail', {
+      url: "/floor-detail/:id",
+      templateUrl: "../templates/floor-detail.html",
+      controller: "FloorController"
     });
     
 });

@@ -1,7 +1,8 @@
 var app = angular.module('cs');
 
-app.controller('FloorController', function($scope, authService, $firebase, firebaseService) {
+app.controller('FloorController', function($scope, $location, authService, $firebase, firebaseService, $stateParams) {
   $scope.post = {};
+
   $scope.currentUser = authService.getCurrentUser();
   var id = $scope.currentUser.uid;
   $scope.getCurrentUser = function(){
@@ -24,7 +25,6 @@ app.controller('FloorController', function($scope, authService, $firebase, fireb
 
 
     $scope.floor = firebaseService.getFloor();
-      console.log($scope.floor.timestamp);
 
   $scope.like = function(index) {
     var flag = true;
@@ -38,4 +38,19 @@ app.controller('FloorController', function($scope, authService, $firebase, fireb
       firebaseService.addLike($scope.floor[index].$id, $scope.floor[index].likes, id);
     }
   }
+
+  $scope.postDetails = function(index) {
+    console.log(index);
+    var id = $scope.floor[index].$id
+    $location.path('floor-detail/' + id);
+  }
+
+  $scope.getFloorPost = function() {
+    var id = $stateParams.id
+    $scope.currentPost = firebaseService.getFloorPost(id);
+
+  }();
+
+  
+
 });
