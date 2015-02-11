@@ -4,14 +4,14 @@
     <div ng-repeat="user in users">
       <a href="/#/userDetail/{{user.auth.uid}}">
         <div class="list">
-          <div class="item item-avatar">
-            <img class="exploreAvatar"src="img/avatar.jpg">
+          <div class="item item-avatar item-button-right" href="#">
+            <img class=""src="img/avatar.jpg">
             <h2>{{user.name}}</h2>
-            <p>{{user.level}}</p>
+            <!-- <p>{{user.level}}</p> -->
             <p>{{user.cancer}}</p>
-            <a class="buttonRound rightButt" ng-click="addFriend()">
-             +
-           </a>
+            <button class="button button-add" ng-click="addFriend()">
+              <i class="icon ion-ios-plus"></i>
+            </button>
           </div>
         </div>
       </a>
@@ -19,3 +19,14 @@
   </div>
 </ion-content>
 <tabs></tabs>
+
+
+          <!-- <div class="item item-avatar">
+            <img class="exploreAvatar"src="img/avatar.jpg">
+            <h2>{{user.name}}</h2>
+            <p>{{user.level}}</p>
+            <p>{{user.cancer}}</p>
+            <a class="buttonRound rightButt" ng-click="addFriend()">
+             <i class="icon ion-plus-circled"></i>
+           </a>
+          </div> -->
