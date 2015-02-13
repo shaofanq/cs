@@ -1,15 +1,10 @@
 <navbar></navbar>
+butto
 <ion-content>
   <div class="container">
-    <label class="item item-input">
-      <span class="input-label">Post</span>
-      <input type="text" ng-model="post.text">
-    </label>
-    <button class="button button-block button-positive" ng-click="addPost()">New Post</button>
-
     <div ng-repeat="item in floor" >
-      <div class="list card" ng-click="postDetails($index)">
-        <div class="item item-avatar">
+      <div class="list card">
+        <div class="item item-avatar" ng-click="postDetails($index)">
           <img src="img/avatar.jpg">
           <h2>{{item.user}}</h2>
           <p>{{ item.timestamp | date : format : timezone}}</p>
@@ -17,28 +12,34 @@
         <div class="item item-body">
           <p>{{item.text}}</p>
           <button class="button button-block button-positive ion-heart" ng-click="like($index)"></button>
-
           <p>
             <a href="#" class="subdued">{{item.likes}} Likes</a>
             <a href="#" class="subdued">{{item.commentsCount}} Comments</a>
           </p>
         </div>
-<!--         <div class="item tabs tabs-secondary tabs-icon-left">
-          <a class="tab-item" ng-click="like($index)">
-            <i class="icon ion-thumbsup"></i>
-            
-          </a>
-          <a class="tab-item" href="#">
-            <i class="icon ion-chatbox"></i>
-            
-          </a>
-          <a class="tab-item" href="#">
-            <i class="icon ion-share"></i>
-            
-          </a>
-        </div> -->
       </div>
     </div>
   </div>  
 </ion-content>
 <tabs></tabs>
+<script id="my-modal.html" type="text/ng-template">
+  <ion-modal-view>
+    <ion-header-bar>
+      <h1 class="title">My Modal title</h1>
+    </ion-header-bar>
+    <ion-content>
+    <div class="container">
+      <label class="item item-input">
+        <span class="input-label">Post</span>
+        <input type="text" ng-model="post.text">
+      </label>
+      <button class="button button-block button-positive" ng-click="addPost()">
+        New Post
+      </button>
+      <button class="button button-block button-default" ng-click="closeModal()">
+        Cancel
+      </button>
+    </div>
+    </ion-content>
+  </ion-modal-view>
+</script>
