@@ -5,6 +5,7 @@ app.controller('chatController', function($scope, chatService, firebaseService, 
     $scope.authData = authService.getCurrentUser();
 	var me = firebaseService.getUser($scope.authData.uid);
 	
+    
     $scope.friend = chatService.getMyChats(me.$id);
 	console.log($scope.friend);
 

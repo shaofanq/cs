@@ -8,9 +8,9 @@ app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
       url: "/main",
       templateUrl: "../templates/main.html"
     })
-    
-// ONBOARDING
-
+     //////////////// 
+    // ONBOARDING //
+   ////////////////
     .state('splash', {
       url: '/splash',
       templateUrl: '../templates/splash.html',
@@ -38,8 +38,9 @@ app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
     })
 
 
-// EXPLORE/FLOOR/MESSAGES
-
+     ////////////////////////////////
+    // EXPLORE / FLOOR / MESSAGES //
+   ////////////////////////////////
     .state('explore', {
       url: '/explore',
       templateUrl: '../templates/explore.html',
@@ -62,8 +63,9 @@ app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
     })
 
 
-// PROFILES & FRIENDS
-
+     //////////////////////// 
+    // PROFILES / FRIENDS //
+   ////////////////////////
     .state('user-detail', {
         url: '/userDetail/:id',
         templateUrl: '../templates/user-detail.html',

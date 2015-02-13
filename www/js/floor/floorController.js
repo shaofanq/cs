@@ -24,7 +24,11 @@ app.controller('FloorController', function($scope, $location, authService, $fire
     $scope.modal.hide();
 
   }
-
+    $scope.isActive = function(a,b,c) {
+        if(a === $location.path() || b === $location.path() || c === $location.path()) {
+          return true
+        }
+    }
 
     $scope.floor = firebaseService.getFloor();
 
@@ -57,14 +61,19 @@ app.controller('FloorController', function($scope, $location, authService, $fire
     var id = $stateParams.id;
     comment = {
       text: comment, 
-      timestamp: Date.now()
+      timestamp: Date.now(),
+      likes: 0,
+      user: $scope.user.name
     };
     var count = $scope.floor[0].commentsCount + 1;
     firebaseService.addComment(id, comment, count);
     $scope.modal.hide();
-    addCommentForm.reset(); 
+    addCommentForm.reset();
   }
 
+    /////////////////
+   // MODAL SHIT ///
+  /////////////////
   $ionicModal.fromTemplateUrl('my-modal.html', {
     scope: $scope,
     animation: 'slide-in-up'
