@@ -2,7 +2,7 @@ var app = angular.module('cs');
 
 app.controller('FloorController', function($scope, $location, authService, $firebase, firebaseService, $stateParams, $ionicModal) {
   $scope.post = {};
-
+  $scope.currentPost;
   $scope.currentUser = authService.getCurrentUser();
   var id = $scope.currentUser.uid;
   $scope.getCurrentUser = function(){
@@ -18,7 +18,7 @@ app.controller('FloorController', function($scope, $location, authService, $fire
     $scope.post.user = $scope.user.name;
     $scope.post.likes = 0;
     $scope.post.comments = [];
-    $scope.post.commentsCount = $scope.post.comments.length;
+    $scope.post.commentsCount = 0;
     sync.$push($scope.post);
     $scope.post = {};
     $scope.modal.hide();
@@ -50,8 +50,20 @@ app.controller('FloorController', function($scope, $location, authService, $fire
   $scope.getFloorPost = function() {
     var id = $stateParams.id
     $scope.currentPost = firebaseService.getFloorPost(id);
-
   }();
+
+  $scope.addComment = function(comment) {
+    console.log('floor', $scope.floor[0].commentsCount);
+    var id = $stateParams.id;
+    comment = {
+      text: comment, 
+      timestamp: Date.now()
+    };
+    var count = $scope.floor[0].commentsCount + 1;
+    firebaseService.addComment(id, comment, count);
+    $scope.modal.hide();
+    addCommentForm.reset(); 
+  }
 
   $ionicModal.fromTemplateUrl('my-modal.html', {
     scope: $scope,

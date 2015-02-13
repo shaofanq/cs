@@ -26,9 +26,12 @@ app.service('firebaseService', function ($firebase) {
     floorSync.$update({likes: newLikes});
   }
 
-  this.addComment = function(postId, newComment) {
-   var sync = $firebase(new Firebase(firebaseUrl + '/floorPosts/' + postId + '/comments'));
-   sync.$add(newComment);
+  this.addComment = function(postId, newComment, commentsCount) {
+   var sync = $firebase(new Firebase(firebaseUrl + 'floorPosts/' + postId + '/comments'));
+   var commentSync = $firebase(new Firebase(firebaseUrl + 'floorPosts/' + postId));
+   sync.$push(newComment);
+   commentSync.$update({commentsCount: commentsCount});
+
   }
 
 
