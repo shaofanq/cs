@@ -3,10 +3,11 @@
   <div class="container">
     <div ng-repeat="message in messages">
       <a href="/#/chat/{{message.cid}}">
-          <div class="card">
-            <div class="item item-text-wrap">
+          <div class="list">
+            <div class="item item-avatar">
+              <img class=""src="img/avatar.jpg">
               <h2>{{message.chatters.name}}</h2>
-              <h6>{{message.cid}}</h6>
+              <p>{{message.cid}}</p>
             </div>
           </div>
       </a>
