@@ -158,10 +158,8 @@ margin: 12px 0px;
 	width: 20%;
 }
 
-i.addIcon {
-	
-	color: red;
-	height: 90px;
+i.addIcon.ion-ios-plus {
+	font-size: 900px;
 
 }
 
@@ -240,6 +238,35 @@ span .timestamp .ng-binding {
 
 /*ONBOARDING*/
 
+.inputBox {
+	margin-top: 30px;
+}
+
 .item-input {
 	padding-top: 5px;
+}
+
+/*TABS*/
+.tabs-color-assertive {
+	color: #f83f3d;
+}
+
+
+.tabs-striped.tabs-color-assertive .tab-item {
+	color: #B3B3B3;
+
+}
+
+.tabs-striped.tabs-color-assertive .tab-item.tab-item-active, .tabs-striped.tabs-color-assertive .tab-item.active, .tabs-striped.tabs-color-assertive .tab-item.activated {
+margin-top: -2px;
+color: #f83f3d;
+border: 0 solid #f83f3d;
+border-top-width: 2px;
+}
+
+.tabs-striped.tabs-color-assertive .tab-item.activated, .tabs-striped.tabs-color-assertive .tab-item.active, .tabs-striped.tabs-color-assertive .tab-item.tab-item-active {
+margin-top: -2px;
+color: #f83f3d;
+border: 0 solid #f83f3d;
+border-top-width: 2px;
 }
