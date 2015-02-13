@@ -26,11 +26,6 @@ body {
 	padding-top: 15px;
 }
 
-.noPads{
-	padding-top: 0px;
-}
-
-
 .pane {
 	background-color: #f2f2f2;
 }
@@ -143,10 +138,8 @@ a {
 	height: 50px;
 	background-color: #fff;
 	color:#B3B3B3;
-	border: none;
 	text-align:center;
 	vertical-align: middle;
-	
 }
 
 .button.button-add {
@@ -179,7 +172,6 @@ i.addIcon.ion-ios-plus {
 	font-size: 900px;
 
 }
-
 
 /*PROFILES*/
 
@@ -268,10 +260,7 @@ span .timestamp .ng-binding {
 
 .inputPicBox {
 	height: 30%;
-	padding: 50px;
 }
-
-/*MESSAGES*/
 
 
 
@@ -279,7 +268,6 @@ span .timestamp .ng-binding {
 .tabs-color-assertive {
 	color: #f83f3d;
 }
-
 
 .tabs-striped.tabs-color-assertive .tab-item {
 	color: #B3B3B3;
@@ -303,6 +291,6 @@ border-top-width: 2px;
 background-color: #fff;
 background-image: none;
 border-bottom: 1px solid #ddd;
-border-top: 1px solid #B3B3B3 !important;
+border-top: 1px solid #ddd;
 padding-top: 2px;
 }
