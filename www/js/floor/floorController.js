@@ -1,6 +1,6 @@
 var app = angular.module('cs');
 
-app.controller('FloorController', function($scope, $location, authService, $firebase, firebaseService, $stateParams) {
+app.controller('FloorController', function($scope, $location, authService, $firebase, firebaseService, $stateParams, $ionicModal) {
   $scope.post = {};
 
   $scope.currentUser = authService.getCurrentUser();
@@ -21,6 +21,8 @@ app.controller('FloorController', function($scope, $location, authService, $fire
     $scope.post.commentsCount = $scope.post.comments.length;
     sync.$push($scope.post);
     $scope.post = {};
+    $scope.modal.hide();
+
   }
 
 
@@ -51,6 +53,18 @@ app.controller('FloorController', function($scope, $location, authService, $fire
 
   }();
 
+  $ionicModal.fromTemplateUrl('my-modal.html', {
+    scope: $scope,
+    animation: 'slide-in-up'
+  }).then(function(modal) {
+    $scope.modal = modal;
+  });
+  $scope.openModal = function() {
+    $scope.modal.show();
+  };
+  $scope.closeModal = function() {
+    $scope.modal.hide();
+  }
   
 
 });
