@@ -236,3 +236,10 @@ p {
 span .timestamp .ng-binding {
 	color: #94928f;
 }
+
+
+/*ONBOARDING*/
+
+.item-input {
+	padding-top: 5px;
+}
