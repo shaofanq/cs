@@ -24,7 +24,6 @@ body {
 
 .scroll-content{
 	padding-top: 15px;
-	margin-bottom: 35px;
 }
 
 .pane {
@@ -41,6 +40,7 @@ body {
 .containerFullWidth {
 	width:100%;
 }
+
 a {
   text-decoration: none;
   color: #000;
@@ -139,17 +139,6 @@ color: #b3b3b3;
 margin: 12px 0px;
 }
 
-.icon.ion-ios-plus {
-	font-size: 40px;
-}
-
-.button.button-add {
-border-color: #fff;
-background-color: #fff;
-color: #b3b3b3;
-margin: 12px 0px;
-}
-
 .noBorder {
 	border:none;
 }
@@ -167,6 +156,13 @@ margin: 12px 0px;
 .exploreAvatar {
 	height: 20%;
 	width: 20%;
+}
+
+i.addIcon {
+	
+	color: red;
+	height: 90px;
+
 }
 
 /*PROFILES*/
