@@ -7,8 +7,7 @@ app.controller('FloorController', function($scope, $location, authService, $fire
   var id = $scope.currentUser.uid;
   $scope.getCurrentUser = function(){
     $scope.user = firebaseService.getUser(id);
-    console.log($scope.user);
-  }()
+  }();
   var floorRef = new Firebase('https://cancer.firebaseio.com/app/floorPosts');
   var sync = $firebase(floorRef);
 
@@ -57,7 +56,7 @@ app.controller('FloorController', function($scope, $location, authService, $fire
   }();
 
   $scope.addComment = function(comment) {
-    console.log('floor', $scope.floor[0].commentsCount);
+    var count = 0;
     var id = $stateParams.id;
     comment = {
       text: comment, 
@@ -65,10 +64,15 @@ app.controller('FloorController', function($scope, $location, authService, $fire
       likes: 0,
       user: $scope.user.name
     };
-    var count = $scope.floor[0].commentsCount + 1;
+    for (var i = 0; i < $scope.floor.length; i++) {
+      if($scope.floor[i].$id === id) {
+        count = $scope.floor[i].commentsCount + 1;
+      }
+    };
     firebaseService.addComment(id, comment, count);
     $scope.modal.hide();
     addCommentForm.reset();
+    if ($scope.data) {$scope.data.message = "";};
   }
 
     /////////////////
