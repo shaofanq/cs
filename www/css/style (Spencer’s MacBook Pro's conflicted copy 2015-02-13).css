@@ -23,13 +23,8 @@ body {
 }
 
 .scroll-content{
-	padding-top: 45px;
+	padding-top: 15px;
 }
-
-.noPads{
-	padding-top: 0px;
-}
-
 
 .pane {
 	background-color: #f2f2f2;
@@ -37,8 +32,9 @@ body {
 
 .container {
   height: 100%;
-  width: 100%;
+  width: 95%;
   margin: auto;
+  padding: 30px 0 0 0;
 }
 
 .containerFullWidth {
@@ -142,10 +138,8 @@ a {
 	height: 50px;
 	background-color: #fff;
 	color:#B3B3B3;
-	border: none;
 	text-align:center;
 	vertical-align: middle;
-	
 }
 
 .button.button-add {
@@ -178,7 +172,6 @@ i.addIcon.ion-ios-plus {
 	font-size: 900px;
 
 }
-
 
 /*PROFILES*/
 
@@ -214,16 +207,11 @@ p {
 	float: right;
 	margin-bottom:10px;
 	min-height: 40px;
-	/*padding: 7px;*/
+	padding: 7px;
 	background-color: #fff;
-	/*width: 60%;*/
+	width: 60%;
 	color: #000;
-	/*border-radius: 2px;*/
-	padding: 10px !important;
- 	border-radius: 10px !important;
- 	text-align: left !important;
-  	max-width: 240px !important;
-
+	border-radius: 2px;
 }
 
 .row-chat{
@@ -233,7 +221,7 @@ p {
 }
 
 .left {
-	background-color: #007AFF !important;
+	background-color: #418bc5 !important;
 	float: left !important;
 	color: #fff !important;
 }
@@ -272,10 +260,7 @@ span .timestamp .ng-binding {
 
 .inputPicBox {
 	height: 30%;
-	padding: 50px;
 }
-
-/*MESSAGES*/
 
 
 
@@ -283,7 +268,6 @@ span .timestamp .ng-binding {
 .tabs-color-assertive {
 	color: #f83f3d;
 }
-
 
 .tabs-striped.tabs-color-assertive .tab-item {
 	color: #B3B3B3;
@@ -307,75 +291,6 @@ border-top-width: 2px;
 background-color: #fff;
 background-image: none;
 border-bottom: 1px solid #ddd;
-border-top: 1px solid #B3B3B3 !important;
+border-top: 1px solid #ddd;
 padding-top: 2px;
-}
-
-/*CHAT*/
-
-.messages {
-  display: -webkit-box !important;
-  display: -moz-box !important;
-  display: -ms-flexbox !important;
-  display: -webkit-flex !important;
-  display: flex !important;
-  -webkit-align-content: center !important;
-  -ms-flex-line-pack: center !important;
-  align-content: center !important;
-  -webkit-box-align: center !important;
-  -moz-box-align: center !important;
-  -webkit-align-items: center !important;
-  -ms-flex-align: center !important;
-  align-items: center !important;
-  margin-bottom: 20px !important;
-}
- .message {
-    -webkit-box-flex: 1 !important;
-    -moz-box-flex: 1 !important;
-    -webkit-flex: 1 1 auto !important;
-    -ms-flex: 1 1 auto !important;
-    flex: 1 1 auto !important;
-    padding: 10px !important;
-    -webkit-transition: all 250ms ease-in-out !important;
-    transition: all 250ms ease-in-out !important;
-    overflow: hidden !important;
-    text-align: left !important;
-    -webkit-transform: translate3d(0, 0, 0) !important;
-    -moz-transform: translate3d(0, 0, 0) !important;
-    transform: translate3d(0, 0, 0) !important;
-  }
-
-.time {
-  -webkit-box-flex: 0 !important;
-  -moz-box-flex: 0 !important;
-  -webkit-flex: 0 1 auto !important;
-  -ms-flex: 0 1 auto !important;
-  flex: 0 1 auto !important;
-  -webkit-align-self: auto !important;
-  -ms-flex-item-align: auto !important;
-  align-self: auto !important;
-  width: 120px !important;
-  text-align: center !important;
-  padding: 0 0 0 0 !important;
-  -webkit-transition: all 250ms ease-in-out !important;
-  transition: all 250ms ease-in-out !important;
-  -webkit-transform: translate3d(10px, 0, 0) !important;
-  -moz-transform: translate3d(10px, 0, 0) !important;
-  transform: translate3d(10px, 0, 0) !important;
-}
- .time.slide-right {
-    -webkit-transform: translate3d(130px, 0, 0) !important;
-    -moz-transform: translate3d(130px, 0, 0) !important;
-    transform: translate3d(130px, 0, 0) !important;
-  }
-
-
-.messageTxt {
-  background: #007AFF !important;
-  display: inline-block !important;
-  color: white !important;
-  padding: 10px !important;
-  border-radius: 10px !important;
-  text-align: left !important;
-  max-width: 240px !important;
 }

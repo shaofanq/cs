@@ -1,5 +1,6 @@
 var app = angular.module('cs');
-app.controller('chatController', function($scope, chatService, firebaseService, $stateParams, $rootScope, $state, authService, $ionicScrollDelegate){
+
+app.controller('chatController', function($scope, chatService, firebaseService, $stateParams, $rootScope, $state, $ionicScrollDelegate, authService){
 	
 	$scope.messages = chatService.getChat($stateParams.cid);   
     $scope.authData = authService.getCurrentUser();
@@ -19,22 +20,16 @@ app.controller('chatController', function($scope, chatService, firebaseService, 
     $scope.userId = me.$id;
     $scope.messageText = '';
     console.log('userId:', $scope.userId);   
-    
     $scope.sendMessage = function(textMessage) {
+        $ionicScrollDelegate.scrollBottom(true);
         $scope.messages.$add({
         	text: textMessage, 
         	senderId: $scope.userId,
         	timestamp: Firebase.ServerValue.TIMESTAMP
-        });
-        };
-
+            });
+        $scope.messageText = "";
+    };
     $scope.reset = function(textMessage) {
     	form.reset()
     }
-    $ionicScrollDelegate.scrollBottom(true);
-
-
-  	// $scope.goTo = function(scrn) {
-  	// 	$state.go(scrn);
-  	// }
 });

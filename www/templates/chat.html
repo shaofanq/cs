@@ -1,18 +1,29 @@
 <navbar></navbar>
-<ion-content onLoad="moveWin();" title="Friend">
+<ion-content>
   <div class="container">
     <div ng-repeat="message in messages" class="bubble-container" ng-class="{left: userId !== message.senderId}" >
         <div class="textBox">
             {{message.text}}<br>
-            <span class="timestamp">{{message.timestamp | date:"EEE 'at' h:mma"}}</span>
-          </div>            
-    </div>
-    <div class="row-chat">
-      <form id="fuck" novalidate name="form" ng-submit="sendMessage(messageText)">
-        <input name="mess" type="text" class="msgInput" ng-model="messageText" placeholder="Type your message" />
-          <button type="submit" class="button button-positive" ng-click="reset(messageText)">Send</button>
-      </form>
+            <!-- <span class="timestamp">{{message.timestamp | date:"EEE 'at' h:mma"}}</span> -->
+          </div>           
     </div>
   </div>
+
+  
 </ion-content>
-<tabs></tabs>
+
+    <ion-footer-bar keyboard-attach class="bar-stable item-input-inset">
+        <label class="item-input-wrapper">
+            <input name="mess" type="text" class="msgInput" ng-model="messageText" on-return="reset(messageText);closeKeyboard()" placeholder="Type your message"/>
+        </label>
+          <button type="submit" class="button button-positive" ng-click="sendMessage(messageText)">Send
+          </button>
+    </ion-footer-bar>
+
+
+    <!-- <div class="message" ng-class="{'slide-right': hideTime, '': !hideTime}">
+              <span class="messageTxt">{{message.text}}</span>
+           </div>       
+          <div class="time" ng-class="{'slide-right': hideTime, '': !hideTime}">
+            {{message.time}}
+          </div> -->
