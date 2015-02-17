@@ -313,6 +313,12 @@ padding-top: 2px;
 
 /*CHAT*/
 
+
+.scroll {
+  padding: 10px 0 50px !important;
+}
+   
+
 .messages {
   display: -webkit-box !important;
   display: -moz-box !important;
@@ -327,9 +333,8 @@ padding-top: 2px;
   -webkit-align-items: center !important;
   -ms-flex-align: center !important;
   align-items: center !important;
-  margin-bottom: 20px !important;
-}
- .message {
+  margin-bottom: 50px !important;
+  .message {
     -webkit-box-flex: 1 !important;
     -moz-box-flex: 1 !important;
     -webkit-flex: 1 1 auto !important;
@@ -338,13 +343,13 @@ padding-top: 2px;
     padding: 10px !important;
     -webkit-transition: all 250ms ease-in-out !important;
     transition: all 250ms ease-in-out !important;
-    overflow: hidden !important;
-    text-align: left !important;
+/*    overflow: hidden !important;
+*/    text-align: left !important;
     -webkit-transform: translate3d(0, 0, 0) !important;
     -moz-transform: translate3d(0, 0, 0) !important;
     transform: translate3d(0, 0, 0) !important;
   }
-
+}
 .time {
   -webkit-box-flex: 0 !important;
   -moz-box-flex: 0 !important;
@@ -362,15 +367,31 @@ padding-top: 2px;
   -webkit-transform: translate3d(10px, 0, 0) !important;
   -moz-transform: translate3d(10px, 0, 0) !important;
   transform: translate3d(10px, 0, 0) !important;
-}
- .time.slide-right {
+  &.slide-right {
     -webkit-transform: translate3d(130px, 0, 0) !important;
     -moz-transform: translate3d(130px, 0, 0) !important;
     transform: translate3d(130px, 0, 0) !important;
   }
-
-
-.messageTxt {
+}
+//This will change
+.messages.other {
+  .message {
+    -webkit-transform: translate3d(0, 0, 0) !important;
+    -moz-transform: translate3d(0, 0, 0) !important;
+    transform: translate3d(0, 0, 0) !important;
+    text-align: right !important;
+  }
+  .message.slide-right {
+    -webkit-transform: translate3d(120px, 0, 0) !important;
+    -moz-transform: translate3d(120px, 0, 0) !important;
+    transform: translate3d(120px, 0, 0) !important;
+  }
+  span {
+    color: black !important;
+    background-color: #C7C7CC !important;
+  }
+}
+.fuck {
   background: #007AFF !important;
   display: inline-block !important;
   color: white !important;
