@@ -1,5 +1,5 @@
 var app = angular.module('cs');
-app.controller('chatController', function($scope, chatService, firebaseService, $stateParams, $rootScope, $state, authService){
+app.controller('chatController', function($scope, chatService, firebaseService, $stateParams, $rootScope, $state, authService, $ionicScrollDelegate){
 	
 	$scope.messages = chatService.getChat($stateParams.cid);   
     $scope.authData = authService.getCurrentUser();
@@ -31,6 +31,7 @@ app.controller('chatController', function($scope, chatService, firebaseService, 
     $scope.reset = function(textMessage) {
     	form.reset()
     }
+    $ionicScrollDelegate.scrollBottom(true);
 
 
   	// $scope.goTo = function(scrn) {

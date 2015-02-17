@@ -15,7 +15,13 @@
       <div class="card">
         <div class="container">
           <p>{{comment.text}}</p>
+          <a class="subdued">- {{comment.user}}</a>
           <p>{{ currentPost.timestamp | date : format : timezone}}</p>
+          <a class="subdued"></a>
+          <a href="#" class="item item-icon-right subdued" ng-click="commentLike($index)">
+            <i class="icon ion-heart"></i>
+              Hearts: {{comment.likes}}
+          </a>
         </div>
       </div>
     </div> 

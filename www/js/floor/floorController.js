@@ -75,6 +75,10 @@ app.controller('FloorController', function($scope, $location, authService, $fire
     if ($scope.data) {$scope.data.message = "";};
   }
 
+  $scope.commentLike = function(index) {
+    console.log($scope.currentPost);
+  }
+
     /////////////////
    // MODAL SHIT ///
   /////////////////

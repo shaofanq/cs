@@ -11,11 +11,16 @@ butto
         </div>
         <div class="item item-body">
           <p>{{item.text}}</p>
-          <button class="button button-block button-positive ion-heart" ng-click="like($index)"></button>
+          <a href="#" class="item item-icon-right subdued"  ng-click="like($index)">
+            <i class="icon ion-chevron-up"></i>
+              Likes: {{item.likes}}
+          </a>
           <p>
-            <a href="#" class="subdued">{{item.likes}} Likes</a>
-            <a href="#" class="subdued">{{item.commentsCount}} Comments</a>
+            <a href="#" class="subdued"  ng-click="postDetails($index)">
+                Replies: {{item.commentsCount}}
+            </a>
           </p>
+
         </div>
       </div>
     </div>
