@@ -57,7 +57,7 @@ app.controller('FloorController', function($scope, $location, authService, $fire
   }();
 
   $scope.addComment = function(comment) {
-    console.log('floor', $scope.floor[0].commentsCount);
+    var count = 0;
     var id = $stateParams.id;
     comment = {
       text: comment, 
@@ -65,10 +65,16 @@ app.controller('FloorController', function($scope, $location, authService, $fire
       likes: 0,
       user: $scope.user.name
     };
-    var count = $scope.floor[0].commentsCount + 1;
+    console.log('ean look here: ', $scope.floor);
+    for (var i = 0; i < $scope.floor.length; i++) {
+      if($scope.floor[i].$id === id) {
+        count = $scope.floor[i].commentsCount + 1;
+      }
+    };
     firebaseService.addComment(id, comment, count);
     $scope.modal.hide();
     addCommentForm.reset();
+    $scope.data.message = "";
   }
 
     /////////////////
