@@ -9,7 +9,6 @@
         <p>{{ currentPost.timestamp | date : format : timezone}}</p>
         <a href="#" class="subdued">{{currentPost.likes}} Likes</a>
         <a href="#" class="subdued">{{currentPost.commentsCount}} Comments</a>
-
       </div>
     </div> 
     <div ng-repeat="comment in currentPost.comments">
@@ -30,7 +29,6 @@
     Send
   </button>
 </ion-footer-bar>
-
 <script id="my-modal.html" type="text/ng-template">
   <ion-modal-view>
     <ion-header-bar>
@@ -41,7 +39,7 @@
     <form name="addCommentForm">
       <label class="item item-input">
         <span class="input-label">Comment</span>
-        <input type="text" ng-model="comment">
+        <input autofocus type="text" ng-model="comment">
       </label>
       <button class="button button-block button-positive" ng-click="addComment(comment)">
         Add Comment
