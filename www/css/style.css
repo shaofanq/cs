@@ -185,6 +185,22 @@ i.addIcon.ion-ios-plus {
 .profilePicBox {
 	width: 100%;
 	height: 25%;
+	padding: 65px 0 50px 0;
+}
+
+.circle {
+	border-radius: 50%;
+	height: 50px;
+	width: 50px;
+	background-color: #fff;
+	vertical-align: middle;
+	margin: 0 auto;
+}
+
+.locationBox {
+	height: 20px;
+	padding: 10px 0 20px 0;
+
 }
 
 /*SPLASH*/
@@ -314,9 +330,7 @@ padding-top: 2px;
 /*CHAT*/
 
 
-.scroll {
-  padding: 10px 0 50px !important;
-}
+
    
 
 .messages {

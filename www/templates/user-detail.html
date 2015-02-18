@@ -1,12 +1,19 @@
 <navbar></navbar>
 <ion-content>
-  <div class="container">
-    <div class="profilePicBox text-center">
-    	<h3>{{user.name}}</h3>
+  <div class="container ">
+    <div class="profilePicBox fightBlue text-center">
+    	<div class="circle"></div>
+        <h4>{{user.name}}</h4>
     </div>
-    <div>
-    	<h5>{{user.level}}</h5>
-    	<h5>Location, US</h5>
+    <div class="locationBox row text-center">
+    	<a class="col col-50 item-avatar-left">
+            <i class="ion-ios-location"></i>
+            {{user.level}}
+        </a>
+        <a class="col col-50 item-avatar-left">
+            <i class="ion-ios-location"></i>
+            Location, US
+        </a>
     </div>
     <div class="card noBorder text-center">
     	<h3>About</h3>

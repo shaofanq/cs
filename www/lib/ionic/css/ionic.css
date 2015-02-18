@@ -1947,7 +1947,7 @@ html {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  font-family: sans-serif;
+  font-family: "Roboto", sans-serif;
   /* 1 */
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2207,7 +2207,7 @@ body, .ionic-body {
   color: #000;
   word-wrap: break-word;
   font-size: 14px;
-  font-family: "Helvetica Neue", "Roboto", sans-serif;
+  font-family: "Roboto", sans-serif;
   line-height: 20px;
   text-rendering: optimizeLegibility;
   -webkit-backface-visibility: hidden;

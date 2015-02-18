@@ -20,7 +20,7 @@
            ng-class="{other: message.userId != myId}"
            class="messages">
         <div class="message right" >
-          <span class="fuck">{{ message }}</span>
+          <span class="fuck">{{ message.text }}</span>
         </div>
         <div class="time" ng-class="{'slide-right': hideTime, '': !hideTime}">{{message.time}}</div>
       </div>

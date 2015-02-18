@@ -1,4 +1,4 @@
-<navbar></navbar>
+<!-- <navbar></navbar>
 <ion-content>
   <div class="container">
     <div ng-repeat="friend in reqs | filter: {status: 'accepted'}">
@@ -6,8 +6,29 @@
         <div class="card">
           <div class="item item-text-wrap">
             <h1>{{friend.name}}</h1>
-            <!-- <p>{{friend.cancer}}</p> -->
+            <p>{{friend.cancer}}</p>
             <a class="button button-block supGreen whiteText" ng-click="createChat(friend.friendId, friend.name)">&#8710;</a>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</ion-content>
+<tabs></tabs> -->
+<navbar></navbar>
+<ion-content>
+  <div class="container">
+    <div ng-repeat="friend in reqs | filter: {status: 'accepted'}">
+      <a href="/#/userDetail/{{friend.friendId}}">
+        <div class="list">
+          <div class="item item-avatar item-button-right" href="#">
+            <img class=""src="img/avatar.jpg">
+            <h2>{{friend.name}}</h2>
+            <h5>message</h5>
+            <!-- <p>{{user.cancer}}</p> -->
+            <button class="button button-add" ng-click="createChat(friend.friendId, friend.name)">
+              <i class="icon ion-chatbubble addIcon"></i>
+            </button>
           </div>
         </div>
       </a>
