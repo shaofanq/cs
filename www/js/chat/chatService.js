@@ -1,6 +1,6 @@
 var app = angular.module('cs');
 
-app.factory('chatService', function($firebase, $q){
+app.factory('chatService', function($firebase, $q, $ionicScrollDelegate){
   var fireUrl = 'https://cancer.firebaseio.com/app/';
   var fireSync = new Firebase(fireUrl);
 

@@ -1,6 +1,6 @@
 var app = angular.module('cs');
 
-app.service('firebaseService', function ($firebase) {
+app.service('firebaseService', function ($firebase, $ionicScrollDelegate) {
   var firebaseUrl = 'https://cancer.firebaseio.com/app/';
 
   this.getUsers = function(){

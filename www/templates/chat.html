@@ -1,31 +1,49 @@
 <navbar></navbar>
-<!-- <ion-content>
-
-  <div class="container">
-    <div ng-repeat="message in messages" class="bubble-container" ng-class="{left: userId !== message.senderId}" >
-        <div class="textBox">
-            {{message.text}}<br>
-          </div>           
-    </div>
-  </div>
-
-  
-</ion-content> -->
-
 <ion-pane class="messaging-view">
     <ion-content class="content-stable"
                  on-swipe-left="hideTime = false"
                  on-swipe-right="hideTime = true">
+
       <div ng-repeat="message in messages"
-           ng-class="{other: message.userId != myId}"
+           ng-class="{other: message.senderId === userId}"
            class="messages">
-        <div class="message right" >
-          <span class="fuck">{{ message }}</span>
+
+        <div class="message" ng-class="{'slide-right': hideTime, '': !hideTime}">
+          <span class="fuck">{{ message.text }}</span>
+          <div class="box"></div>
         </div>
+
         <div class="time" ng-class="{'slide-right': hideTime, '': !hideTime}">{{message.time}}</div>
+
+
       </div>
+
     </ion-content>
+
     <ion-footer-bar keyboard-attach class="bar-stable item-input-inset">
+      <label class="item-input-wrapper">
+        <input type="text" placeholder="Type your message" on-return="sendMessage(); closeKeyboard()" ng-model="messageText" on-focus="inputUp()" on-blur="inputDown()" />
+      </label>
+      <button class="button button-clear" ng-click="sendMessage(messageText)">
+        Send
+      </button>
+    </ion-footer-bar>
+  </ion-pane>
+
+
+<!-- <navbar></navbar>
+<ion-pane class="messaging-view">
+    <ion-content  class="content-stable" on-swipe-left="hideTime = false" on-swipe-right="hideTime = true">
+
+    <div ng-repeat="message in messages" class="scroll bubble-container" ng-class="{left: userId !== message.senderId}" >
+        <div  class="textBox" >
+            {{message.text}}<br>
+            <span class="timestamp">{{message.timestamp | date:"EEE 'at' h:mma"}}</span>
+          </div>         
+    </div>
+
+    </ion-content>
+    <ion-footer-bar style="margin-top:50px" keyboard-attach class="bar-stable item-input-inset">
       <label class="item-input-wrapper">
         <input type="text" placeholder="Type your message" on-return="sendMessage(messageText); closeKeyboard()" ng-model="messageText" on-focus="inputUp()" on-blur="inputDown()" />
       </label>
@@ -34,38 +52,4 @@
       </button>
     </ion-footer-bar>
   </ion-pane>
-
-<!--  <ion-content class="content-stable"
-                 on-swipe-left="hideTime = false"
-                 on-swipe-right="hideTime = true">
-
-      <div ng-repeat="message in messages"
-           ng-class="{other: message.userId != myId}"
-           class="messages">
-
-        <div class="message" ng-class="{'slide-right': hideTime, '': !hideTime}">
-          <span>{{ message.text }}</span>
-        </div>
-
-        <div class="time" ng-class="{'slide-right': hideTime, '': !hideTime}">{{message.time}}</div>
-
-
-      </div>
-
-    </ion-content>
-
-    <ion-footer-bar keyboard-attach class="bar-stable item-input-inset">
-        <label class="item-input-wrapper">
-            <input name="mess" type="text" class="msgInput" ng-model="messageText" on-return="reset(messageText);closeKeyboard()" placeholder="Type your message"/>
-        </label>
-          <button type="submit" class="button button-positive" ng-click="sendMessage(messageText)">Send
-          </button>
-    </ion-footer-bar> -->
-
-
-    <!-- <div class="message" ng-class="{'slide-right': hideTime, '': !hideTime}">
-              <span class="messageTxt">{{message.text}}</span>
-           </div>       
-          <div class="time" ng-class="{'slide-right': hideTime, '': !hideTime}">
-            {{message.time}}
-          </div> -->
+ -->
