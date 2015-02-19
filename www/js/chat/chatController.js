@@ -5,7 +5,8 @@ app.controller('chatController', function($scope, chatService, firebaseService, 
     $scope.authData = authService.getCurrentUser();
 	var me = firebaseService.getUser($scope.authData.uid);
     $scope.friend = chatService.getMyChats(me.$id);
-
+    $scope.friend.info = firebaseService.getUser('simplelogin:67');
+    console.log('friend name', $scope.friend.info.name);
     $scope.$watchCollection('messages', function(newNames, oldNames) {
         $ionicScrollDelegate.scrollBottom(true);
     });    
@@ -14,9 +15,6 @@ app.controller('chatController', function($scope, chatService, firebaseService, 
         $ionicScrollDelegate.scrollBottom(true);
     },2000);
 
-	$scope.timeStamp = function() {
-		return 
-	}
     var side = 'left';
     
     $scope.userId = me.$id;
@@ -33,7 +31,7 @@ app.controller('chatController', function($scope, chatService, firebaseService, 
     isIOS = ionic.Platform.isWebView() && ionic.Platform.isIOS();
 
     $scope.sendMessage = function(textMessage) {
-        $timeout(function() {
+        if(textMessage){
             $ionicScrollDelegate.scrollBottom(true);
             $scope.messages.$add({
                 text: textMessage, 
@@ -41,8 +39,7 @@ app.controller('chatController', function($scope, chatService, firebaseService, 
                 timestamp: Firebase.ServerValue.TIMESTAMP
                 });
             $scope.messageText = "";
-
-        })
+        }
     };
 
 
