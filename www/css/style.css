@@ -98,6 +98,23 @@ a {
 	color: #fff;
 }
 
+.addGreen {
+	background-color: #20b11d;
+}
+
+.padBottom {
+	padding-bottom: 10px;
+}
+
+#boldFont {
+	font-weight: 800;
+	font-size: 18pt;
+}
+
+#fontEighteen {
+	font-size: 18pt;
+}
+
 /*BUTTONS*/
 
 .button.button-block{
@@ -129,14 +146,12 @@ a {
 }
 
 .buttonRound {
-	background-color: #fff;
 	display:inline-block;
 	border-radius:20px;
 	width: 40px;
 	height: 40px;
 	border: none;
 	font-size:26px;
-	color:#B3B3B3;
 	text-align:center;
 	padding: 10px;
 	vertical-align: middle;
@@ -408,7 +423,7 @@ padding-top: 2px;
   transform: translate3d(120px, 0, 0) !important; }
 .messages.other span {
   color: black !important;
-  background-color: #C7C7CC !important; }
+  background-color: #fff !important; }
 
 .fuck {
   background: #007AFF !important;

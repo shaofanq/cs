@@ -15,11 +15,17 @@
             Location, US
         </a>
     </div>
-    <div class="card noBorder text-center">
+    <!-- <div class="card noBorder text-center">
     	<h3>About</h3>
     	<div class="item item-text-wrap">{{user.bio}}</div>
+    </div> -->
+    <div class="card noBorder text-center">
+        <div class="item item-text-wrap">
+            <h2 class="padBottom"id="boldFont">About</h2>
+            {{user.bio}}
+        </div>
     </div>
-  	<a class="buttonRound noBorder supGreen whiteText" ng-click="addFriend()">
+  	<a class="buttonRound noBorder addGreen whiteText" ng-click="addFriend()">
     	+
     </a>
   </div>
