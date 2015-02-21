@@ -107,7 +107,7 @@ a {
 }
 
 .padBottom {
-	padding-bottom: 10px;
+	padding-bottom: 15px;
 }
 
 #boldFont {
@@ -228,8 +228,9 @@ i.addIcon.ion-ios-plus {
 }
 
 .locationBox {
-	height: 20px;
-	padding: 10px 0 20px 0;
+	height: 65px;
+	padding: 20px 0 20px 0;
+	background-color: #fff;
 
 }
 
@@ -239,6 +240,10 @@ i.addIcon.ion-ios-plus {
 	z-index: 1;
 	height: 50%;
 	width: 100%;
+}
+
+.aboutBox {
+	margin-top: 10px;
 }
 
 .z2 {
@@ -480,4 +485,8 @@ padding-top: 2px;
   color: #d6d6d6;
   font-size: 12px;
   margin-bottom: -10px;
+}
+
+.card {
+	box-shadow: none;
 }
