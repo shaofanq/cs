@@ -184,6 +184,16 @@ color: #b3b3b3;
 margin: 12px 0px;
 }
 
+.fuck{
+	border:none;
+	background: #b3b3b3;
+	color: #fff;
+	margin-top: 10px;
+	text-align: center;
+	font-weight: bolder;
+	border-radius: 50%;
+}
+
 .noBorder {
 	border:none;
 }
@@ -203,9 +213,12 @@ margin: 12px 0px;
 	width: 20%;
 }
 
-i.addIcon.ion-ios-plus {
-	font-size: 900px;
+.item {
+	border-top: 1px;
+}
 
+.item h4 {
+	font-weight: 400;
 }
 
 
@@ -248,6 +261,11 @@ i.addIcon.ion-ios-plus {
 
 .z2 {
 	z-index: 2;
+}
+
+.card .item:last-child, .list-inset .item:last-child {
+	margin-bottom: 15px;
+
 }
 
 /*SPLASH*/
