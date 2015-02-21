@@ -19,21 +19,31 @@ app.service('firebaseService', function ($firebase, $ionicScrollDelegate) {
     return $firebase(new Firebase(firebaseUrl + '/floorPosts/' + id)).$asObject();
   }
 
-  this.addLike = function(postId, newLikes, userId) {
-    var userSync = $firebase(new Firebase(firebaseUrl + 'users/' + userId + '/favorites'));
-    var floorSync = $firebase(new Firebase(firebaseUrl + 'floorPosts/' + postId));
-    userSync.$push(postId);
-    floorSync.$update({likes: newLikes});
-  }
-
   this.addComment = function(postId, newComment, commentsCount) {
    var sync = $firebase(new Firebase(firebaseUrl + 'floorPosts/' + postId + '/comments'));
    var commentSync = $firebase(new Firebase(firebaseUrl + 'floorPosts/' + postId));
    sync.$push(newComment);
    commentSync.$update({commentsCount: commentsCount});
-
   }
 
+  this.getCurrentComments = function(postId) {
+    return $firebase(new Firebase(firebaseUrl + '/floorPosts/' + postId + '/comments')).$asArray();
+  }
+
+  this.addLike = function(postId, newLikes, userId) {
+    var userSync = $firebase(new Firebase(firebaseUrl + 'users/' + userId + '/favorites/posts'));
+    var floorSync = $firebase(new Firebase(firebaseUrl + 'floorPosts/' + postId));
+    userSync.$push(postId);
+    floorSync.$update({likes: newLikes});
+  }
+
+  this.addCommentLike = function(commentId, newLikes, postId, userId) {
+    debugger;
+    var userSync = $firebase(new Firebase(firebaseUrl + 'users/' + userId + '/favorites/comments'));
+    var commentSync = $firebase(new Firebase(firebaseUrl + 'floorPosts/' + postId + '/comments/' + commentId));
+    userSync.$push(commentId);
+    commentSync.$update({likes: newLikes});
+  };
 
 // ADD USERS
 

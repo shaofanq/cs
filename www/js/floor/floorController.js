@@ -31,18 +31,6 @@ app.controller('FloorController', function($scope, $location, authService, $fire
 
     $scope.floor = firebaseService.getFloor();
 
-  $scope.like = function(index) {
-    var flag = true;
-    for(key in $scope.user.favorites) {
-      if($scope.user.favorites[key] === $scope.floor[index].$id) {
-        flag = false;
-      }
-    };
-    if(flag) {
-      $scope.floor[index].likes = $scope.floor[index].likes + 1;
-      firebaseService.addLike($scope.floor[index].$id, $scope.floor[index].likes, id);
-    }
-  }
 
   $scope.postDetails = function(index) {
     console.log(index);
@@ -51,8 +39,18 @@ app.controller('FloorController', function($scope, $location, authService, $fire
   }
 
   $scope.getFloorPost = function() {
+
     var id = $stateParams.id
     $scope.currentPost = firebaseService.getFloorPost(id);
+    // var comments  = firebaseService.getCurrentComments($scope.currentPost.$id);
+    // for (var i = 0; i < comments.length; i++) {
+    //   $scope.currentPost.comments.push(comments[i]);
+    // };
+    setTimeout(function() {
+      $scope.currentPost.comments = firebaseService.getCurrentComments($scope.currentPost.$id);
+      console.log('here', $scope.currentPost);
+    },1000)
+
   }();
 
   $scope.addComment = function(comment) {
@@ -75,8 +73,34 @@ app.controller('FloorController', function($scope, $location, authService, $fire
     if ($scope.data) {$scope.data.message = "";};
   }
 
+
+  $scope.like = function(index) {
+    var flag = true;
+    for(key in $scope.user.favorites.posts) {
+      if($scope.user.favorites.posts[key] === $scope.floor[index].$id) {
+        flag = false;
+      }
+    };
+    if(flag) {
+      $scope.floor[index].likes = $scope.floor[index].likes + 1;
+      firebaseService.addLike($scope.floor[index].$id, $scope.floor[index].likes, id);
+    }
+  }
+
   $scope.commentLike = function(index) {
-    console.log($scope.currentPost);
+    console.log($scope.currentPost.comments[index]);
+
+    console.log('here',$scope.user);
+    var flag = true;
+    for(key in $scope.user.favorites.comments) {
+      if($scope.user.favorites.comments[key] === $scope.currentPost.comments[index].$id) {
+        flag = false;
+      }
+    };
+    if(flag) {
+      $scope.currentPost.comments[index].likes = $scope.currentPost.comments[index].likes + 1;
+      firebaseService.addCommentLike($stateParams.id, $scope.currentPost.comments[index].likes, $scope.currentPost.$id, id)
+    }
   }
 
     /////////////////

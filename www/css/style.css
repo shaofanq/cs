@@ -44,7 +44,7 @@ body {
   height: 100%;
   width: 100%;
   margin: auto;
-  margin-top: -10px;
+
 }
 
 .containerFullWidth {
@@ -443,4 +443,19 @@ padding-top: 2px;
   color: #d6d6d6;
   font-size: 12px;
   margin-bottom: -10px;
+}
+
+.bar-header {
+  height: 60px;
+  border: none;
+  box-shadow: 0 0 4px rgba(0,0,0,.08),0 4px 8px rgba(0,0,0,.08);
+}
+
+.whiteText {
+  margin-top: 7px;
+}
+
+.whiteText p{
+  font-size: 20px;
+  margin-top: 7px;
 }
