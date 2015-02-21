@@ -1,27 +1,34 @@
 <navbar></navbar>
 <ion-content>
   <div class="container">
-    <div class="profilePicBox fightBlue text-center">
-    	<img class="circle" src="img/avatar.jpg">
-        <h4 class="whiteText">{{user.name}}</h4>
+    <div class="profilePicBox fightBlue text-center coverPhoto">
+    	<!-- <img class="coverPhoto"src="img/trianglesBlue.png">
+ -->        <img class="circle z2" src="img/avatar.jpg">
+        <h3 class=" z2">{{user.name}}</h3>
+         <a class="z2 centerIt buttonRound noBorder addGreen whiteText" ng-click="addFriend()">
+        +
+    </a>
     </div>
+    
     <div class="locationBox row text-center">
     	<a class="col col-50 item-avatar-left">
             <i class="ion-icecream"></i>
-            {{user.level}}
+            {{user.cancer}}
         </a>
         <a class="col col-50 item-avatar-left">
             <i class="ion-ios-location"></i>
-            Location, US
+            Location
         </a>
     </div>
-    <div class="card noBorder text-center">
-    	<h3>About</h3>
-    	<div class="item item-text-wrap">{{user.bio}}</div>
+    <div class="card aboutBox noBorder text-center">
+        <div class="item item-text-wrap">
+            <h2 class="padBottom"id="boldFont">About</h2>
+            {{user.bio}}
+        </div>
     </div>
-  	<a class="buttonRound noBorder supGreen whiteText" ng-click="addFriend()">
+  	<!-- <a class="buttonRound noBorder addGreen whiteText" ng-click="addFriend()">
     	+
-    </a>
+    </a> -->
   </div>
 </ion-content>
 <tabs></tabs>

@@ -32,6 +32,10 @@ body {
 	padding-top: 0px;
 }
 
+.centerIt {
+	margin: !important 0 auto;
+}
+
 .tabs {
   margin-left: -5px;
 }
@@ -98,6 +102,23 @@ a {
 	color: #fff;
 }
 
+.addGreen {
+	background-color: #20b11d;
+}
+
+.padBottom {
+	padding-bottom: 15px;
+}
+
+#boldFont {
+	font-weight: 800;
+	font-size: 18pt;
+}
+
+#fontEighteen {
+	font-size: 18pt;
+}
+
 /*BUTTONS*/
 
 .button.button-block{
@@ -129,17 +150,19 @@ a {
 }
 
 .buttonRound {
-	background-color: #fff;
 	display:inline-block;
-	border-radius:20px;
+	border-radius:50%;
 	width: 40px;
 	height: 40px;
 	border: none;
 	font-size:26px;
-	color:#B3B3B3;
 	text-align:center;
-	padding: 10px;
+	padding: 8px;
 	vertical-align: middle;
+	position: absolute;
+	margin-top: 30px;
+	margin-left: -20px;
+
 }
 
 .inputButt {
@@ -161,6 +184,16 @@ color: #b3b3b3;
 margin: 12px 0px;
 }
 
+.fuck{
+	border:none;
+	background: #b3b3b3;
+	color: #fff;
+	margin-top: 10px;
+	text-align: center;
+	font-weight: bolder;
+	border-radius: 50%;
+}
+
 .noBorder {
 	border:none;
 }
@@ -180,9 +213,12 @@ margin: 12px 0px;
 	width: 20%;
 }
 
-i.addIcon.ion-ios-plus {
-	font-size: 900px;
+.item {
+	border-top: 1px;
+}
 
+.item h4 {
+	font-weight: 400;
 }
 
 
@@ -192,6 +228,7 @@ i.addIcon.ion-ios-plus {
 	width: 100%;
 	height: 25%;
 	padding: 65px 0 50px 0;
+	/*background-image: url("/img/trianglesBlue.png");*/
 }
 
 .circle {
@@ -204,8 +241,30 @@ i.addIcon.ion-ios-plus {
 }
 
 .locationBox {
-	height: 20px;
-	padding: 10px 0 20px 0;
+	height: 65px;
+	padding: 20px 0 20px 0;
+	background-color: #fff;
+
+}
+
+.coverPhoto {
+	background-image: url("/img/trianglesBlue.png");
+	background-size: cover;
+	z-index: 1;
+	height: 50%;
+	width: 100%;
+}
+
+.aboutBox {
+	margin-top: 10px;
+}
+
+.z2 {
+	z-index: 2;
+}
+
+.card .item:last-child, .list-inset .item:last-child {
+	margin-bottom: 15px;
 
 }
 
@@ -410,9 +469,10 @@ padding-top: 2px;
   transform: translate3d(120px, 0, 0) !important; }
 .messages.other span {
   color: black !important;
-  background-color: #FFF !important; 
+  background-color: #fff !important;
   float: right;
 }
+
 
 .bubble {
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
@@ -424,7 +484,7 @@ padding-top: 2px;
   text-align: left !important;
   font-size: 15px;
   line-height: 30px;
-  width: 240px !important; 
+  /*width: 240px !important; */
 }
 
 .chat-footer {
@@ -445,6 +505,7 @@ padding-top: 2px;
   margin-bottom: -10px;
 }
 
+
 .bar-header {
   height: 60px;
   border: none;
@@ -458,4 +519,8 @@ padding-top: 2px;
 .whiteText p{
   font-size: 20px;
   margin-top: 7px;
+}
+
+.card {
+	box-shadow: none;
 }
