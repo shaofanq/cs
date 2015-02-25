@@ -1,17 +1,17 @@
   <ion-nav-bar class="bar bar-header csRed">
 
   <ion-nav-buttons side="left">
-    <button ng-if="isActive('/explore', '/messages', '/floor')" class="button button-icon icon whiteText ion-navicon" ng-click="toggleLeft()"></button>
-    <button ng-if="!isActive('/explore', '/messages', '/floor')" class="button button-icon icon whiteText ion-arrow-left-c" ng-click="goBack()"></button>
+    <button ng-if="isActive('/explore', '/messages', '/floor')" class="button button-icon icon whiteText top-nav-icon ion-navicon" ng-click="toggleLeft()"></button>
+    <button ng-if="!isActive('/explore', '/messages', '/floor')" class="button button-icon icon whiteText top-nav-icon ion-arrow-left-c" ng-click="goBack()"></button>
 
   </ion-nav-buttons>
 
 
-    <ion-nav-title class="h1 title whiteText">
+    <ion-nav-title class="h1 title whiteText top-nav-icon">
       <p>Cancer Spot</p>
     </ion-nav-title>
     <ion-nav-buttons side="right">
-    <button class="button button-icon icon whiteText addPostButton ion-compose" ng-click="openModal()" ng-if="isActive('/floor')"></button>
-    <button class="button button-icon icon whiteText ion-android-more-vertical" ng-click="editUser()"></button>
+    <button class="button button-icon icon whiteText top-nav-icon addPostButton ion-compose" ng-click="openModal()" ng-if="isActive('/floor')"></button>
+    <button class="button button-icon icon whiteText top-nav-icon ion-android-more-vertical" ng-click="editUser()"></button>
     </ion-nav-buttons>
   </ion-nav-bar>
