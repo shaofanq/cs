@@ -2,15 +2,17 @@ var app = angular.module('cs');
 
 app.controller('UserDetailController', function($scope, authService, $location, $firebase, firebaseService, $ionicSideMenuDelegate, $stateParams, $ionicHistory) {
 
+  var currentUser = authService.getCurrentUser();
+
   $scope.toggleLeft = function() {
     $ionicSideMenuDelegate.toggleLeft();
   };
   var exploreRef = new Firebase('https://cancer.firebaseio.com/app/');
   var sync = $firebase(exploreRef);
 
-    $scope.isActive = function(route) {
-        return route === $location.path();
-    }
+  $scope.isActive = function(route) {
+      return route === $location.path();
+  }
 
   $scope.toggleLeft = function() {
     $ionicSideMenuDelegate.toggleLeft();
@@ -20,7 +22,7 @@ app.controller('UserDetailController', function($scope, authService, $location, 
     $location.path('/edit', {}, {reload: true});
   }
 
-  $scope.isActive = function (viewLocation) {
+  $scope.isActive = function(viewLocation) {
      var active = (viewLocation === $location.path());
      return active;
   };
@@ -44,11 +46,8 @@ app.controller('UserDetailController', function($scope, authService, $location, 
 
 console.log($scope.authInfo);
   // ADD FRIENDS AND SHIT
-
     $scope.addFriend = function() {
-        firebaseService.addFriend($scope.authInfo.uid, $stateParams.id, "sent", $scope.user.name);
+        firebaseService.addFriend($scope.authInfo.uid, $stateParams.id, "sent", $scope.user.name, $scope.currentUser.name);
         firebaseService.addFriend($stateParams.id, $scope.authInfo.uid, "received", $scope.currentUser.name);  
     }
-
-
 });

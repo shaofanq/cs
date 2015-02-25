@@ -75,16 +75,22 @@ app.controller('FloorController', function($scope, $location, authService, $fire
 
 
   $scope.like = function(index) {
-    var flag = true;
-    for(key in $scope.user.favorites.posts) {
-      if($scope.user.favorites.posts[key] === $scope.floor[index].$id) {
-        flag = false;
+    if($scope.user.favorites) {
+      var flag = true;
+      for(key in $scope.user.favorites.posts) {
+        if($scope.user.favorites.posts[key] === $scope.floor[index].$id) {
+          flag = false;
+        }
+      };
+      if(flag) {
+        $scope.floor[index].likes = $scope.floor[index].likes + 1;
+        firebaseService.addLike($scope.floor[index].$id, $scope.floor[index].likes, id);
       }
-    };
-    if(flag) {
+    } else {
       $scope.floor[index].likes = $scope.floor[index].likes + 1;
       firebaseService.addLike($scope.floor[index].$id, $scope.floor[index].likes, id);
     }
+
   }
 
   $scope.commentLike = function(index) {

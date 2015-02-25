@@ -3,18 +3,16 @@
   <div class="container">
     <div ng-repeat="message in messages">
       <a href="/#/chat/{{message.cid}}">
-          <div class="list">
-            <div class="item item-avatar">
-              <img class=""src="img/avatar.jpg">
-              <h2>{{message.chatters.name}}</h2>
-              <p>{{message.cid}}</p>
-            </div>
+        <div class="list">
+          <div class="item item-avatar">
+            <img class=""src="img/avatar.jpg">
+            <h2>{{message.chatters.name}}</h2>
+            <p>{{message.cid}}</p>
           </div>
+        </div>
       </a>
     </div>
   </div>
-
-
 </ion-content>
 <tabs></tabs>
 

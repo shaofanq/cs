@@ -261,6 +261,7 @@ margin: 12px 0px;
 
 .z2 {
 	z-index: 2;
+  margin-top: 31px !important;
 }
 
 .card .item:last-child, .list-inset .item:last-child {

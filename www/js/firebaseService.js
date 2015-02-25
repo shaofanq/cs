@@ -1,6 +1,6 @@
 var app = angular.module('cs');
 
-app.service('firebaseService', function ($firebase, $ionicScrollDelegate) {
+app.service('firebaseService', function ($firebase, $ionicScrollDelegate, chatService) {
   var firebaseUrl = 'https://cancer.firebaseio.com/app/';
 
   this.getUsers = function(){
@@ -47,7 +47,8 @@ app.service('firebaseService', function ($firebase, $ionicScrollDelegate) {
 
 // ADD USERS
 
-  this.addFriend = function(userId, otherId, theStatus, theName) {
+  this.addFriend = function(userId, otherId, theStatus, theName, currentUserName) {
+    console.log(userId, otherId, theStatus, theName, currentUserName);
       var conRef = new Firebase('https://cancer.firebaseio.com/app/users/' + userId + '/friends/' + otherId);
       var conSync = $firebase(conRef); 
 
@@ -55,7 +56,8 @@ app.service('firebaseService', function ($firebase, $ionicScrollDelegate) {
           friendId: otherId,
           name: theName,
           status: theStatus
-        })
+        });
+        chatService.createChat(userId, otherId, currentUserName, theName)
   }
 
 // CONNECTIONS & NOTIFICATIONS
