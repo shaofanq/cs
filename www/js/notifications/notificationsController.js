@@ -2,10 +2,17 @@ var app = angular.module('cs');
 
 app.controller('notificationsController', function($scope, authService, $location, $firebase, firebaseService, $ionicSideMenuDelegate, $stateParams, $ionicHistory, chatService, $state) {
 
+
+  $scope.isActive = function(a,b,c) {
+      if(a === $location.path() || b === $location.path() || c === $location.path()) {
+        return true
+      }
+  }
+
   $scope.toggleLeft = function() {
     $ionicSideMenuDelegate.toggleLeft();
   };
-  var exploreRef = new Firebase('https://cancer.firebaseio.com/app/');
+  var exploreRef = new Firebase('https://cancer.firebaseio.com/ean/');
   var sync = $firebase(exploreRef);
 
     $scope.isActive = function(route) {

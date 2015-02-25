@@ -1,7 +1,7 @@
 var app = angular.module('cs');
 
 app.service('firebaseService', function ($firebase, $ionicScrollDelegate, chatService) {
-  var firebaseUrl = 'https://cancer.firebaseio.com/app/';
+  var firebaseUrl = 'https://cancer.firebaseio.com/ean/';
 
   this.getUsers = function(){
     return $firebase(new Firebase(firebaseUrl + 'users/')).$asObject();
@@ -49,7 +49,7 @@ app.service('firebaseService', function ($firebase, $ionicScrollDelegate, chatSe
 
   this.addFriend = function(userId, otherId, theStatus, theName, currentUserName) {
     console.log(userId, otherId, theStatus, theName, currentUserName);
-      var conRef = new Firebase('https://cancer.firebaseio.com/app/users/' + userId + '/friends/' + otherId);
+      var conRef = new Firebase('https://cancer.firebaseio.com/ean/users/' + userId + '/friends/' + otherId);
       var conSync = $firebase(conRef); 
 
         conSync.$set({
@@ -67,7 +67,7 @@ app.service('firebaseService', function ($firebase, $ionicScrollDelegate, chatSe
   }
 
   this.updateFriend = function(userId, otherId, theStatus) {
-      var upRef = new Firebase('https://cancer.firebaseio.com/app/users/' + userId + '/friends/' + otherId);
+      var upRef = new Firebase('https://cancer.firebaseio.com/ean/users/' + userId + '/friends/' + otherId);
       var upSync = $firebase(upRef); 
 
       upSync.$update({
@@ -76,7 +76,7 @@ app.service('firebaseService', function ($firebase, $ionicScrollDelegate, chatSe
   }
 
   this.deleteFriend = function(userId, otherId) {
-      var delRef = new Firebase('https://cancer.firebaseio.com/app/users/' + userId + '/friends/' + otherId);
+      var delRef = new Firebase('https://cancer.firebaseio.com/ean/users/' + userId + '/friends/' + otherId);
       var delSync = $firebase(delRef); 
 
       delSync.$remove();

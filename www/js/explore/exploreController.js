@@ -7,7 +7,7 @@ app.controller('ExploreController', function($scope, authService, $location, $fi
   $rootScope.state = $state;
   console.log('fuck ', $rootScope.state);
 
-  var exploreRef = new Firebase('https://cancer.firebaseio.com/app/');
+  var exploreRef = new Firebase('https://cancer.firebaseio.com/ean/');
   var sync = $firebase(exploreRef);
 
     $scope.isActive = function(a,b,c) {
@@ -24,14 +24,7 @@ app.controller('ExploreController', function($scope, authService, $location, $fi
     $location.path('/edit', {}, {reload: true});
   }
 
-  // $scope.isActive = function (viewLocation) {
-  //    var active = (viewLocation === $location.path());
-  //    return active;
-  // };
-
-    $scope.users = firebaseService.getUsers();
-
-
+  $scope.users = firebaseService.getUsers();
 
   $scope.logout = function() {
     authService.logout();
@@ -43,7 +36,7 @@ app.controller('ExploreController', function($scope, authService, $location, $fi
   }
 
 
-  $scope.currentUser = '';
+  // $scope.currentUser = '';
   $scope.currentUser = authService.getCurrentUser();
 
   if(!$scope.currentUser) {

@@ -2,7 +2,7 @@ var app = angular.module('cs');
 
 app.service('authService', function(){
   //Just a reference to the firebase endpoint
-  var firebaseUrl = 'https://cancer.firebaseio.com/app'
+  var firebaseUrl = 'https://cancer.firebaseio.com/ean'
   //Creates an object using the Firebase Constructor with our endpoint passed in 
   var firebaseLogin = new Firebase(firebaseUrl);
 

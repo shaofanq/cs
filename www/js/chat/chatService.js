@@ -1,7 +1,7 @@
 var app = angular.module('cs');
 
 app.factory('chatService', function($firebase, $q, $ionicScrollDelegate){
-  var fireUrl = 'https://cancer.firebaseio.com/app/';
+  var fireUrl = 'https://cancer.firebaseio.com/ean/';
   var fireSync = new Firebase(fireUrl);
 
     function createChatNode(chatNodeId, userId){
@@ -12,12 +12,7 @@ app.factory('chatService', function($firebase, $q, $ionicScrollDelegate){
       
       chatsSync.$set(chatNodeId, {
         cid: chatNodeId,
-        messages: [{
-            text: '',
-            senderId: userId,
-            side: '',
-            timeStamp: ''
-          }]
+        messages: []
         }).then(function(data){
           deferred.resolve(data);
         })
@@ -54,7 +49,7 @@ app.factory('chatService', function($firebase, $q, $ionicScrollDelegate){
         
         createChatNode(chatNodeId, myId).then(function(data){
           addChatToUser(myId, friendId, chatNodeId, friendName);
-          addChatToUser(friendId, myId, chatNodeId, myName);
+          // addChatToUser(friendId, myId, chatNodeId, myName);
         })
       },
     

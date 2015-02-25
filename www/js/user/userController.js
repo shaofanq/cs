@@ -2,7 +2,7 @@ var app = angular.module('cs');
 
 app.controller('UserController', function($scope, firebaseService, authService, ipCookie, $firebase, $location, $state) {
     $scope.user = authService.getCurrentUser();
-    var userRef = new Firebase('https://cancer.firebaseio.com/app/users/' + $scope.user.uid);
+    var userRef = new Firebase('https://cancer.firebaseio.com/ean/users/' + $scope.user.uid);
     var sync = $firebase(userRef);
 
     $scope.userData = sync.$asObject();
