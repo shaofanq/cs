@@ -2,21 +2,20 @@
 <ion-content>
   <div class="container">
     <div ng-repeat="user in users">
-      <a href="/#/userDetail/{{user.auth.uid}}">
-        <div class="list">
-          <div class="item item-avatar item-button-right" href="#">
-            <img class=""src="img/avatar.jpg">
-            <h2>{{user.name}}</h2>
-            <h4 class="cancerExplore">{{user.cancer}}</h4>
-            <button class="fuck button">
-              <span style="margin-left:0px; margin-top:-5px">+</span>
-            </button>
-           <!--  <button class="button button-add" ng-click="addFriend()">
-              <i class="icon ion-plus-circled addIcon"></i>
-            </button> -->
+      <div ng-if="user.uid !== currentUser.uid">
+        <a href="/#/userDetail/{{user.auth.uid}}">
+          <div class="list">
+            <div class="item item-avatar item-button-right" href="#">
+              <img class=""src="img/avatar.jpg">
+              <h2>{{user.name}}</h2>
+              <h4 class="cancerExplore">{{user.cancer}}</h4>
+              <button class="fuck button">
+                <span style="margin-left:0px; margin-top:-5px">+</span>
+              </button>
+            </div>
           </div>
-        </div>
-      </a>
+        </a>
+      </div>
     </div>
   </div>
 </ion-content>

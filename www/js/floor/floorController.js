@@ -8,7 +8,7 @@ app.controller('FloorController', function($scope, $location, authService, $fire
   $scope.getCurrentUser = function(){
     $scope.user = firebaseService.getUser(id);
   }();
-  var floorRef = new Firebase('https://cancer.firebaseio.com/app/floorPosts');
+  var floorRef = new Firebase('https://cancer.firebaseio.com/ean/floorPosts');
   var sync = $firebase(floorRef);
 
   $scope.addPost = function() {

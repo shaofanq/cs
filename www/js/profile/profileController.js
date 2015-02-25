@@ -4,7 +4,7 @@ app.controller('ProfileController', function($scope, authService, $location, $fi
   $scope.toggleLeft = function() {
     $ionicSideMenuDelegate.toggleLeft();
   };
-  var exploreRef = new Firebase('https://cancer.firebaseio.com/app');
+  var exploreRef = new Firebase('https://cancer.firebaseio.com/ean');
   var sync = $firebase(exploreRef);
 
     $scope.isActive = function(route) {
