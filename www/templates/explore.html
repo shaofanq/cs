@@ -4,13 +4,16 @@
     <div ng-repeat="user in users">
       <a href="/#/userDetail/{{user.auth.uid}}">
         <div class="list">
-          <div class="item item-avatar item-button-right" href="#">
+          <div class="item item-avatar item-button-right flex" href="#">
             <img class=""src="img/avatar.jpg">
             <h2>{{user.name}}</h2>
-            <h4 class="cancerExplore">{{user.cancer}}</h4>
-            <button class="fuck button">
-              <span style="margin-left:0px; margin-top:-5px">+</span>
-            </button>
+            <div class="middle cancer-sub-div">
+            <div class="typeCircle fightBlue f-row middle"></div>
+            <h4 class="cancerExplore f-row middle">{{user.cancer}}</h4>
+            </div>
+              <div class="exAddButton whiteText">
+                <span style="margin-left:0px; margin-top:-5px">+</span>
+              </div>
            <!--  <button class="button button-add" ng-click="addFriend()">
               <i class="icon ion-plus-circled addIcon"></i>
             </button> -->
