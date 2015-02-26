@@ -10,7 +10,7 @@
 
         <div class="message" ng-class="{'slide-right': hideTime, '': !hideTime}">
 
-          <span class="bubble">{{ message.text }}<br> <!-- <p class="timestamp">{{message.timestamp | date:"EEE 'at' h:mma"}}</p> --></span>
+          <span class="bubble">{{ message.text }}<br> <p class="timestamp">{{message.timestamp | date:"EEE 'at' h:mma"}}</p></span>
 
           <div class="box"></div>
         </div>
@@ -29,7 +29,7 @@
       <button class="button button-icon icon whiteText ion-camera light-icon"></button>
     </div>
       <label class="item-input-wrapper">
-        <input type="text" placeholder="Hey there..." on-return="sendMessage(); closeKeyboard()" ng-model="messageText" on-focus="inputUp()" on-blur="inputDown()" />
+        <input type="text" placeholder="Message" on-return="sendMessage(); closeKeyboard()" ng-model="messageText" on-focus="inputUp()" on-blur="inputDown()" />
       </label>
       <button class="button button-clear chat-submit" ng-click="sendMessage(messageText)">
         Send
