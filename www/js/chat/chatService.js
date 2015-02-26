@@ -49,7 +49,7 @@ app.factory('chatService', function($firebase, $q, $ionicScrollDelegate){
         
         createChatNode(chatNodeId, myId).then(function(data){
           addChatToUser(myId, friendId, chatNodeId, friendName);
-          // addChatToUser(friendId, myId, chatNodeId, myName);
+          addChatToUser(friendId, myId, chatNodeId, myName);
         })
       },
     

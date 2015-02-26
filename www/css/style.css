@@ -25,7 +25,7 @@ body {
 
 
 .scroll-content{
-	padding-top: 45px;
+	padding-top: 50px;
 }
 
 .noPads{
@@ -399,7 +399,7 @@ padding-top: 2px;
 
 
 .scroll {
-  padding: 10px 0 10% !important; 
+  padding: 10px 0 0 !important; 
 }
 
    
@@ -428,7 +428,7 @@ padding-top: 2px;
     -webkit-flex: 1 1 auto !important;
     -ms-flex: 1 1 auto !important;
     flex: 1 1 auto !important;
-    padding: 5px 15px;
+    padding: 10px;
     -webkit-transition: all 250ms ease-in-out !important;
     transition: all 250ms ease-in-out !important;
 /*    overflow: hidden !important;
@@ -469,23 +469,27 @@ padding-top: 2px;
   -moz-transform: translate3d(120px, 0, 0) !important;
   transform: translate3d(120px, 0, 0) !important; }*/
 .messages.other span {
-  color: black !important;
-  background-color: #fff !important;
+  color: #FFF !important;
+  background-color: #2989D9 !important;
   float: right;
 }
 
 
 .bubble {
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-  background: #3E82CF !important;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.12), 0 1px 1px rgba(0,0,0,0.24);
+  background: #FFF !important;
   display: inline-block !important;
-  color: #FFF !important;
+  color: #616161 !important;
   padding: 15px !important;
-  border-radius: 8px !important;
+  border-radius: 10px !important;
   text-align: left !important;
-  font-size: 15px;
+  font-size: 19px;
+  font-family: "Roboto";
   line-height: 30px;
-  max-width: 280px !important; 
+  font-weight: medium;
+  /*max-width: 290px !important; */
+  max-width: 80%; 
+
   /*min-width: 5px !important;*/
 }
 
