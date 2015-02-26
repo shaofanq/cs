@@ -1,7 +1,7 @@
 <ion-nav-bar  class="bar bar-header csRed">
   <ion-nav-buttons side="left">
     <button ng-if="isActive('/explore', '/messages', '/floor', '/friends', '/notifications')" class="button button-icon icon whiteText ion-navicon top-nav-icon" ng-click="toggleLeft()"></button>
-    <button ng-if="!isActive('/explore', '/messages', '/floor', '/friends', '/notifications')" class="button button-icon icon whiteText ion-arrow-left-c top-nav-icon" ng-click="goBack()"></button>
+    <button ng-if="!isActive('/explore', '/messages', '/floor', '/friends', '/notifications')" class="button button-icon icon whiteText ion-ios-arrow-back top-nav-icon" ng-click="goBack()"></button>
   </ion-nav-buttons>
   <ion-nav-title style="text-align:left; margin-left: 20%" align-title="left" class="h1 title whiteText top-nav-icon">
     <p>{{title}}</p>
