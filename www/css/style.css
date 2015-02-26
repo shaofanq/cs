@@ -25,7 +25,7 @@ body {
 
 
 .scroll-content{
-	padding-top: 45px;
+	padding-top: 50px;
 }
 
 .noPads{
@@ -65,7 +65,14 @@ a {
 }
 
 
-/*COLORS*/
+
+
+
+/*////////////////////////////////
+/////////COLOR///////////////////
+//////////////////////////////*/
+
+
 
 .csRed {
 	background-color: #f83f3d;
@@ -119,7 +126,33 @@ a {
 	font-size: 18pt;
 }
 
-/*BUTTONS*/
+.greyText {
+	color: #738DA0 !important;
+}
+
+
+/*////////////////////////////////
+/////////LEFT MENU///////////////
+//////////////////////////////*/
+
+
+.menu-left {
+	background-color: #3c4a54;
+}
+
+a.item {
+	background-color: #3c4a54;
+	color: #fff;
+	border: none;
+}
+
+
+
+/*////////////////////////////////
+/////////BUTTONS/////////////////
+//////////////////////////////*/
+
+
 
 .button.button-block{
 	margin-bottom: 0px;
@@ -184,15 +217,6 @@ color: #b3b3b3;
 margin: 12px 0px;
 }
 
-.fuck{
-	border:none;
-	background: #b3b3b3;
-	color: #fff;
-	margin-top: 10px;
-	text-align: center;
-	font-weight: bolder;
-	border-radius: 50%;
-}
 
 .noBorder {
 	border:none;
@@ -206,23 +230,110 @@ margin: 12px 0px;
 	background-color: 
 }
 
-/*EXPLORE*/
+
+
+
+/*////////////////////////////////
+/////////EXPLORE/////////////////
+//////////////////////////////*/
+
 
 .exploreAvatar {
 	height: 20%;
 	width: 20%;
 }
-
 .item {
 	border-top: 1px;
 }
-
 .item h4 {
 	font-weight: 400;
+	font-size: 12px !important;
+}
+.fuck{
+	border:none;
+	background: #b3b3b3;
+	color: #fff;
+	margin-top: 10px;
+	text-align: center;
+	font-weight: bolder;
+	border-radius: 50%;
+}
+.exAddButton {
+	width: 25px;
+	height: 25px;
+	border-radius: 50%;
+	border: none;
+	font-size:20px;
+	font-weight: bolder;
+	text-align:center;
+	background: #b3b3b3;	
+}
+.item-note {
+float: right;
+color: #aaa;
+font-size: 14px;
+margin-top: -30px;
+}
+.typeCircle {
+	border-radius: 50%;
+	height: 12px;
+	width: 12px;
+	border: none;
+	padding-top: 3px;
+	margin-right: 2px;
+}
+.cancerExplore {
+	font-size: 10pt !important;
+	font-weight: 400;
+	margin-bottom: 5px;
+}
+
+/*.flex {
+	display: flex;
+}*/
+
+.f-row {
+	flex-direction: row;
+	display: inline-flex;
+}
+
+.f-column {
+	flex-direction: row;
+}
+
+.middle {
+	vertical-align: middle;
+}
+
+.item-avatar>img:first-child {
+	top: 12px;
+	max-width: 48px;
+	max-height: 48px;
+}
+
+.item-avatar, 
+.item-avatar, 
+.item-content, 
+.item-avatar-left, 
+.item-avatar-left, 
+.item-content {
+padding-left: 82px;
+min-height: 72px;
+}
+
+.cancer-sub-div {
+	margin-top: -5px;
 }
 
 
-/*PROFILES*/
+
+
+
+
+/*////////////////////////////////
+/////////PROFILES////////////////
+//////////////////////////////*/
+
 
 .profilePicBox {
 	width: 100%;
@@ -247,6 +358,21 @@ margin: 12px 0px;
 
 }
 
+.addButton {
+	display:inline-block;
+	border-radius:50%;
+	width: 40px;
+	height: 40px;
+	border: none;
+	font-size:26px;
+	text-align:center;
+	padding: 8px;
+	vertical-align: middle;
+	position: absolute;
+	margin-top: 30px !important;
+	margin-left: -20px;
+}
+
 .coverPhoto {
 	background-image: url("/img/trianglesBlue.png");
 	background-size: cover;
@@ -261,15 +387,28 @@ margin: 12px 0px;
 
 .z2 {
 	z-index: 2;
+<<<<<<< HEAD
   margin-top: 31px !important;
+=======
+	/*margin-top: 30px !important;*/
+>>>>>>> 5739ebef19c554de11b8bbb410fc8349da565701
 }
 
 .card .item:last-child, .list-inset .item:last-child {
 	margin-bottom: 15px;
-
 }
 
-/*SPLASH*/
+
+
+
+
+
+/*////////////////////////////////
+/////////SPLASH//////////////////
+//////////////////////////////*/
+
+
+
 .buttonsBox {
 	margin-top: 0px;
 }
@@ -287,7 +426,91 @@ p {
 }
 
 
-/*CHAT*/
+
+
+
+
+
+
+/*////////////////////////////////
+/////////ONBOARDING//////////////
+//////////////////////////////*/
+
+
+.inputBox {
+	width: 85%;
+	margin: 0 auto;
+	padding: 30px 0px 30px 0px;
+}
+
+.item-input {
+	padding-top: 5px;
+}
+
+.inputPicBox {
+	height: 30%;
+	padding: 50px;
+}
+
+
+
+
+/*////////////////////////////////
+/////////MESSAGES////////////////
+//////////////////////////////*/
+
+
+
+
+
+
+/*////////////////////////////////
+/////////TABS////////////////////
+//////////////////////////////*/
+
+
+
+.tabs-color-assertive {
+	color: #f83f3d;
+}
+
+
+.tabs-striped.tabs-color-assertive .tab-item {
+	color: #B3B3B3;
+}
+
+.tabs-striped.tabs-color-assertive .tab-item.tab-item-active, .tabs-striped.tabs-color-assertive .tab-item.active, .tabs-striped.tabs-color-assertive .tab-item.activated {
+margin-top: -2px;
+color: #f83f3d;
+border: 0 solid #f83f3d;
+border-top-width: 2px;
+}
+
+.tabs-striped.tabs-color-assertive .tab-item.activated, .tabs-striped.tabs-color-assertive .tab-item.active, .tabs-striped.tabs-color-assertive .tab-item.tab-item-active {
+margin-top: -2px;
+color: #f83f3d;
+border: 0 solid #f83f3d;
+border-top-width: 2px;
+}
+
+.tabs-striped .tabs {
+background-color: #fff;
+background-image: none;
+border-bottom: 1px solid #ddd;
+border-top: 1px solid #B3B3B3 !important;
+padding-top: 2px;
+}
+
+
+
+
+
+
+/*////////////////////////////////
+/////////CHAT////////////////////
+//////////////////////////////*/
+
+
 
 .bubble-container {
 	display:block;
@@ -339,71 +562,9 @@ span .timestamp .ng-binding {
 	color: #94928f;
 }
 
-
-
-/*ONBOARDING*/
-.inputBox {
-	width: 85%;
-	margin: 0 auto;
-	padding: 30px 0px 30px 0px;
-}
-
-.item-input {
-	padding-top: 5px;
-}
-
-.inputPicBox {
-	height: 30%;
-	padding: 50px;
-}
-
-/*MESSAGES*/
-
-
-
-/*TABS*/
-.tabs-color-assertive {
-	color: #f83f3d;
-}
-
-
-.tabs-striped.tabs-color-assertive .tab-item {
-	color: #B3B3B3;
-}
-
-.tabs-striped.tabs-color-assertive .tab-item.tab-item-active, .tabs-striped.tabs-color-assertive .tab-item.active, .tabs-striped.tabs-color-assertive .tab-item.activated {
-margin-top: -2px;
-color: #f83f3d;
-border: 0 solid #f83f3d;
-border-top-width: 2px;
-}
-
-.tabs-striped.tabs-color-assertive .tab-item.activated, .tabs-striped.tabs-color-assertive .tab-item.active, .tabs-striped.tabs-color-assertive .tab-item.tab-item-active {
-margin-top: -2px;
-color: #f83f3d;
-border: 0 solid #f83f3d;
-border-top-width: 2px;
-}
-
-.tabs-striped .tabs {
-background-color: #fff;
-background-image: none;
-border-bottom: 1px solid #ddd;
-border-top: 1px solid #B3B3B3 !important;
-padding-top: 2px;
-}
-
-/*CHAT*/
-
-
-
-
 .scroll {
   padding: 10px 0 10% !important; 
 }
-
-   
-
 
 .messages {
   display: -webkit-box !important;
@@ -514,11 +675,17 @@ padding-top: 2px;
   box-shadow: 0 0 4px rgba(0,0,0,.08),0 4px 8px rgba(0,0,0,.08);
 }
 
+
 .top-nav-icon {
-  margin-top: 7px;
+  margin-top: 7px ;
 }
 
-.top-nav-icon p{
+
+
+.whiteText {
+	color: #fff;
+}
+.whiteText p{
   font-size: 20px;
   margin-top: 7px;
 }

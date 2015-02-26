@@ -2,17 +2,18 @@
 <ion-content>
   <div class="container">
     <div ng-repeat="user in users">
-      <div ng-if="user.uid !== currentUser.uid">
-        <a href="/#/userDetail/{{user.auth.uid}}">
-          <div class="list">
-            <div class="item item-avatar item-button-right" href="#">
-              <img class=""src="img/avatar.jpg">
-              <h2>{{user.name}}</h2>
-              <h4 class="cancerExplore">{{user.cancer}}</h4>
-              <button class="fuck button">
-                <span style="margin-left:0px; margin-top:-5px">+</span>
-              </button>
+      <a href="/#/userDetail/{{user.auth.uid}}">
+        <div class="list">
+          <div class="item item-avatar flex" href="#">
+            <img class=""src="img/avatar.jpg">
+            <h2>{{user.name}}</h2>
+            <div class="middle cancer-sub-div">
+            <div class="typeCircle fightBlue f-row middle"></div>
+            <h4 class="cancerExplore f-row middle">{{user.cancer}}</h4>
             </div>
+              <span class="item-note exAddButton whiteText"> 
+                +
+              </span>
           </div>
         </a>
       </div>
