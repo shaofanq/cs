@@ -311,7 +311,12 @@ margin-top: -30px;
 	max-height: 48px;
 }
 
-.item-avatar, .item-avatar .item-content, .item-avatar-left, .item-avatar-left .item-content {
+.item-avatar, 
+.item-avatar, 
+.item-content, 
+.item-avatar-left, 
+.item-avatar-left, 
+.item-content {
 padding-left: 82px;
 min-height: 72px;
 }
@@ -669,19 +674,18 @@ span .timestamp .ng-binding {
   border: none;
   box-shadow: 0 0 4px rgba(0,0,0,.08),0 4px 8px rgba(0,0,0,.08);
 }
-<<<<<<< HEAD
+
 
 .top-nav-icon {
-  margin-top: 7px;
+  margin-top: 7px ;
 }
 
-.top-nav-icon p{
-=======
+
+
 .whiteText {
 	color: #fff;
 }
 .whiteText p{
->>>>>>> 5739ebef19c554de11b8bbb410fc8349da565701
   font-size: 20px;
   margin-top: 7px;
 }
