@@ -2,6 +2,7 @@
 <ion-content>
   <div class="container">
     <div ng-repeat="user in users">
+<<<<<<< HEAD
       <div ng-if="user.uid !== currentUser.uid">
         <a href="/#/userDetail/{{user.auth.uid}}">
           <div class="list">
@@ -13,6 +14,23 @@
                 <span style="margin-left:0px; margin-top:-5px">+</span>
               </button>
             </div>
+=======
+      <a href="/#/userDetail/{{user.auth.uid}}">
+        <div class="list">
+          <div class="item item-avatar flex" href="#">
+            <img class=""src="img/avatar.jpg">
+            <h2>{{user.name}}</h2>
+            <div class="middle cancer-sub-div">
+            <div class="typeCircle fightBlue f-row middle"></div>
+            <h4 class="cancerExplore f-row middle">{{user.cancer}}</h4>
+            </div>
+              <span class="item-note exAddButton whiteText"> 
+                +
+              </span>
+           <!--  <button class="button button-add" ng-click="addFriend()">
+              <i class="icon ion-plus-circled addIcon"></i>
+            </button> -->
+>>>>>>> 5739ebef19c554de11b8bbb410fc8349da565701
           </div>
         </a>
       </div>
