@@ -126,6 +126,10 @@ a {
 	font-size: 18pt;
 }
 
+.greyText {
+	color: #738DA0 !important;
+}
+
 
 /*////////////////////////////////
 /////////LEFT MENU///////////////
@@ -139,6 +143,7 @@ a {
 a.item {
 	background-color: #3c4a54;
 	color: #fff;
+	border: none;
 }
 
 
