@@ -61,5 +61,5 @@ After that you should be able to type
 $ ionic serve
 ````
 
-And view the app~!
+And view the app!
 
