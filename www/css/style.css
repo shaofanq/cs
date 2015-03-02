@@ -559,7 +559,9 @@ padding-top: 2px;
 	font-size: 6pt;
 	padding-top: 1px;
 	color: #fff;
-	float: left;
+	/*float: left;*/
+	display: block;
+
 }
 
 span .timestamp .ng-binding {
@@ -636,7 +638,7 @@ span .timestamp .ng-binding {
 .messages.other span {
   color: #FFF !important;
   background-color: #2989D9 !important;
-  float: right;
+  /*float: right;*/
 }
 
 
@@ -648,10 +650,10 @@ span .timestamp .ng-binding {
   padding: 15px !important;
   border-radius: 10px !important;
   text-align: left !important;
-  font-size: 19px;
+  font-size: 20px;
   font-family: "Roboto";
   line-height: 30px;
-  font-weight: medium;
+  font-weight: 500;
   /*max-width: 290px !important; */
   max-width: 80%; 
 
@@ -671,9 +673,9 @@ span .timestamp .ng-binding {
 }
 
 .timestamp {
-  color: #d6d6d6;
+  color: #ababab;
   font-size: 12px;
-  margin-bottom: -10px;
+  margin-bottom: -20px;
 }
 
 

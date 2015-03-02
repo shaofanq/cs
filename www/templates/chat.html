@@ -10,14 +10,8 @@
 
         <div class="message" ng-class="{'slide-right': hideTime, '': !hideTime}">
 
-          <span class="bubble">{{ message.text }}<br> <p class="timestamp">{{message.timestamp | date:"EEE 'at' h:mma"}}</p></span>
-
-          <div class="box"></div>
+          <span class="bubble">{{ message.text }}<br></span> <p class="timestamp">{{message.timestamp | date:"EEE h:mm a"}}</p>
         </div>
-
-       <!--  <div class="time">{{message.time}}</div> -->
-
-
       </div>
 
 
