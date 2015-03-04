@@ -208,7 +208,7 @@ a.item {
 	border: none;
 	text-align:center;
 	vertical-align: middle;
-	
+
 }
 
 .button.button-add {
@@ -228,7 +228,7 @@ margin: 12px 0px;
 }
 
 .headerColor {
-	background-color: 
+	background-color:
 }
 
 
@@ -267,7 +267,7 @@ margin: 12px 0px;
 	font-size:20px;
 	font-weight: bolder;
 	text-align:center;
-	background: #b3b3b3;	
+	background: #b3b3b3;
 }
 .item-note {
 float: right;
@@ -312,11 +312,11 @@ margin-top: -30px;
 	max-height: 48px;
 }
 
-.item-avatar, 
-.item-avatar, 
-.item-content, 
-.item-avatar-left, 
-.item-avatar-left, 
+.item-avatar,
+.item-avatar,
+.item-content,
+.item-avatar-left,
+.item-avatar-left,
 .item-content {
 padding-left: 82px;
 min-height: 72px;
@@ -567,7 +567,7 @@ span .timestamp .ng-binding {
 }
 
 .scroll {
-  padding: 10px 0 0 !important; 
+  padding: 10px 0 0 !important;
 }
 
 .messages {
@@ -653,7 +653,7 @@ span .timestamp .ng-binding {
   line-height: 30px;
   font-weight: medium;
   /*max-width: 290px !important; */
-  max-width: 80%; 
+  max-width: 80%;
 
   /*min-width: 5px !important;*/
 }
@@ -700,4 +700,11 @@ span .timestamp .ng-binding {
 
 .card {
 	box-shadow: none;
+}
+
+.cropArea {
+  background: #E4E4E4;
+  overflow: hidden;
+  width:500px;
+  height:350px;
 }

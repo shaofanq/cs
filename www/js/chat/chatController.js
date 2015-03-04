@@ -1,25 +1,23 @@
 var app = angular.module('cs');
 
 app.controller('chatController', function($scope, chatService, firebaseService, $stateParams, $rootScope, $state, $ionicScrollDelegate, authService, $firebase, $timeout){
-	$scope.messages = chatService.getChat($stateParams.cid);   
+	$scope.messages = chatService.getChat($stateParams.cid);
     $scope.authData = authService.getCurrentUser();
 	var me = firebaseService.getUser($scope.authData.uid);
     $scope.friend = chatService.getMyChats(me.$id);
     $scope.friend.info = firebaseService.getUser('simplelogin:67');
-    console.log('friend name', $scope.friend.info.name);
     $scope.$watchCollection('messages', function(newNames, oldNames) {
         $ionicScrollDelegate.scrollBottom(true);
-    });    
+    });
 
     setTimeout(function(){
         $ionicScrollDelegate.scrollBottom(true);
     },2000);
 
     var side = 'left';
-    
+
     $scope.userId = me.$id;
     $scope.messageText = '';
-    console.log('userId:', $scope.userId);   
 
     $scope.reset = function(textMessage) {
     	form.reset()
@@ -34,7 +32,7 @@ app.controller('chatController', function($scope, chatService, firebaseService, 
         if(textMessage){
             $ionicScrollDelegate.scrollBottom(true);
             $scope.messages.$add({
-                text: textMessage, 
+                text: textMessage,
                 senderId: $scope.userId,
                 timestamp: Firebase.ServerValue.TIMESTAMP
                 });

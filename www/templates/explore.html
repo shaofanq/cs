@@ -5,13 +5,13 @@
       <a href="/#/userDetail/{{user.auth.uid}}">
         <div class="list">
           <div class="item item-avatar flex" href="#">
-            <img class=""src="img/avatar.jpg">
+            <img class="" ng-src="{{user.profilePic}}">
             <h2>{{user.name}}</h2>
             <div class="middle cancer-sub-div">
             <div class="typeCircle fightBlue f-row middle"></div>
             <h4 class="cancerExplore f-row middle">{{user.cancer}}</h4>
             </div>
-              <span class="item-note exAddButton whiteText"> 
+              <span class="item-note exAddButton whiteText">
                 +
               </span>
           </div>

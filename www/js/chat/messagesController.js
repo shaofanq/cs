@@ -9,6 +9,5 @@ app.controller('messagesController', function($scope, $state, $stateParams, fire
 	$scope.authData = authService.getCurrentUser();
   var me = firebaseService.getUser($scope.authData.uid);
   $scope.messages = chatService.getMyChats(me.$id);
-  console.log($scope.messages);
 
-})
+});

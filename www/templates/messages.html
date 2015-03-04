@@ -1,12 +1,12 @@
 <navbar></navbar>
 <ion-content>
   <div class="container">
-    <div ng-repeat="message in messages">
+    <div ng-repeat="message in messages | filter:{status: 'active'}">
       <a href="/#/chat/{{message.cid}}">
         <div class="list">
           <div class="item item-avatar">
-            <img class=""src="img/avatar.jpg">
-            <h2>{{message.chatters.name}}</h2>
+            <img class="" ng-src="{{message.chatters.profilePic}}">
+            <h2>{{message.status}}</h2>
           </div>
         </div>
       </a>
@@ -14,6 +14,3 @@
   </div>
 </ion-content>
 <tabs></tabs>
-
-
-

@@ -1,4 +1,4 @@
-var app = angular.module('cs', ['ionic', 'firebase', 'ipCookie'])
+var app = angular.module('cs', ['ionic', 'firebase', 'ipCookie', 'ngImgCrop'])
 
 app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
   $ionicConfigProvider.views.transition('none');
@@ -8,7 +8,7 @@ app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
       url: "/main",
       templateUrl: "../templates/main.html"
     })
-     //////////////// 
+     ////////////////
     // ONBOARDING //
    ////////////////
     .state('splash', {
@@ -59,17 +59,17 @@ app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
     .state('floor', {
         url: '/floor',
         templateUrl: '../templates/floor.html',
-        controller: 'FloorController'      
+        controller: 'FloorController'
     })
 
 
-     //////////////////////// 
+     ////////////////////////
     // PROFILES / FRIENDS //
    ////////////////////////
     .state('user-detail', {
         url: '/userDetail/:id',
         templateUrl: '../templates/user-detail.html',
-        controller: 'UserDetailController'      
+        controller: 'UserDetailController'
     })
     .state('edit-user', {
       url: '/edit',
@@ -91,5 +91,5 @@ app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
       templateUrl: "../templates/floor-detail.html",
       controller: "FloorController"
     });
-    
+
 });
