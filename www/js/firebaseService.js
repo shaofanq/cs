@@ -48,9 +48,8 @@ app.service('firebaseService', function ($firebase, $ionicScrollDelegate, chatSe
 // ADD USERS
 
   this.addFriend = function(userId, otherId, theStatus, theName, currentUserName) {
-    console.log(userId, otherId, theStatus, theName, currentUserName);
       var conRef = new Firebase('https://cancer.firebaseio.com/ean/users/' + userId + '/friends/' + otherId);
-      var conSync = $firebase(conRef); 
+      var conSync = $firebase(conRef);
 
         conSync.$set({
           friendId: otherId,
@@ -68,16 +67,17 @@ app.service('firebaseService', function ($firebase, $ionicScrollDelegate, chatSe
 
   this.updateFriend = function(userId, otherId, theStatus) {
       var upRef = new Firebase('https://cancer.firebaseio.com/ean/users/' + userId + '/friends/' + otherId);
-      var upSync = $firebase(upRef); 
+      var upSync = $firebase(upRef);
 
       upSync.$update({
         status: theStatus
-      })
+      });
   }
+
 
   this.deleteFriend = function(userId, otherId) {
       var delRef = new Firebase('https://cancer.firebaseio.com/ean/users/' + userId + '/friends/' + otherId);
-      var delSync = $firebase(delRef); 
+      var delSync = $firebase(delRef);
 
       delSync.$remove();
   }

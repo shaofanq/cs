@@ -44,10 +44,9 @@ app.controller('UserDetailController', function($scope, authService, $location, 
     $location.path('/login', {}, {reload: true});
   }
 
-console.log($scope.authInfo);
   // ADD FRIENDS AND SHIT
     $scope.addFriend = function() {
         firebaseService.addFriend($scope.authInfo.uid, $stateParams.id, "sent", $scope.user.name, $scope.currentUser.name);
-        firebaseService.addFriend($stateParams.id, $scope.authInfo.uid, "received", $scope.currentUser.name);  
+        firebaseService.addFriend($stateParams.id, $scope.authInfo.uid, "received", $scope.currentUser.name);
     }
 });

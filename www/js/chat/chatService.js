@@ -4,12 +4,24 @@ app.factory('chatService', function($firebase, $q, $ionicScrollDelegate){
   var fireUrl = 'https://cancer.firebaseio.com/ean/';
   var fireSync = new Firebase(fireUrl);
 
+  // var replaceDupes = function(arr) {
+  //   for (var i = 0; i < arr.length; i++) {
+  //     for (var i = 0; j < arr.length; j++) {
+  //       if(arr[i].chatters.id === arr[j].chatters.id) {
+  //         arr.splice(j, 1);
+  //       }
+  //     }
+  //   }
+  //   console.log('arr', arr);
+  //   return arr;
+  // }
+
     function createChatNode(chatNodeId, userId){
       var deferred = $q.defer();
 
-      var chatsRef = new Firebase(fireUrl + "chats"); 
+      var chatsRef = new Firebase(fireUrl + "chats");
       var chatsSync = $firebase(chatsRef);
-      
+
       chatsSync.$set(chatNodeId, {
         cid: chatNodeId,
         messages: []
@@ -20,18 +32,18 @@ app.factory('chatService', function($firebase, $q, $ionicScrollDelegate){
     };
 
     function addChatToUser(userId, friendUserId, chatNodeId, friendName){
-      var myChatsRef = new Firebase(fireUrl + 'users/' + userId + "/myChats"); 
+      var myChatsRef = new Firebase(fireUrl + 'users/' + userId + "/myChats");
       var myChatsSync = $firebase(myChatsRef);
 
       myChatsSync.$set(chatNodeId, {
           cid: chatNodeId,
           chatters: {
-            id: friendUserId, 
+            id: friendUserId,
             name: friendName
           },
           status: 'deactivated'
       });
-    } 
+    }
 
 
     return{
@@ -46,13 +58,13 @@ app.factory('chatService', function($firebase, $q, $ionicScrollDelegate){
             s4() + '-' + s4() + s4() + s4();
         }
         var chatNodeId = guid();
-        
+
         createChatNode(chatNodeId, myId).then(function(data){
           addChatToUser(myId, friendId, chatNodeId, friendName);
           addChatToUser(friendId, myId, chatNodeId, myName);
         })
       },
-    
+
       getMessages: function(){
         return $firebase(new Firebase(fireUrl + 'chats/')).$asArray();
       },
@@ -60,8 +72,21 @@ app.factory('chatService', function($firebase, $q, $ionicScrollDelegate){
       getChat: function(cid){
         return $firebase(new Firebase(fireUrl + 'chats/' + cid + '/messages')).$asArray();
       },
-
+      changeChatStatus: function(a, b, userId, otherId) {
+        console.log('wowee', a);
+        console.log('wowee', b);
+        var aRef = new Firebase(fireUrl + 'users/'+ userId + '/myChats/' + a);
+        var bRef = new Firebase(fireUrl + 'users/'+ otherId + '/myChats/' + b)
+        var aSync = $firebase(aRef);
+        var bSync = $firebase(bRef);
+        aSync.$update({status: 'active'});
+        bSync.$update({status: 'active'});
+      },
       getMyChats: function(userId){
+        var myChats = $firebase(new Firebase(fireUrl + 'users/' + userId + '/myChats')).$asArray();
+        for (var i = 0; i < myChats.length; i++) {
+          console.log(myChats);
+        }
         return $firebase(new Firebase(fireUrl + 'users/' + userId + '/myChats')).$asArray();
       }
 

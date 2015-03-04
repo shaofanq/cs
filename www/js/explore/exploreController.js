@@ -5,7 +5,7 @@ app.controller('ExploreController', function($scope, authService, $location, $fi
     $ionicSideMenuDelegate.toggleLeft();
   };
   $rootScope.state = $state;
-  console.log('fuck ', $rootScope.state);
+
 
   var exploreRef = new Firebase('https://cancer.firebaseio.com/ean/');
   var sync = $firebase(exploreRef);
@@ -35,16 +35,20 @@ app.controller('ExploreController', function($scope, authService, $location, $fi
     $location.path('/notifications', {}, {reload: true});
   }
 
+  var auth = authService.getCurrentUser();
 
-  // $scope.currentUser = '';
-  $scope.currentUser = authService.getCurrentUser();
 
-  if(!$scope.currentUser) {
+  if(!auth) {
     $location.path('/splash', {}, {reload: true});
-  }
+  } else {
+    var getCurrentUserData = function() {
+      var cu = authService.getCurrentUser();
+      $scope.currentUser = firebaseService.getUser(cu.uid)
+    }();
+  };
 
   $scope.goTo = function(id) {
-    $state.go('userDetail/' + id);   
+    $state.go('userDetail/' + id);
   }
 
 });

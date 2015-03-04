@@ -2,19 +2,16 @@
 <ion-content>
   <div class="container">
     <div class="list">
-
     	<a ng-repeat="friend in reqs | filter: {status: 'received'}" class="item item-button">
-            <h3>{{friend.name}}</h3>
-            <button class="button csRed rightButt" ng-click="acceptReq(friend.$id)">
-               <i class="icon ion-person-add"></i>
-            </button>
-            <button class="button button-light rightButt" ng-click="rejectReq(friend.$id)">
-                <i class="icon ion-close-circled"></i>
-            </button>
+        <h3>{{friend.name}}</h3>
+        <button class="button csRed rightButt" ng-click="acceptReq(friend.$id)">
+           <i class="icon ion-person-add"></i>
+        </button>
+        <button class="button button-light rightButt" ng-click="rejectReq(friend.$id)">
+            <i class="icon ion-close-circled"></i>
+        </button>
       </a>
-
     </div>
   </div>
-
 </ion-content>
 <tabs></tabs>

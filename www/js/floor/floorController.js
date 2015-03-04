@@ -12,9 +12,9 @@ app.controller('FloorController', function($scope, $location, authService, $fire
   var sync = $firebase(floorRef);
 
   $scope.addPost = function() {
-    var d = Date.now();
-    $scope.post.timestamp = d;
+    $scope.post.timestamp = Date.now();
     $scope.post.user = $scope.user.name;
+    $scope.post.profilePic = $scope.user.profilePic;
     $scope.post.likes = 0;
     $scope.post.comments = [];
     $scope.post.commentsCount = 0;
@@ -33,7 +33,6 @@ app.controller('FloorController', function($scope, $location, authService, $fire
 
 
   $scope.postDetails = function(index) {
-    console.log(index);
     var id = $scope.floor[index].$id
     $location.path('floor-detail/' + id);
   }
@@ -48,7 +47,6 @@ app.controller('FloorController', function($scope, $location, authService, $fire
     // };
     setTimeout(function() {
       $scope.currentPost.comments = firebaseService.getCurrentComments($scope.currentPost.$id);
-      console.log('here', $scope.currentPost);
     },1000)
 
   }();
@@ -57,7 +55,7 @@ app.controller('FloorController', function($scope, $location, authService, $fire
     var count = 0;
     var id = $stateParams.id;
     comment = {
-      text: comment, 
+      text: comment,
       timestamp: Date.now(),
       likes: 0,
       user: $scope.user.name
@@ -94,9 +92,7 @@ app.controller('FloorController', function($scope, $location, authService, $fire
   }
 
   $scope.commentLike = function(index) {
-    console.log($scope.currentPost.comments[index]);
 
-    console.log('here',$scope.user);
     var flag = true;
     for(key in $scope.user.favorites.comments) {
       if($scope.user.favorites.comments[key] === $scope.currentPost.comments[index].$id) {
@@ -124,6 +120,6 @@ app.controller('FloorController', function($scope, $location, authService, $fire
   $scope.closeModal = function() {
     $scope.modal.hide();
   }
-  
+
 
 });

@@ -4,7 +4,7 @@
     <div ng-repeat="item in floor" >
       <div class="list card">
         <div class="item item-avatar" ng-click="postDetails($index)">
-          <img src="img/avatar.jpg">
+          <img ng-src="{{item.profilePic}}">
           <h2>{{item.user}}</h2>
           <p>{{ item.timestamp | date : format : timezone}}</p>
         </div>
@@ -36,7 +36,7 @@
     <div class="container">
       <label class="item item-input">
         <span class="input-label">Post</span>
-        <input autofocus type="text" ng-model="post.text">
+        <input type="text" ng-model="post.text">
       </label>
       <button class="button button-block button-positive" ng-click="addPost()">
         New Post

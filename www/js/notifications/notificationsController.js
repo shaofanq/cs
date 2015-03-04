@@ -44,13 +44,11 @@ app.controller('notificationsController', function($scope, authService, $locatio
   $scope.authInfo = authService.getCurrentUser();
 
   $scope.currentUser = firebaseService.getUser($scope.authInfo.uid);
-  console.log($scope.currentUser.name);
-  console.log($scope.currentUser);
 
   if(!$scope.authInfo) {
     $location.path('/login', {}, {reload: true});
   }
- 
+
 
 
 //GET REQUESTS
@@ -58,16 +56,28 @@ app.controller('notificationsController', function($scope, authService, $locatio
 
   $scope.reqs = [];
   $scope.reqs = firebaseService.getFriends($scope.authInfo.uid);
-  
 
-  // ACCEPT AND REJECT REQUESTS 
+
+  // ACCEPT AND REJECT REQUESTS
 
   $scope.acceptReq = function(id) {
-      console.log(id)
       firebaseService.updateFriend($scope.authInfo.uid, id, "accepted");
       firebaseService.updateFriend(id, $scope.authInfo.uid, "accepted");
+      
+      var myChats = chatService.getMyChats($scope.authInfo.uid);
+      var otherChats = chatService.getMyChats(id);
+      setTimeout(function() {
+        for (var i = 0; i < otherChats.length; i++) {
+          for (var j = 0; j < myChats.length; j++) {
+            if(myChats[i].cid === otherChats[j].cid) {
+              myChats[i].status = 'active';
+              otherChats[j].status = 'active';
+              chatService.changeChatStatus(myChats[i].cid, otherChats[j].cid, $scope.authInfo.uid, id);
+            }
+          }
+        }
+      }, 500);
 
-      // createChat();
   }
 
   $scope.rejectReq = function(id) {
@@ -82,10 +92,10 @@ app.controller('notificationsController', function($scope, authService, $locatio
   $scope.createChat = function(friendId, friendName){
       chatService.createChat($scope.currentUser.auth.uid, friendId, $scope.currentUser.name, friendName);
       var cid = $scope.currentUser.auth.uid + friendId;
-      $location.path('chat/' + cid); 
+      $location.path('chat/' + cid);
   };
 
-   
+
 
 
 

@@ -2,15 +2,14 @@
 <ion-content>
   <div class="container">
     <div class="profilePicBox fightBlue text-center coverPhoto">
-    	<!-- <img class="coverPhoto"src="img/trianglesBlue.png">
- -->        <img class="circle z2" src="img/avatar.jpg">
+        <img class="circle z2" ng-src="{{user.profilePic}}">
         <h3 class=" z2">{{user.name}}</h3>
 
          <a class="z2 centerIt buttonRound noBorder addGreen whiteText"  ng-click="addFriend()">
         +
     </a>
     </div>
-    
+
     <div class="locationBox row text-center">
     	<a class="col col-50 item-avatar-left">
             <i class="ion-icecream"></i>
@@ -27,7 +26,7 @@
             {{user.bio}}
         </div>
     </div>
-    
+
   </div>
 </ion-content>
 <tabs></tabs>

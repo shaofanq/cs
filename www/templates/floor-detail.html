@@ -1,30 +1,28 @@
 <navbar></navbar>
 <ion-content>
   <div class="container">
-    <div class="profilePicBox text-center">
+    <div class="profilePicBox">
       <div class="card" scroll="false">
-        <h3>{{currentPost.user}}</h3>
+        <div class="row">
+          <img style="border-radius:100%; height:50px" ng-src="{{currentPost.profilePic}}" alt="" />
+          <h3>{{currentPost.user}}</h3>
+        </div>
         <h5>{{currentPost.text}}</h5>
         <h5>Location, US</h5>
         <p>{{ currentPost.timestamp | date : format : timezone}}</p>
         <a href="#" class="subdued">{{currentPost.likes}} Likes</a>
         <a href="#" class="subdued">{{currentPost.commentsCount}} Comments</a>
       </div>
-    </div> 
+    </div>
     <div ng-repeat="comment in currentPost.comments">
       <div class="card">
         <div class="container">
           <p>{{comment.text}}</p>
           <a class="subdued">- {{comment.user}}</a>
           <p>{{ currentPost.timestamp | date : format : timezone}}</p>
-          <a class="subdued"></a>
-          <a href="#" class="item item-icon-right subdued" ng-click="commentLike($index)">
-            <i class="icon ion-heart"></i>
-              Hearts: {{comment.likes}}
-          </a>
         </div>
       </div>
-    </div> 
+    </div>
   </div>
 </ion-content>
 <ion-footer-bar class="bar-stable item-input-inset" ng-click="openModal()">
