@@ -191,7 +191,7 @@ a.item {
 	border: none;
 	font-size:26px;
 	text-align:center;
-	padding: 8px;
+	padding: 10px 8px 8px 9px;
 	vertical-align: middle;
 	position: absolute;
 	margin-top: 30px;
@@ -245,6 +245,7 @@ margin: 12px 0px;
 }
 .item {
 	border-top: 1px;
+	border-color: #ebebeb;
 }
 .item h4 {
 	font-weight: 400;
@@ -260,20 +261,19 @@ margin: 12px 0px;
 	border-radius: 50%;
 }
 .exAddButton {
-	width: 25px;
-	height: 25px;
+	width: 27px;
+	height: 27px;
 	border-radius: 50%;
 	border: none;
 	font-size:20px;
-	font-weight: bolder;
 	text-align:center;
 	background: #b3b3b3;
 }
 .item-note {
-float: right;
-color: #aaa;
-font-size: 14px;
-margin-top: -30px;
+	float: right;
+	color: #aaa;
+	margin-top: -30px;
+	padding-top: 3px;
 }
 .typeCircle {
 	border-radius: 50%;
