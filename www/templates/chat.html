@@ -11,7 +11,7 @@
         <div class="message" ng-class="{'slide-right': hideTime, '': !hideTime}">
 
           <span class="bubble">{{ message.text }}<br></span>
-           <p class="timestamp">{{message.timestamp | date:"EEE h:mm a"}}</p>
+           <p class="timestamp" am-time-ago="message.timestamp"></p>
         </div>
       </div>
     </div>
