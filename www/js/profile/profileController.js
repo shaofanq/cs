@@ -9,7 +9,7 @@ app.controller('ProfileController', function($scope, authService, $location, $fi
 
     $scope.isActive = function(route) {
         return route === $location.path();
-    }
+    };
 
   $scope.toggleLeft = function() {
     $ionicSideMenuDelegate.toggleLeft();
@@ -17,7 +17,7 @@ app.controller('ProfileController', function($scope, authService, $location, $fi
 
   $scope.editUser = function() {
     $location.path('/edit', {}, {reload: true});
-  }
+  };
 
   $scope.isActive = function (viewLocation) {
      var active = (viewLocation === $location.path());
@@ -27,7 +27,7 @@ app.controller('ProfileController', function($scope, authService, $location, $fi
   $scope.logout = function() {
     authService.logout();
     $location.path('/splash', {}, {reload: true});
-  }
+  };
 
   $scope.users = firebaseService.getUsers();
 
