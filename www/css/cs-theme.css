@@ -25,9 +25,9 @@ background-color: #f2f2f2;
 }
 
 .container {
-height: 100%;
-width: 100%;
-margin: auto;
+/* height: 100%; */
+/* width: 100%; */
+/* margin: auto; */
 
 }
 
@@ -42,6 +42,7 @@ color: #000;
 
 .logo {
 max-width: 260px;
+/* height: 200px; */
 }
 
 
@@ -393,7 +394,7 @@ margin: 0 auto;
 padding: 30px 0px 30px 0px;
 }
 .walkthroughImgContainer{
-padding: 20px 0px 0px 0px;
+/* padding: 20px 0px 0px 0px; */
 }
 
 p {
@@ -688,4 +689,20 @@ background: #E4E4E4;
 overflow: hidden;
 width:500px;
 height:350px;
+}
+
+.redIcon {
+	color: #F36C60 !important;
+}
+
+.ion-checkmark:before {
+  content: "\f122";
+  margin-top: -3px;
+}
+
+.used {
+  transition: 0.3s;
+  border-radius: 5px !important;
+  background: #F36C60;
+  content: "\f095";
 }
