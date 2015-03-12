@@ -5,23 +5,26 @@
       <div style="border-bottom: 1px solid #d6d6d6">
         <div class="row">
           <div class="col col-75">
-            <div class="well">
-              <p>
-                {{item.text}}
+            <br>
+            <div class="well" style="padding:0 18px;">
+              <p ng-click="postDetails($index)">
+                {{item.text | characters:125 }}
               </p>
             </div>
           </div>
           <div class="col text-center">
+            <br>
+            <br>
             <p style=" font-size:20px; margin-bottom:-10px">
               {{item.likes}}
             </p><br>
-            <i style=" font-size:40px; margin-top:-10px; color:#717171" class="icon ion-heart"></i>
+              <i ng-class="{ redIcon: item.admired}" style=" font-size:40px; margin-top:-10px; color:#717171" class="icon ion-heart" ng-click="like(item, $index)"></i>
           </div>
         </div>
-        <div class="row">
+        <div ng-click="postDetails($index)" class="row">
           <a style="background: transparent; color: #717171; font-size:16px; padding-left: 40px" class="item post-details item-icon-left" href="#">
             <i style="color:#5677FC;font-size:16px"  class="icon ion-clock"></i>
-            {{ item.timestamp | date : format : timezone}}
+            <span am-time-ago="item.timestamp"></span>
           </a>
           <a style="background: transparent; color: #717171; font-size:16px; padding-left: 40px" class="item post-details item-icon-left" href="#">
             <i style="color:#5677FC;font-size:16px"  class="icon ion-chatbox-working"></i>

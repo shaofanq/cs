@@ -724,3 +724,8 @@ overflow: hidden;
 width:500px;
 height:350px;
 }
+
+
+.redIcon {
+	color: #F36C60 !important;
+}

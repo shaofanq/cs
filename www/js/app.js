@@ -1,4 +1,8 @@
-var app = angular.module('cs', ['ionic', 'firebase', 'ipCookie', 'ngImgCrop']);
+var app = angular.module('cs', ['ionic', 'firebase', 'ipCookie', 'ngImgCrop', 'truncate','angularMoment']);
+
+app.run(function(amMoment) {
+    amMoment.changeLocale('de');
+});
 
 app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
   $ionicConfigProvider.views.transition('none');

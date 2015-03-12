@@ -18,6 +18,7 @@ app.controller('FloorController', function($scope, $location, authService, $fire
     $scope.post.likes = 0;
     $scope.post.comments = [];
     $scope.post.commentsCount = 0;
+    $scope.post.admirers = ['1'];
     sync.$push($scope.post);
     $scope.post = {};
     $scope.modal.hide();
@@ -31,6 +32,19 @@ app.controller('FloorController', function($scope, $location, authService, $fire
 
     $scope.floor = firebaseService.getFloor();
 
+    $scope.floor.$loaded(function(){
+      var faves = Object.keys($scope.user.favorites.posts);
+
+      for (var i = 0; i < $scope.floor.length; i++) {
+        current = $scope.floor[i].$id;
+        for (var j = 0; j < faves.length; j++) {
+          var favorite = $scope.user.favorites.posts[faves[j]];
+          if(favorite === current){
+            $scope.floor[i].admired = true;
+          }
+        }
+      }
+    })
 
   $scope.postDetails = function(index) {
     var id = $scope.floor[index].$id
@@ -65,12 +79,17 @@ app.controller('FloorController', function($scope, $location, authService, $fire
     if ($scope.data) {$scope.data.message = "";};
   }
 
-
-  $scope.like = function(index) {
+  $scope.like = function(item, index) {
+    var index;
+    for (var i = 0; i < $scope.floor.length; i++) {
+      if($scope.floor[i].$id === item.$id) {
+        index = i
+      }
+    }
     if($scope.user.favorites) {
       var flag = true;
       for(key in $scope.user.favorites.posts) {
-        if($scope.user.favorites.posts[key] === $scope.floor[index].$id) {
+        if($scope.user.favorites.posts[key] === item.$id) {
           flag = false;
         }
       };
@@ -82,8 +101,9 @@ app.controller('FloorController', function($scope, $location, authService, $fire
       $scope.floor[index].likes = $scope.floor[index].likes + 1;
       firebaseService.addLike($scope.floor[index].$id, $scope.floor[index].likes, id);
     }
-
+    $scope.floor[index].admired = true;
   }
+
 
   $scope.commentLike = function(index) {
 
