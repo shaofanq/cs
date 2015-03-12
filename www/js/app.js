@@ -8,9 +8,12 @@ app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
       url: "/main",
       templateUrl: "../templates/main.html"
     })
+ 
+
      ////////////////
     // ONBOARDING //
    ////////////////
+   
     .state('splash', {
       url: '/splash',
       templateUrl: '../templates/splash.html',
@@ -26,9 +29,24 @@ app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
       templateUrl: '../templates/fss.html',
       controller: 'UserController'
     })
-    .state('typeInfo', {
-      url: '/typeInfo',
-      templateUrl: '../templates/typeInfo.html',
+    .state('type-fighter', {
+      url: '/type-fighter',
+      templateUrl: '../templates/type-fighter.html',
+      controller: 'UserController'
+    })
+    .state('type-survivor', {
+      url: '/type-survivor',
+      templateUrl: '../templates/type-survivor.html',
+      controller: 'UserController'
+    })
+    .state('type-supporter', {
+      url: '/type-supporter',
+      templateUrl: '../templates/type-supporter.html',
+      controller: 'UserController'
+    })
+    .state('bio-info', {
+      url: '/bio-info',
+      templateUrl: '../templates/bio-info.html',
       controller: 'UserController'
     })
     .state('login', {

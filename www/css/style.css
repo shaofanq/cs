@@ -131,6 +131,18 @@ font-size: 18pt;
 color: #738DA0 !important;
 }
 
+.bold {
+	font-weight: 800;
+}
+
+.lighter {
+	font-weight: 300;
+}
+
+.400 {
+	font-weight: 400;
+}
+
 
 /*////////////////////////////////
 /////////LEFT MENU///////////////
@@ -433,27 +445,43 @@ font-size: 16px;
 //////////////////////////////*/
 
 .bar.item-input-inset .item-input-wrapper input {
-padding-left: 0px;
-width: 94%;
-height: 28px;
-background: 0 0;
+	padding-left: 0px;
+	width: 94%;
+	height: 28px;
+	background: 0 0;
 }
 
-
 .inputBox {
-width: 85%;
-margin: 0 auto;
-padding: 30px 0px 30px 0px;
+	width: 85%;
+	margin: 0 auto;
+	padding-top: 7px;
 }
 
 .item-input {
-padding-top: 5px;
+	padding-top: 5px;
 }
 
 .inputPicBox {
-height: 30%;
-padding: 50px;
+	height: 30%;
+	padding: 50px;
 }
+
+.onboardBox {
+	padding-top: 25px;
+}
+
+.onItem {
+	padding-top: 7px;
+}
+
+.paddingTop30 {
+	padding-top:30px;
+}
+
+.paddingTop15 {
+	padding-top: 15px;
+}
+
 
 
 
