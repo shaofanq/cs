@@ -63,10 +63,11 @@ app.controller('notificationsController', function($scope, authService, $locatio
   $scope.acceptReq = function(id) {
       firebaseService.updateFriend($scope.authInfo.uid, id, "accepted");
       firebaseService.updateFriend(id, $scope.authInfo.uid, "accepted");
-      
+
       var myChats = chatService.getMyChats($scope.authInfo.uid);
       var otherChats = chatService.getMyChats(id);
-      setTimeout(function() {
+
+      otherChats.$loaded().then(function() {
         for (var i = 0; i < otherChats.length; i++) {
           for (var j = 0; j < myChats.length; j++) {
             if(myChats[i].cid === otherChats[j].cid) {
@@ -76,8 +77,7 @@ app.controller('notificationsController', function($scope, authService, $locatio
             }
           }
         }
-      }, 500);
-
+      });
   }
 
   $scope.rejectReq = function(id) {

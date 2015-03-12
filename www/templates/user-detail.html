@@ -2,7 +2,8 @@
 <ion-content>
   <div class="container">
     <div class="profilePicBox fightBlue text-center coverPhoto">
-        <img class="circle z2" ng-src="{{user.profilePic}}">
+      <img ng-if="user.profilePic" class="circle z2" ng-src="{{user.profilePic}}">
+      <img ng-if="!user.profilePic" class="circle z2" ng-src="img/avatar.png">
         <h3 class=" z2">{{user.name}}</h3>
 
          <a class="z2 centerIt buttonRound noBorder addGreen whiteText"  ng-click="addFriend()">

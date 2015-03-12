@@ -6,4 +6,7 @@ app.controller('NavbarController', function($scope, $ionicHistory, $state) {
   $scope.goBack = function() {
     $ionicHistory.goBack();
   }
+  $scope.toggleSearch = function() {
+    $scope.search = !$scope.search;
+  }
 });
