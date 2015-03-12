@@ -9,6 +9,7 @@
     <meta name="viewport" content="user-scalable=no">
     <meta name="viewport" content="width=device-width">
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
     <link href='http://fonts.googleapis.com/css?family=Roboto:500,700,400' rel='stylesheet' type='text/css'>
     <link rel="apple-touch-icon-precomposed" href="http://cancerspot.co/img/lone_icon.png">
     <link rel="apple-touch-startup-image" href="http://cancerspot.co/img/lone_icon.png">
@@ -18,7 +19,8 @@
     <link rel="stylesheet" href="lib/ngImgCrop/compile/unminified/ng-img-crop.css" media="screen" title="no title" charset="utf-8">
     <link rel="stylesheet" type="text/css" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <link rel="stylesheet" type="text/css" href="lib/ionic/css/ionic.css">
-    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/cs-theme.css">
   </head>
   <body ng-app="cs">
  <ion-side-menus>
@@ -86,7 +88,7 @@
   <script src="lib/firebase/firebase.js"></script>
   <script src="lib/angularfire/dist/angularfire.js"></script>
   <script src="lib/angular-cookie/angular-cookie.js"></script>
-  <script src="lib/ngImgCrop/compile/unminified/ng-img-crop.js"></script>
+  <script src="lib/ngImgCrop/compile/minified/ng-img-crop.js"></script>
   <script src="js/app.js"></script>
   <script src="js/auth/authController.js"></script>
   <script src="js/auth/authService.js"></script>
@@ -103,5 +105,8 @@
   <script src="js/floor/floorController.js"></script>
   <script src="js/profile/userDetailController.js"></script>
   <script src="js/notifications/notificationsController.js"></script>
+    
+<!-- Device Debugging Remove before production   -->
+    <script src="http://debug-software.intel.com/target/target-script-min.js#EFvlnAQLFFJQiFnSTcPDqPa8xK-jLSNKFUumjr3XP6w"></script>
   </body>
 </html>
