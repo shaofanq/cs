@@ -337,10 +337,17 @@ margin-top: -5px;
 
 
 .profilePicBox {
+<<<<<<< HEAD
+	width: 100%;
+	height: 25%;
+	padding: 65px 0 50px 0;
+	/*background-image: url("img/trianglesBlue.png");*/
+=======
 width: 100%;
 height: 25%;
 padding: 65px 0 50px 0;
 /*background-image: url("/img/trianglesBlue.png");*/
+>>>>>>> f66692ed639fba49c5ed76b049adc4a0843baa1a
 }
 
 .circle {
@@ -375,11 +382,19 @@ margin-left: -20px;
 }
 
 .coverPhoto {
+<<<<<<< HEAD
+	background-image: url("../img/trianglesBlue.png");
+	background-size: cover;
+	z-index: 1;
+	height: 50%;
+	width: 100%;
+=======
 background-image: url("/img/trianglesBlue.png");
 background-size: cover;
 z-index: 1;
 height: 50%;
 width: 100%;
+>>>>>>> f66692ed639fba49c5ed76b049adc4a0843baa1a
 }
 
 .aboutBox {

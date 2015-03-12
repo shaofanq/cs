@@ -6,15 +6,14 @@ app.controller('ExploreController', function($scope, authService, $location, $fi
   };
   $rootScope.state = $state;
 
-
   var exploreRef = new Firebase('https://cancer.firebaseio.com/ean/');
   var sync = $firebase(exploreRef);
 
     $scope.isActive = function(a,b,c) {
         if(a === $location.path() || b === $location.path() || c === $location.path()) {
-          return true
+          return true;
         }
-    }
+    };
 
   $scope.toggleLeft = function() {
     $ionicSideMenuDelegate.toggleLeft();
@@ -22,18 +21,18 @@ app.controller('ExploreController', function($scope, authService, $location, $fi
 
   $scope.editUser = function() {
     $location.path('/edit', {}, {reload: true});
-  }
+  };
 
   $scope.users = firebaseService.getUsers();
 
   $scope.logout = function() {
     authService.logout();
     $location.path('/splash', {}, {reload: true});
-  }
+  };
 
   $scope.notifications = function() {
     $location.path('/notifications', {}, {reload: true});
-  }
+  };
 
   var auth = authService.getCurrentUser();
 
@@ -43,12 +42,12 @@ app.controller('ExploreController', function($scope, authService, $location, $fi
   } else {
     var getCurrentUserData = function() {
       var cu = authService.getCurrentUser();
-      $scope.currentUser = firebaseService.getUser(cu.uid)
+      $scope.currentUser = firebaseService.getUser(cu.uid);
     }();
-  };
+  }
 
   $scope.goTo = function(id) {
     $state.go('userDetail/' + id);
-  }
+  };
 
 });
