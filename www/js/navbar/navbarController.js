@@ -10,4 +10,7 @@ app.controller('NavbarController', function($scope, $ionicHistory, $state) {
       $state.go('explore');
     }
   }
+  $scope.toggleSearch = function() {
+    $scope.search = !$scope.search;
+  }
 });

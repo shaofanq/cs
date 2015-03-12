@@ -4,8 +4,9 @@
     <div ng-repeat="user in users">
       <a href="" ui-sref="user-detail({id: user.auth.uid})">
         <div class="list">
-          <div class="item item-avatar flex" href="#">
-            <img class="" ng-src="{{user.profilePic}}">
+          <div class="item item-avatar text-left" href="#">
+            <img ng-if="user.profilePic" class="" ng-src="{{user.profilePic}}">
+            <img ng-if="!user.profilePic" class="" ng-src="img/avatar.png">
             <h2>{{user.name}}</h2>
             <div class="middle cancer-sub-div">
             <div class="typeCircle fightBlue f-row middle"></div>

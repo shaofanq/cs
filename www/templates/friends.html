@@ -22,8 +22,10 @@
       <a href="/#/userDetail/{{friend.friendId}}">
         <div class="list">
           <div class="item item-avatar item-button-right" href="#">
-            <img class=""src="img/avatar.jpg">
+            <img class="" ng-src="{{user.profilePic}}">
             <h2>{{friend.name}}</h2>
+            <img class="" ng-src="{{friend.profilePic}}">
+            <h3>{{friend.name}}</h3>
             <h5>message</h5>
             <!-- <p>{{user.cancer}}</p> -->
 <!--             <button class="button button-add" ng-click="createChat(friend.friendId, friend.name)">

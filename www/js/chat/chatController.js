@@ -1,65 +1,48 @@
 var app = angular.module('cs');
 
 app.controller('chatController', function($scope, chatService, firebaseService, $stateParams, $rootScope, $state, $ionicScrollDelegate, authService, $firebase, $timeout){
-	$scope.messages = chatService.getChat($stateParams.cid);
-    $scope.authData = authService.getCurrentUser();
-	var me = firebaseService.getUser($scope.authData.uid);
-    $scope.friend = chatService.getMyChats(me.$id);
-    $scope.friend.info = firebaseService.getUser('simplelogin:67');
-    $scope.$watchCollection('messages', function(newNames, oldNames) {
-        $ionicScrollDelegate.scrollBottom(true);
-    });
+	// set me in the controller's scope.
+	var me;
 
-    setTimeout(function(){
-        $ionicScrollDelegate.scrollBottom(true);
-    },2000);
+	// get all of the data
+	var getData = function() {
+		$scope.messages = chatService.getChat($stateParams.cid);
+		$scope.authData = authService.getCurrentUser();
+		me = firebaseService.getUser($scope.authData.uid);
+		$scope.friend = chatService.getMyChats(me.$id);
+	}();
 
-    var side = 'left';
+	// scroll to bottom after the chats load
+	$scope.messages.$loaded().then(function() {
+		$ionicScrollDelegate.scrollBottom(true);
+	})
 
-    $scope.userId = me.$id;
-    $scope.messageText = '';
+	// set a side variable
+  var side = 'left';
 
-    $scope.reset = function(textMessage) {
-    	form.reset()
-    }
+  // add userID to scope from the me object
+	me.$loaded().then(function() {
+		$scope.userId = me.$id;
+	})
+
+	// define message text
+  $scope.messageText = '';
+
+  $scope.reset = function(textMessage) {
+  	form.reset()
+  }
 
  $scope.hideTime = true;
 
-  var alternate,
-    isIOS = ionic.Platform.isWebView() && ionic.Platform.isIOS();
-
-    $scope.sendMessage = function(textMessage) {
-        if(textMessage){
-            $ionicScrollDelegate.scrollBottom(true);
-            $scope.messages.$add({
-                text: textMessage,
-                senderId: $scope.userId,
-                timestamp: Firebase.ServerValue.TIMESTAMP
-                });
-            $scope.messageText = "";
-        }
-    };
-
-
-
-
-  $scope.inputUp = function() {
-    if (isIOS) $scope.data.keyboardHeight = 216;
-    $timeout(function() {
-      $ionicScrollDelegate.scrollBottom(true);
-    }, 300);
-
+  $scope.sendMessage = function(textMessage) {
+      if(textMessage){
+          $ionicScrollDelegate.scrollBottom(true);
+          $scope.messages.$add({
+              text: textMessage,
+              senderId: $scope.userId,
+              timestamp: Firebase.ServerValue.TIMESTAMP
+              });
+          $scope.messageText = "";
+      }
   };
-
-  $scope.inputDown = function() {
-    if (isIOS) $scope.data.keyboardHeight = 0;
-    $ionicScrollDelegate.resize();
-  };
-
-  $scope.closeKeyboard = function() {
-    // cordova.plugins.Keyboard.close();
-  };
-
-
-
 });

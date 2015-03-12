@@ -38,17 +38,11 @@ app.controller('FloorController', function($scope, $location, authService, $fire
   }
 
   $scope.getFloorPost = function() {
-
     var id = $stateParams.id
     $scope.currentPost = firebaseService.getFloorPost(id);
-    // var comments  = firebaseService.getCurrentComments($scope.currentPost.$id);
-    // for (var i = 0; i < comments.length; i++) {
-    //   $scope.currentPost.comments.push(comments[i]);
-    // };
-    setTimeout(function() {
+    $scope.currentPost.$loaded().then(function() {
       $scope.currentPost.comments = firebaseService.getCurrentComments($scope.currentPost.$id);
-    },1000)
-
+    })
   }();
 
   $scope.addComment = function(comment) {

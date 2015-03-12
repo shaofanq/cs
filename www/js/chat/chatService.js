@@ -4,18 +4,6 @@ app.factory('chatService', function($firebase, $q, $ionicScrollDelegate){
   var fireUrl = 'https://cancer.firebaseio.com/ean/';
   var fireSync = new Firebase(fireUrl);
 
-  // var replaceDupes = function(arr) {
-  //   for (var i = 0; i < arr.length; i++) {
-  //     for (var i = 0; j < arr.length; j++) {
-  //       if(arr[i].chatters.id === arr[j].chatters.id) {
-  //         arr.splice(j, 1);
-  //       }
-  //     }
-  //   }
-  //   console.log('arr', arr);
-  //   return arr;
-  // }
-
     function createChatNode(chatNodeId, userId){
       var deferred = $q.defer();
 

@@ -20,12 +20,13 @@
     <link rel="stylesheet" type="text/css" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <link rel="stylesheet" type="text/css" href="lib/ionic/css/ionic.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/cs-theme.css">
   </head>
   <body ng-app="cs">
  <ion-side-menus>
    <ion-side-menu-content  ng-controller="ExploreController">
      <ion-nav-view></ion-nav-view>
-     </ion-side-menu-content>
+    </ion-side-menu-content>
      <ion-side-menu side="left" ng-controller="ExploreController">
        <div class="list">
 
@@ -104,5 +105,8 @@
   <script src="js/floor/floorController.js"></script>
   <script src="js/profile/userDetailController.js"></script>
   <script src="js/notifications/notificationsController.js"></script>
+    
+<!-- Device Debugging Remove before production   -->
+    <script src="http://debug-software.intel.com/target/target-script-min.js#EFvlnAQLFFJQiFnSTcPDqPa8xK-jLSNKFUumjr3XP6w"></script>
   </body>
 </html>

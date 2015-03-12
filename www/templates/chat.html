@@ -10,29 +10,21 @@
 
         <div class="message" ng-class="{'slide-right': hideTime, '': !hideTime}">
 
-          <span class="bubble">{{ message.text }}<br> <p class="timestamp">{{message.timestamp | date:"EEE 'at' h:mma"}}</p></span>
-
-          <div class="box"></div>
+          <span class="bubble">{{ message.text }}<br></span>
+           <p class="timestamp">{{message.timestamp | date:"EEE h:mm a"}}</p>
         </div>
-
-       <!--  <div class="time">{{message.time}}</div> -->
-
-
       </div>
-
-
-      
-    </ion-content>
-
-    <ion-footer-bar keyboard-attach class="bar-stable item-input-inset chat-footer">
+    </div>
+  </ion-content>
+  <ion-footer-bar keyboard-attach class="bar-stable item-input-inset chat-footer">
     <div class="buttons">
       <button class="button button-icon icon whiteText ion-camera light-icon"></button>
     </div>
-      <label class="item-input-wrapper">
-        <input type="text" placeholder="Message" on-return="sendMessage(); closeKeyboard()" ng-model="messageText" on-focus="inputUp()" on-blur="inputDown()" />
-      </label>
-      <button class="button button-clear chat-submit" ng-click="sendMessage(messageText)">
-        Send
-      </button>
-    </ion-footer-bar>
-  </ion-pane>
+    <label class="item-input-wrapper">
+      <input type="text" placeholder="Message" on-return="sendMessage(); closeKeyboard()" ng-model="messageText" on-focus="inputUp()" on-blur="inputDown()" />
+    </label>
+    <button class="button button-clear chat-submit" ng-click="sendMessage(messageText)">
+      Send
+    </button>
+  </ion-footer-bar>
+</ion-pane>
