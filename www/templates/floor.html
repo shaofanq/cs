@@ -2,36 +2,41 @@
 <ion-content>
   <div class="container">
     <div ng-repeat="item in floor" >
-      <div class="list card">
-        <div class="item item-avatar" ng-click="postDetails($index)">
-          <img ng-src="{{item.profilePic}}">
-          <h2>{{item.user}}</h2>
-          <p>{{ item.timestamp | date : format : timezone}}</p>
+      <div style="border-bottom: 1px solid #d6d6d6">
+        <div class="row">
+          <div class="col col-75">
+            <div class="well">
+              <p>
+                {{item.text}}
+              </p>
+            </div>
+          </div>
+          <div class="col text-center">
+            <p style=" font-size:20px; margin-bottom:-10px">
+              {{item.likes}}
+            </p><br>
+            <i style=" font-size:40px; margin-top:-10px; color:#717171" class="icon ion-heart"></i>
+          </div>
         </div>
-        <div class="item item-body">
-          <p>{{item.text}}</p>
-          <a class="item item-icon-right subdued"  ng-click="like($index)">
-            <i class="icon ion-heart"></i>
-              Likes: {{item.likes}}
+        <div class="row">
+          <a style="background: transparent; color: #717171; font-size:16px; padding-left: 40px" class="item post-details item-icon-left" href="#">
+            <i style="color:#5677FC;font-size:16px"  class="icon ion-clock"></i>
+            {{ item.timestamp | date : format : timezone}}
           </a>
-          <p>
-            <a href="#" class="subdued"  ng-click="postDetails($index)">
-                Replies: {{item.commentsCount}}
-            </a>
-          </p>
-
+          <a style="background: transparent; color: #717171; font-size:16px; padding-left: 40px" class="item post-details item-icon-left" href="#">
+            <i style="color:#5677FC;font-size:16px"  class="icon ion-chatbox-working"></i>
+            {{ item.commentsCount}} <span ng-if="item.commentsCount === 1">Reply</span>
+            <span ng-if="item.commentsCount !== 1">Replies</span>
+          </a>
         </div>
       </div>
     </div>
   </div>
 </ion-content>
 <tabs></tabs>
-
-
 <script id="my-modal.html" type="text/ng-template">
   <ion-modal-view>
     <h1>Make a Post</h1>
-
     <ion-content>
     <div class="container">
       <label class="item item-input">
@@ -48,3 +53,4 @@
     </ion-content>
   </ion-modal-view>
 </script>
+<!-- <p>{{ item.timestamp | date : format : timezone}}</p> -->
