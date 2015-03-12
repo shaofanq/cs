@@ -33,8 +33,10 @@ app.service('firebaseService', function ($firebase, $ionicScrollDelegate, chatSe
   this.addLike = function(postId, newLikes, userId) {
     var userSync = $firebase(new Firebase(firebaseUrl + 'users/' + userId + '/favorites/posts'));
     var floorSync = $firebase(new Firebase(firebaseUrl + 'floorPosts/' + postId));
+    var list = $firebase(new Firebase(firebaseUrl + 'floorPosts/' + postId + '/admirers'));
     userSync.$push(postId);
     floorSync.$update({likes: newLikes});
+    list.$push(userId);
   }
 
   this.addCommentLike = function(commentId, newLikes, postId, userId) {

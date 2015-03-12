@@ -1,12 +1,12 @@
 <navbar></navbar>
 <ion-content>
   <div class="container">
-    <div ng-repeat="message in messages | filter:{status: 'active'}">
-      <a href="/#/chat/{{message.cid}}">
+    <div ng-repeat="message in messages | filter:{status: 'active'} track by $index">
+      <a ui-sref="chat({cid: message.cid})">
         <div class="list">
           <div class="item item-avatar">
             <img class="" ng-src="{{message.chatters.profilePic}}">
-            <h2>{{message.status}}</h2>
+            <h2>{{message.chatters.name}}</h2>
           </div>
         </div>
       </a>

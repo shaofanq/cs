@@ -14,16 +14,15 @@ app.controller('UserController', function($scope, firebaseService, authService, 
         name: user.name,
         level: user.level
       });
-      $location.path('/explore')
-    }
+      $location.path('/explore');
+    };
 
     $scope.fss = function(item, link){
         sync.$update({
           level: item,
-        })
-
+        });
         $state.go(link);
-    }
+    };
 
     $scope.myImage='';
        $scope.myCroppedImage='';
@@ -40,9 +39,8 @@ app.controller('UserController', function($scope, firebaseService, authService, 
        };
        angular.element(document.querySelector('#fileInput')).on('change',handleFileSelect);
        $scope.saveImage = function(pic) {
-         console.log(pic)
          sync.$update({
            profilePic: pic
          });
-       }
+       };
 });

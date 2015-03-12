@@ -1,8 +1,8 @@
 <navbar></navbar>
 <ion-content>
   <div class="container">
-    <div ng-repeat="user in users">
-      <a href="/#/userDetail/{{user.auth.uid}}">
+    <div ng-repeat="user in users ">
+      <a href="" ui-sref="user-detail({id: user.auth.uid})">
         <div class="list">
           <div class="item item-avatar text-left" href="#">
             <img ng-if="user.profilePic" class="" ng-src="{{user.profilePic}}">
