@@ -1,6 +1,7 @@
 var app = angular.module('cs');
 
 app.controller('ExploreController', function($scope, authService, $location, $firebase, firebaseService, $ionicSideMenuDelegate, $state, $rootScope) {
+  console.log('explore conroller', $scope.user)
   $scope.toggleLeft = function() {
     $ionicSideMenuDelegate.toggleLeft();
   };

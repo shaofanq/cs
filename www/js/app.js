@@ -111,5 +111,5 @@ app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
       templateUrl: "templates/floor-detail.html",
       controller: "FloorController"
     });
-    $urlRouterProvider.otherwise("/explore");
+    $urlRouterProvider.otherwise("/splash");
 });

@@ -3,6 +3,7 @@ var app = angular.module('cs');
 app.controller('FloorController', function($scope, $location, authService, $firebase, firebaseService, $stateParams, $ionicModal) {
   $scope.post = {};
   $scope.currentPost;
+  $scope.favoritePosts = firebaseService.getFavoritePosts($scope.user.$id);
 
   var floorRef = new Firebase('https://cancer.firebaseio.com/ean/floorPosts');
   var sync = $firebase(floorRef);
@@ -28,18 +29,28 @@ app.controller('FloorController', function($scope, $location, authService, $fire
 
     $scope.floor = firebaseService.getFloor();
 
-    $scope.floor.$loaded(function(){
-      var faves = Object.keys($scope.user.favorites.posts);
-      for (var i = 0; i < $scope.floor.length; i++) {
-        current = $scope.floor[i].$id;
-        for (var j = 0; j < faves.length; j++) {
-          var favorite = $scope.user.favorites.posts[faves[j]];
-          if(favorite === current){
-            $scope.floor[i].admired = true;
-          }
+    $scope.checkFavs = function(item) {
+      var arr = $scope.favoritePosts;
+      for (var i = 0; i < arr.length; i++) {
+        if(item.$id === arr[i].$value) {
+          item.admired = true;
         }
       }
-    })
+    }
+
+
+    // $scope.floor.$loaded(function(){
+    //   var faves = Object.keys($scope.user.favorites.posts);
+    //   for (var i = 0; i < $scope.floor.length; i++) {
+    //     current = $scope.floor[i].$id;
+    //     for (var j = 0; j < faves.length; j++) {
+    //       var favorite = $scope.user.favorites.posts[faves[j]];
+    //       if(favorite === current){
+    //         $scope.floor[i].admired = true;
+    //       }
+    //     }
+    //   }
+    // });
 
   $scope.postDetails = function(index) {
     var id = $scope.floor[index].$id
@@ -83,6 +94,7 @@ app.controller('FloorController', function($scope, $location, authService, $fire
     }
     if($scope.user.favorites) {
       var flag = true;
+      $scope.floor[index].admired = true;
       for(key in $scope.user.favorites.posts) {
         if($scope.user.favorites.posts[key] === item.$id) {
           flag = false;
@@ -90,28 +102,13 @@ app.controller('FloorController', function($scope, $location, authService, $fire
       };
       if(flag) {
         $scope.floor[index].likes = $scope.floor[index].likes + 1;
-        firebaseService.addLike($scope.floor[index].$id, $scope.floor[index].likes, id);
+        firebaseService.addLike($scope.floor[index].$id, $scope.floor[index].likes, $scope.user.$id);
       }
     } else {
       $scope.floor[index].likes = $scope.floor[index].likes + 1;
       firebaseService.addLike($scope.floor[index].$id, $scope.floor[index].likes, id);
     }
     $scope.floor[index].admired = true;
-  }
-
-
-  $scope.commentLike = function(index) {
-
-    var flag = true;
-    for(key in $scope.user.favorites.comments) {
-      if($scope.user.favorites.comments[key] === $scope.currentPost.comments[index].$id) {
-        flag = false;
-      }
-    };
-    if(flag) {
-      $scope.currentPost.comments[index].likes = $scope.currentPost.comments[index].likes + 1;
-      firebaseService.addCommentLike($stateParams.id, $scope.currentPost.comments[index].likes, $scope.currentPost.$id, id)
-    }
   }
 
     /////////////////

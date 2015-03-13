@@ -1,7 +1,7 @@
 <navbar></navbar>
 <ion-content>
   <div class="container">
-    <div ng-repeat="item in floor" >
+    <div ng-repeat="item in floor" ng-init="checkFavs(item)" >
       <div style="border-bottom: 1px solid #d6d6d6; background: #fff">
         <div class="row">
           <div class="col col-80">
@@ -18,7 +18,7 @@
             <p style=" font-size:20px; margin-bottom:-10px">
               {{item.likes}}
             </p><br>
-              <i ng-class="{ redIcon: item.admired}" style=" font-size:40px; margin-top:-10px; color:#717171" class="icon ion-heart" ng-click="like(item, $index)"></i>
+            <i ng-class="{ redIcon: admired || item.admired}" style=" font-size:40px; margin-top:-10px; color:#717171" class="icon ion-heart" ng-click="like(item, $index); admired = true"></i>
           </div>
         </div>
         <div ng-click="postDetails($index)" class="row">

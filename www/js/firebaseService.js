@@ -19,6 +19,10 @@ app.service('firebaseService', function ($firebase, $ionicScrollDelegate, chatSe
     return $firebase(new Firebase(firebaseUrl + '/floorPosts/' + id)).$asObject();
   }
 
+  this.getFavoritePosts = function(id) {
+    return $firebase(new Firebase(firebaseUrl + 'users/' + id + '/favorites/posts/')).$asArray();
+  }
+
   this.addComment = function(postId, newComment, commentsCount) {
    var sync = $firebase(new Firebase(firebaseUrl + 'floorPosts/' + postId + '/comments'));
    var commentSync = $firebase(new Firebase(firebaseUrl + 'floorPosts/' + postId));
