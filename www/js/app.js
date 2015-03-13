@@ -50,6 +50,7 @@ app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
     .state('bio-info', {
       url: '/bio-info',
       templateUrl: '../templates/bio-info.html',
+      controller: 'UserController'
     })
     .state('login', {
       url: '/login',

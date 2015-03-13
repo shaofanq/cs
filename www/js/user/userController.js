@@ -9,10 +9,38 @@ app.controller('UserController', function($scope, firebaseService, authService, 
 
     $scope.addData = function(user) {
       sync.$update({
-        bio: user.bio,
         cancer: user.cancer,
         name: user.name,
         level: user.level
+      });
+      $location.path('/bio-info');
+    };
+
+    $scope.addSurvivor = function(user) {
+      sync.$update({
+        cancer: user.cancer,
+        name: user.name,
+        level: user.level,
+        yot: user.yot
+      });
+      $location.path('/bio-info');
+    };
+
+    $scope.addSupporter = function(user) {
+      sync.$update({
+        cancer: user.cancer,
+        name: user.name,
+        level: user.level,
+        supType: user.supType
+      });
+      $location.path('/bio-info');
+    };
+
+    $scope.addBioInfo = function(user) {
+      sync.$update({
+        bio: user.bio,
+        age: user.age,
+        local: user.local
       });
       $location.path('/explore');
     };
