@@ -11,9 +11,6 @@ app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
       url: "/main",
       templateUrl: "templates/main.html"
     })
-     ////////////////
-    // ONBOARDING //
-   ////////////////
     .state('splash', {
       url: '/splash',
       templateUrl: 'templates/splash.html',
@@ -24,42 +21,59 @@ app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
       templateUrl: 'templates/register.html',
       controller: 'AuthController'
     })
-    .state('fss', {
-      url: '/fss',
-      templateUrl: 'templates/fss.html',
-      controller: 'UserController'
-    })
-    .state('typeInfo', {
-      url: '/typeInfo',
-      templateUrl: 'templates/typeInfo.html',
-      controller: 'UserController'
-    })
     .state('login', {
       url: '/login',
       templateUrl: 'templates/login.html',
       controller: 'AuthController'
+    })
+        ////////////////
+       //  SECURED   //
+      ////////////////
+    .state('secured', {
+      abstract: true,
+      controller: 'ValidationController',
+      template: '<ion-nav-view></ion-nav-view>',
+      resolve: {
+        userRef: function(authService, firebaseService){
+          var auth = authService.getCurrentUser();
+          var user = firebaseService.getUser(auth.uid);
+          return {
+              auth: auth,
+              user: user
+          }
+        }
+      }
+    })
+      ////////////////
+     // ONBOARDING //
+    ////////////////
+
+    .state('secured.fss', {
+      url: '/fss',
+      templateUrl: 'templates/fss.html',
+      controller: 'UserController'
     })
 
 
      ////////////////////////////////
     // EXPLORE / FLOOR / MESSAGES //
    ////////////////////////////////
-    .state('explore', {
+    .state('secured.explore', {
       url: '/explore',
       templateUrl: 'templates/explore.html',
       controller: 'ExploreController'
     })
-    .state('messages', {
+    .state('secured.messages', {
       url: '/messages',
       templateUrl: 'templates/messages.html',
       controller: 'messagesController'
     })
-    .state('chat', {
+    .state('secured.chat', {
       url: '/chat/:cid',
       templateUrl: 'templates/chat.html',
       controller: 'chatController'
     })
-    .state('floor', {
+    .state('secured.floor', {
         url: '/floor',
         templateUrl: 'templates/floor.html',
         controller: 'FloorController'
@@ -67,27 +81,27 @@ app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
      ////////////////////////
     // PROFILES / FRIENDS //
    ////////////////////////
-    .state('user-detail', {
+    .state('secured.user-detail', {
         url: '/userDetail/:id',
         templateUrl: 'templates/user-detail.html',
         controller: 'UserDetailController'
     })
-    .state('edit-user', {
+    .state('secured.edit-user', {
       url: '/edit',
       templateUrl: 'templates/edit-user.html',
       controller: 'UserController'
     })
-    .state('notifications', {
+    .state('secured.notifications', {
       url: "/notifications",
       templateUrl: "templates/notifications.html",
       controller: "notificationsController"
     })
-    .state('friends', {
+    .state('secured.friends', {
       url: "/friends",
       templateUrl: "templates/friends.html",
       controller: "notificationsController"
     })
-    .state('floor-detail', {
+    .state('secured.floor-detail', {
       url: "/floor-detail/:id",
       templateUrl: "templates/floor-detail.html",
       controller: "FloorController"

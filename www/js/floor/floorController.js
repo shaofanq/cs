@@ -3,11 +3,7 @@ var app = angular.module('cs');
 app.controller('FloorController', function($scope, $location, authService, $firebase, firebaseService, $stateParams, $ionicModal) {
   $scope.post = {};
   $scope.currentPost;
-  $scope.currentUser = authService.getCurrentUser();
-  var id = $scope.currentUser.uid;
-  $scope.getCurrentUser = function(){
-    $scope.user = firebaseService.getUser(id);
-  }();
+
   var floorRef = new Firebase('https://cancer.firebaseio.com/ean/floorPosts');
   var sync = $firebase(floorRef);
 
@@ -34,7 +30,6 @@ app.controller('FloorController', function($scope, $location, authService, $fire
 
     $scope.floor.$loaded(function(){
       var faves = Object.keys($scope.user.favorites.posts);
-
       for (var i = 0; i < $scope.floor.length; i++) {
         current = $scope.floor[i].$id;
         for (var j = 0; j < faves.length; j++) {
@@ -120,8 +115,8 @@ app.controller('FloorController', function($scope, $location, authService, $fire
   }
 
     /////////////////
-   // MODAL SHIT ///
-  /////////////////
+   // MODAL SHIT //
+  ///////////////
   $ionicModal.fromTemplateUrl('my-modal.html', {
     scope: $scope,
     animation: 'slide-in-up'

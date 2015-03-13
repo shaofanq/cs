@@ -14,14 +14,6 @@ app.controller('notificationsController', function($scope, authService, $locatio
     $location.path('/login', {}, {reload: true});
   }
 
-  $scope.user = firebaseService.getUser($stateParams.id);
-  $scope.authInfo = authService.getCurrentUser();
-  $scope.currentUser = firebaseService.getUser($scope.authInfo.uid);
-  if(!$scope.authInfo) {
-    $location.path('/login', {}, {reload: true});
-  }
-
-
 
   //GET REQUESTS
   $scope.reqs = firebaseService.getFriends($scope.authInfo.uid);
@@ -62,10 +54,6 @@ app.controller('notificationsController', function($scope, authService, $locatio
       var cid = $scope.currentUser.auth.uid + friendId;
       $location.path('chat/' + cid);
   };
-
-
-
-
 
 
 });

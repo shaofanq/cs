@@ -1,12 +1,10 @@
 var app = angular.module('cs');
 
 app.controller('AuthController', function ($scope, authService, $location, ipCookie, $state) {
-  
+
   $scope.login = function (user) {
     return authService.login(user, function(user){
-      $scope.$apply(function(){
-        $state.go('explore', {}, {reload: true})
-      });
+        $state.go('secured.explore');
     });
   };
 
@@ -15,15 +13,15 @@ app.controller('AuthController', function ($scope, authService, $location, ipCoo
     user.friends = '';
     return authService.register(user, function(user){
       $scope.$apply(function(){
-        $location.path('/fss', {}, {reload: true})
+        $state.go('secured.fss');
       });
     });
   };
-  
+
   $scope.status = 'Register';
   $scope.showReg = function(){
     if($scope.status === 'Register'){
-      $scope.status = 'Login';  
+      $scope.status = 'Login';
     } else {
       $scope.status = 'Register';
     }

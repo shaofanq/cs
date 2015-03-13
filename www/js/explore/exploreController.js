@@ -20,34 +20,22 @@ app.controller('ExploreController', function($scope, authService, $location, $fi
   };
 
   $scope.editUser = function() {
-    $location.path('/edit', {}, {reload: true});
+    $state.go('secured.edit');
   };
 
   $scope.users = firebaseService.getUsers();
 
   $scope.logout = function() {
     authService.logout();
-    $location.path('/splash', {}, {reload: true});
+    $state.go('secured.splash');
   };
 
   $scope.notifications = function() {
-    $location.path('/notifications', {}, {reload: true});
+    $state.go('secured.notifications');
   };
 
-  var auth = authService.getCurrentUser();
-
-
-  if(!auth) {
-    $location.path('/splash', {}, {reload: true});
-  } else {
-    var getCurrentUserData = function() {
-      var cu = authService.getCurrentUser();
-      $scope.currentUser = firebaseService.getUser(cu.uid);
-    }();
-  }
-
   $scope.goTo = function(id) {
-    $state.go('userDetail/' + id);
+    $state.go('secured.user-detail', {id: id});
   };
 
 });

@@ -7,9 +7,7 @@ app.controller('chatController', function($scope, chatService, firebaseService, 
 	// get all of the data
 	var getData = function() {
 		$scope.messages = chatService.getChat($stateParams.cid);
-		$scope.authData = authService.getCurrentUser();
-		me = firebaseService.getUser($scope.authData.uid);
-		$scope.friend = chatService.getMyChats(me.$id);
+		$scope.friend = chatService.getMyChats($scope.user.$id);
 	}();
 
 	// scroll to bottom after the chats load
@@ -19,11 +17,6 @@ app.controller('chatController', function($scope, chatService, firebaseService, 
 
 	// set a side variable
   var side = 'left';
-
-  // add userID to scope from the me object
-	me.$loaded().then(function() {
-		$scope.userId = me.$id;
-	})
 
 	// define message text
   $scope.messageText = '';
