@@ -71,7 +71,12 @@ app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
     .state('secured.chat', {
       url: '/chat/:cid',
       templateUrl: 'templates/chat.html',
-      controller: 'chatController'
+      controller: 'chatController',
+      resolve: {
+        chatsRef: function(chatService, $state){
+          return chatService.getChat($state.params.cid);
+        }
+      }
     })
     .state('secured.floor', {
         url: '/floor',

@@ -6,25 +6,25 @@ app.controller('notificationsController', function($scope, authService, $locatio
   var sync = $firebase(exploreRef);
 
   $scope.editUser = function() {
-    $location.path('/edit', {}, {reload: true});
+    $state.go('secured.edit');
   }
 
   $scope.logout = function() {
     authService.logout();
-    $location.path('/login', {}, {reload: true});
+    $location.path('secured.login');
   }
 
 
   //GET REQUESTS
-  $scope.reqs = firebaseService.getFriends($scope.authInfo.uid);
+  $scope.reqs = firebaseService.getFriends($scope.auth.uid);
 
 
   // ACCEPT AND REJECT REQUESTS
   $scope.acceptReq = function(id) {
-      firebaseService.updateFriend($scope.authInfo.uid, id, "accepted");
-      firebaseService.updateFriend(id, $scope.authInfo.uid, "accepted");
+      firebaseService.updateFriend($scope.auth.uid, id, "accepted");
+      firebaseService.updateFriend(id, $scope.auth.uid, "accepted");
 
-      var myChats = chatService.getMyChats($scope.authInfo.uid);
+      var myChats = chatService.getMyChats($scope.auth.uid);
       var otherChats = chatService.getMyChats(id);
 
       otherChats.$loaded().then(function() {
@@ -50,9 +50,9 @@ app.controller('notificationsController', function($scope, authService, $locatio
 // CREATING A CHAT
 
   $scope.createChat = function(friendId, friendName){
-      chatService.createChat($scope.currentUser.auth.uid, friendId, $scope.currentUser.name, friendName);
-      var cid = $scope.currentUser.auth.uid + friendId;
-      $location.path('chat/' + cid);
+      chatService.createChat($scope.auth.uid, friendId, $scope.user.name, friendName);
+      var cid = $scope.auth.uid + friendId;
+      $state.go('secured.chat', { cid: cid});
   };
 
 

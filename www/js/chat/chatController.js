@@ -1,19 +1,15 @@
 var app = angular.module('cs');
 
-app.controller('chatController', function($scope, chatService, firebaseService, $stateParams, $rootScope, $state, $ionicScrollDelegate, authService, $firebase, $timeout){
+app.controller('chatController', function($scope, chatsRef, chatService, firebaseService, $stateParams, $rootScope, $state, $ionicScrollDelegate, authService, $firebase, $timeout){
 	// set me in the controller's scope.
 	var me;
 
+	$scope.messages = chatsRef;
+
 	// get all of the data
 	var getData = function() {
-		$scope.messages = chatService.getChat($stateParams.cid);
 		$scope.friend = chatService.getMyChats($scope.user.$id);
 	}();
-
-	// scroll to bottom after the chats load
-	$scope.messages.$loaded().then(function() {
-		$ionicScrollDelegate.scrollBottom(true);
-	})
 
 	// set a side variable
   var side = 'left';
@@ -29,10 +25,9 @@ app.controller('chatController', function($scope, chatService, firebaseService, 
 
   $scope.sendMessage = function(textMessage) {
       if(textMessage){
-          $ionicScrollDelegate.scrollBottom(true);
           $scope.messages.$add({
               text: textMessage,
-              senderId: $scope.userId,
+              senderId: $scope.user.$id,
               timestamp: Firebase.ServerValue.TIMESTAMP
               });
           $scope.messageText = "";
