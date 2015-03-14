@@ -20,6 +20,10 @@
           <p>{{comment.text}}</p>
           <a class="subdued">- {{comment.user}}</a>
           <p>{{ currentPost.timestamp | date : format : timezone}}</p>
+          <p>
+            Likes: {{comment.likes}}
+          </p>
+          <button ng-click="commentLike(comment, $index)">Like this comment</button>
         </div>
       </div>
     </div>

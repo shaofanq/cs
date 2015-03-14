@@ -92,7 +92,7 @@ app.controller('FloorController', function($scope, $location, authService, $fire
         index = i
       }
     }
-    if($scope.user.favorites) {
+    if($scope.user.favorites.posts) {
       var flag = true;
       $scope.floor[index].admired = true;
       for(key in $scope.user.favorites.posts) {
@@ -109,6 +109,19 @@ app.controller('FloorController', function($scope, $location, authService, $fire
       firebaseService.addLike($scope.floor[index].$id, $scope.floor[index].likes, id);
     }
     $scope.floor[index].admired = true;
+  }
+
+  // make it possible to like a comment, only once per user
+  $scope.commentLike = function(item, index) {
+    var user = $scope.user;
+    var post = $scope.currentPost;
+    if(user.favorites.comments) {
+
+    } else {
+      debugger;
+      post.comments[index].likes = post.comments[index].likes + 1;
+      firebaseService.addCommentLike(item.$id, post.comments[index].likes, post.$id, user.$id);
+    }
   }
 
     /////////////////
