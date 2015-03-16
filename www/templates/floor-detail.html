@@ -1,40 +1,84 @@
 <navbar></navbar>
 <ion-content>
-  <div class="container">
-    <div class="profilePicBox">
-      <div class="card" scroll="false">
-        <div class="row">
-          <img style="border-radius:100%; height:50px" ng-src="{{currentPost.profilePic}}" alt="" />
-          <h3>{{currentPost.user}}</h3>
+    <div class="post-detail-box">
+          <div class="row">
+            <div class="col col-20">
+              <img style="border-radius:100%; height:50px" ng-src="{{currentPost.profilePic}}" alt="" />
+            </div>
+            <div class="col">
+              <h3 style="display: block; color: #6E6E6E">{{currentPost.user}}</h3<br>
+                <div style="display:block">
+                  <a style="font-size:13px; font-weight: normal; color: #6E6E6E">
+                    <i style="color:#48BB48;font-size:13px"  class="icon ion-ios-location"></i>
+                    Oakland, CA
+                  </a>
+                  <a style="font-size:13px; font-weight: normal; padding-left:17px; color: #6E6E6E">
+                    <i style="color:#5677FC;font-size:13px"  class="icon ion-clock"></i>
+                    <span am-time-ago="currentPost.timestamp"></span>
+                  </a>
+                </div>
+            </div>
+          </div>
+      <div class="row">
+        <div class="col col-80" style="color: #6E6E6E; padding-bottom:30px">
+          <p>{{currentPost.text}}</p>
         </div>
-        <h5>{{currentPost.text}}</h5>
-        <h5>Location, US</h5>
-        <p>{{ currentPost.timestamp | date : format : timezone}}</p>
-        <a href="#" class="subdued">{{currentPost.likes}} Likes</a>
-        <a href="#" class="subdued">{{currentPost.commentsCount}} Comments</a>
+        <div class="col text-center" style="margin-left:15px">
+          <p style=" font-size:20px; margin-bottom:-10px; color: #6E6E6E">
+            {{currentPost.likes}}
+          </p><br>
+          <i ng-class="{ redIcon: admired || currentPost.admired}" style=" font-size:40px; margin-top:-10px; color:#B3B3B3" class="icon ion-heart" ng-click="like(item, $index); admired = true"></i>
+        </div>
       </div>
+      <div class="text-center">
+        <p style="color: #6E6E6E">{{currentPost.commentsCount}} <span ng-if="currentPost.commentsCount === 1">Reply</span>
+        <span ng-if="currentPost.commentsCount !== 1">Replies</span></p>
+      </div>
+
     </div>
     <div ng-repeat="comment in currentPost.comments">
-      <div class="card">
         <div class="container">
-          <p>{{comment.text}}</p>
-          <a class="subdued">- {{comment.user}}</a>
-          <p>{{ currentPost.timestamp | date : format : timezone}}</p>
-          <p>
-            Likes: {{comment.likes}}
-          </p>
-          <button ng-click="commentLike(comment, $index)">Like this comment</button>
+          <div class="row">
+            <div class="col col-80">
+              <div class="row">
+                <div class="col col-10">
+                  <i style="color:#5677FC;font-size:13px"  class="icon ion-chatbox-working"></i>
+                </div>
+                <div class="col" style="margin-left:-10px; color: #6E6E6E">
+                  <p><span style="color:#5677FC">{{comment.user}}</span> {{comment.text}}</p>
+                </div>
+              </div>
+            </div>
+            <div class="col text-center" style="margin-left:15px">
+              <br>
+              <p style=" font-size:20px; margin-bottom:-10px; color: #6E6E6E">
+                {{comment.likes}}
+              </p><br>
+              <i ng-class="{ redIcon: admired || currentPost.admired}" style=" font-size:40px; margin-top:-10px; color:#B3B3B3" class="icon ion-heart" ng-click="commentLike(comment, $index); admired = true"></i>
+            </div>
+          </div>
+          <div class="row" style="margin-top:-30px">
+            <div class="col">
+              <div class="row">
+                <div class="col col-10">
+                  <i style="color:#5677FC;font-size:13px"  class="icon ion-clock"></i>
+                </div>
+                <div class="col" style="margin-left:-20px; color: #6E6E6E">
+                  <span am-time-ago="comment.timestamp"></span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
+        <hr style="border-top: 1px solid #F1F1F2">
     </div>
-  </div>
 </ion-content>
 <ion-footer-bar class="bar-stable item-input-inset" ng-click="openModal()">
   <label class="item-input-wrapper">
     <input type="text" placeholder="Type your message" on-return="sendMessage(); closeKeyboard()" ng-model="data.message" on-focus="inputUp()" on-blur="inputDown()" />
   </label>
   <button class="button button-clear" ng-click="sendMessage()">
-    Send
+    <span style="color: #5797DF">Send</span>
   </button>
 </ion-footer-bar>
 <script id="my-modal.html" type="text/ng-template">

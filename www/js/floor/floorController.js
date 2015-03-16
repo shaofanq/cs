@@ -54,7 +54,7 @@ app.controller('FloorController', function($scope, $location, authService, $fire
 
   $scope.postDetails = function(index) {
     var id = $scope.floor[index].$id
-    $location.path('floor-detail/' + id);
+    $location.path('detail/' + id);
   }
 
   $scope.getFloorPost = function() {

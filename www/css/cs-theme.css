@@ -1,6 +1,6 @@
 body {
 margin: 150px;
-background-color: #f2f2f2;
+background-color: #FAFAFA;
 font-family: "Roboto";
 }
 
@@ -21,7 +21,7 @@ margin-left: -5px;
 }
 
 .pane {
-background-color: #f2f2f2;
+background-color: #FAFAFA;
 }
 
 .container {
@@ -67,7 +67,7 @@ background-color: #caeaf6;
 background-color: #94928f;
 }
 .csBack {
-background-color: #f2f2f2;
+background-color: #FAFAFA;
 }
 
 .fightBlue {
@@ -319,6 +319,14 @@ margin-top: -5px;
 }
 
 
+.post-detail-box {
+  background: #fff;
+  width: 100%;
+  height: 25%;
+  padding: 0 10px 10px 10px;
+  color: #6E6E6E;
+  /*background-image: url("img/trianglesBlue.png");*/
+}
 
 
 
@@ -326,6 +334,8 @@ margin-top: -5px;
 /*////////////////////////////////
 /////////PROFILES////////////////
 //////////////////////////////*/
+
+
 
 
 .profilePicBox {

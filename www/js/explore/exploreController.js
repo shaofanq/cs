@@ -1,10 +1,10 @@
 var app = angular.module('cs');
 
 app.controller('ExploreController', function($scope, authService, $location, $firebase, firebaseService, $ionicSideMenuDelegate, $state, $rootScope) {
-  if(!$scope.user) {
-    var auth = authService.getCurrentUser();
-    $scope.user = firebaseService.getUser(auth.uid);
-  }
+  // if(!$scope.user) {
+  //   var auth = authService.getCurrentUser();
+  //   $scope.user = firebaseService.getUser(auth.uid);
+  // }
   $scope.toggleLeft = function() {
     $ionicSideMenuDelegate.toggleLeft();
   };
