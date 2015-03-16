@@ -53,7 +53,26 @@ app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
       templateUrl: 'templates/fss.html',
       controller: 'UserController'
     })
-
+    .state('secured.type-fighter', {
+      url: '/type-fighter',
+      templateUrl: '../templates/type-fighter.html',
+      controller: 'UserController'
+    })
+    .state('secured.type-survivor', {
+      url: '/type-survivor',
+      templateUrl: '../templates/type-survivor.html',
+      controller: 'UserController'
+    })
+    .state('secured.type-supporter', {
+      url: '/type-supporter',
+      templateUrl: '../templates/type-supporter.html',
+      controller: 'UserController'
+    })
+    .state('secured.bio-info', {
+      url: '/bio-info',
+      templateUrl: '../templates/bio-info.html',
+      controller: 'UserController'
+    })
 
      ////////////////////////////////
     // EXPLORE / FLOOR / MESSAGES //

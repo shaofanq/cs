@@ -1,16 +1,21 @@
 <othernav></othernav>
 <ion-content class="container containerFullWidth">
-    <div class="inputBox">
+    
+    <div class="inputBox paddingTop30">
         <label class="item item-input">
           <span class="input-label">Email</span>
           <input type="email" ng-model="user.email">
         </label>
+    </div>
+    
+    <div class="inputBox paddingTop15">
         <label class="item item-input">
           <span class="input-label">Password</span>
           <input type="password" ng-model="user.password">
         </label>
     </div>
-    <div class="buttonsBox">
+    
+    <div class="buttonsBox paddingTop30">
         <a class="button button-block csRed whiteText noBorder bigRaisedButton" ng-click="login(user)">Login</a>
         <a class="button button-block fightBlue whiteText noBorder bigRaisedButton" ui-click="">Login with Facebook</a>
         <h6 class="text-center">Don't have an account? <span ui-sref="register">Sign up</span></h6>

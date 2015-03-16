@@ -113,14 +113,27 @@ app.controller('FloorController', function($scope, $location, authService, $fire
 
   // make it possible to like a comment, only once per user
   $scope.commentLike = function(item, index) {
+    // var likeObj = {
+    //   user: $scope.user,
+    //   post: $scope.currentPost,
+    //   likes: post.
+    // };
     var user = $scope.user;
     var post = $scope.currentPost;
-    if(user.favorites.comments) {
-
+    if(user.favorites) {
+      var flag = true;
+      for(key in user.favorites.comments) {
+        if(user.favorites.comments[key] === item.$id) {
+          flag = false;
+        }
+      }
+      if(flag) {
+        var likes = post.comments[index].likes + 1;
+        firebaseService.addCommentLike(item.$id, likes, post.$id, user.$id);
+      }
     } else {
-      debugger;
-      post.comments[index].likes = post.comments[index].likes + 1;
-      firebaseService.addCommentLike(item.$id, post.comments[index].likes, post.$id, user.$id);
+      var likes = post.comments[index].likes + 1;
+      firebaseService.addCommentLike(item.$id, likes, post.$id, user.$id);
     }
   }
 

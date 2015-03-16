@@ -1,0 +1,27 @@
+<othernav></othernav>
+<ion-content class="container">
+  
+  <div class="text-center onboardBox">
+     <h4 class="bold">You put the support in supporter Friend!</h4> 
+    <h4 class="lighter">What kind of supporter are you?</h4>
+  </div>
+  
+  <div class="inputBox paddingTop30">
+    <label class="item item-input onItem">
+      <span class="input-label">Supporter Type</span>
+      <input type="text" ng-model="userData.supType">
+    </label>
+  </div>  
+  
+  <div class="inputBox paddingTop15">
+    <label class="item item-input onItem">
+      <span class="input-label">Cancer Type</span>
+      <input type="text" ng-model="userData.cancer">
+    </label>
+  </div>
+
+  <div class="buttonsBox paddingTop30">
+    <a class="button button-block csRed whiteText noBorder bigRaisedButton" ng-click="addSupporter(userData)">CONTINUE</a>
+  </div>
+
+</ion-content>

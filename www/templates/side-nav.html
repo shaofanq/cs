@@ -1,0 +1,50 @@
+<ion-side-menu side="left">
+  <div class="list">
+
+     <div>
+        <a menu-close ui-sref="notifications" class="item item-avatar">
+         <img class="" ng-src="{{user.profilePic}}">
+         {{user.name}}
+        </a>
+      </div>
+
+      <div>
+        <a menu-close ui-sref="secured.notifications" class="item">
+          Me
+        </a>
+      </div>
+
+      <div>
+        <a menu-close ui-sref="secured.notifications" class="item item-icon-right">
+          <!-- <i class="icon ion-android-notifications"></i> -->
+          Notifications
+          <i class="icon"></i>
+        </a>
+      </div>
+
+      <div>
+        <a menu-close ui-sref="secured.friends" class="item item-icon-right">
+          <!-- <i class="icon ion-person-stalker"></i> -->
+          Friends
+          <i class="icon"></i>
+        </a>
+      </div>
+
+      <div>
+        <a class="item item-icon-right" href="#">
+          <!-- <i class="icon ion-information-circled"></i> -->
+          About
+          <i class="icon"></i>
+        </a>
+      </div>
+
+       <div>
+        <a menu-close ng-click="logout()" class="item text-center greyText" href="#">
+          <!-- <i class="icon ion-power"></i> -->
+          Logout
+          <i class="icon"></i>
+        </a>
+      </div>
+
+  </div>
+</ion-side-menu>

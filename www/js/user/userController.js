@@ -4,7 +4,6 @@ app.controller('UserController', function($scope, firebaseService, authService, 
 
     $scope.addData = function(user) {
       sync.$update({
-        bio: user.bio,
         cancer: user.cancer,
         name: user.name,
         level: user.level
@@ -16,6 +15,35 @@ app.controller('UserController', function($scope, firebaseService, authService, 
         sync.$update({
           level: item,
         });
+        $state.go('secure.bio-info');
+    };
+
+    $scope.addSurvivor = function(user) {
+      sync.$update({
+        cancer: user.cancer,
+        name: user.name,
+        level: user.level,
+        yot: user.yot
+      });
+        $state.go('secure.bio-info');
+    };
+
+    $scope.addSupporter = function(user) {
+      sync.$update({
+        cancer: user.cancer,
+        name: user.name,
+        level: user.level,
+        supType: user.supType
+      });
+        $state.go('secure.bio-info');
+    };
+
+    $scope.addBioInfo = function(user) {
+      sync.$update({
+        bio: user.bio,
+        age: user.age,
+        local: user.local
+      });
         $state.go(link);
     };
 
