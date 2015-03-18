@@ -59,6 +59,7 @@ app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
     })
 
 
+
      ////////////////////////////////
     // EXPLORE / FLOOR / MESSAGES //
    ////////////////////////////////
@@ -89,6 +90,11 @@ app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
         url: '/userDetail/:id',
         templateUrl: 'templates/user-detail.html',
         controller: 'UserDetailController'
+    })
+    .state('me', {
+      url: '/me',
+      templateUrl: 'templates/me.html',
+      controller: 'UserController'
     })
     .state('edit-user', {
       url: '/edit',

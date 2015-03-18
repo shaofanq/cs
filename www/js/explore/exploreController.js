@@ -23,6 +23,10 @@ app.controller('ExploreController', function($scope, authService, $location, $fi
     $location.path('/edit', {}, {reload: true});
   };
 
+  $scope.me = function() {
+    $location.path('/me', {}, {reload: true});
+  };
+
   $scope.users = firebaseService.getUsers();
 
   $scope.logout = function() {
