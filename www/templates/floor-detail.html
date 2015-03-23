@@ -22,12 +22,13 @@
       <div class="row">
         <div class="col col-80" style="color: #6E6E6E; padding-bottom:30px">
           <p>{{currentPost.text}}</p>
+          <p>{{currentPost.admired}}</p>
         </div>
         <div class="col text-center" style="margin-left:15px">
           <p style=" font-size:20px; margin-bottom:-10px; color: #6E6E6E">
             {{currentPost.likes}}
           </p><br>
-          <i ng-class="{ redIcon: admired || currentPost.admired}" style=" font-size:40px; margin-top:-10px; color:#B3B3B3" class="icon ion-heart" ng-click="like(item, $index); admired = true"></i>
+          <i ng-class="{ redIcon: currentPost.admired}" style=" font-size:40px; margin-top:-10px; color:#B3B3B3" class="icon ion-heart"></i>
         </div>
       </div>
       <div class="text-center">
@@ -54,7 +55,7 @@
               <p style=" font-size:20px; margin-bottom:-10px; color: #6E6E6E">
                 {{comment.likes}}
               </p><br>
-              <i ng-class="{ redIcon: admired || currentPost.admired}" style=" font-size:40px; margin-top:-10px; color:#B3B3B3" class="icon ion-heart" ng-click="commentLike(comment, $index); admired = true"></i>
+              <i ng-class="{ redIcon: admired || currentPost.admired}" style=" font-size:40px; margin-top:-10px; color:#B3B3B3" class="icon ion-heart admired" ng-click="commentLike(comment, $index); admired = true"></i>
             </div>
           </div>
           <div class="row" style="margin-top:-30px">

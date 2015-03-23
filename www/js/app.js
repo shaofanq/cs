@@ -126,7 +126,7 @@ app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
       controller: "notificationsController"
     })
     .state('secured.detail', {
-      url: "/detail/:id",
+      url: "/detail/:id+:admired+:shallow",
       templateUrl: "templates/floor-detail.html",
       controller: "FloorController"
     });

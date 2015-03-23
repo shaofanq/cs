@@ -4,7 +4,6 @@ app.controller('FloorController', function($scope, $location, authService, $fire
   $scope.post = {};
   $scope.currentPost;
   $scope.favoritePosts = firebaseService.getFavoritePosts($scope.user.$id);
-
   var floorRef = new Firebase('https://cancer.firebaseio.com/ean/floorPosts');
   var sync = $firebase(floorRef);
 
@@ -52,16 +51,33 @@ app.controller('FloorController', function($scope, $location, authService, $fire
     //   }
     // });
 
-  $scope.postDetails = function(index) {
-    var id = $scope.floor[index].$id
-    $location.path('detail/' + id);
+  $scope.postDetails = function(index, admired, shallowAdmired) {
+    if (shallowAdmired) {
+      var shallow = true;
+    } else {
+      var shallow = false;
+    }
+    var id = $scope.floor[index].$id;
+    if(admired) {
+      admired = true;
+    } else {
+      admired = false;
+    }
+    var admired = admired;
+    $location.path('detail/' + id + '+' + admired + '+' + shallow);
   }
 
   $scope.getFloorPost = function() {
-    var id = $stateParams.id
+    var id = $stateParams.id;
+    var shallow = $stateParams.shallow;
     $scope.currentPost = firebaseService.getFloorPost(id);
     $scope.currentPost.$loaded().then(function() {
       $scope.currentPost.comments = firebaseService.getCurrentComments($scope.currentPost.$id);
+      if($stateParams.admired === "true" || shallow === "true") {
+        $scope.currentPost.admired = true;
+      } else if($stateParams.admired === "false") {
+        $scope.currentPost.admired = false;
+      }
     })
   }();
 
@@ -92,7 +108,9 @@ app.controller('FloorController', function($scope, $location, authService, $fire
         index = i
       }
     }
-    if($scope.user.favorites.posts) {
+    if($scope.user) {
+      $scope.user.favorites = {};
+      $scope.user.favorites.posts = {};
       var flag = true;
       $scope.floor[index].admired = true;
       for(key in $scope.user.favorites.posts) {
@@ -128,12 +146,12 @@ app.controller('FloorController', function($scope, $location, authService, $fire
         }
       }
       if(flag) {
-        var likes = post.comments[index].likes + 1;
-        firebaseService.addCommentLike(item.$id, likes, post.$id, user.$id);
+        var likes = item.likes + 1;
+        firebaseService.addCommentLike(item.$id, likes, $stateParams.id, user.$id);
       }
     } else {
-      var likes = post.comments[index].likes + 1;
-      firebaseService.addCommentLike(item.$id, likes, post.$id, user.$id);
+      var likes = item.likes + 1;
+      firebaseService.addCommentLike(item.$id, likes, $stateParams.id, user.$id);
     }
   }
 
