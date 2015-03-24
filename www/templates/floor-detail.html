@@ -23,11 +23,11 @@
         <div class="col col-80" style="color: #6E6E6E; padding-bottom:30px">
           <p>{{currentPost.text}}</p>
         </div>
-        <div class="col text-center" style="margin-left:15px">
+        <div class="col text-center" style="margin-left:32px">
           <p style=" font-size:20px; margin-bottom:-10px; color: #6E6E6E">
             {{currentPost.likes}}
           </p><br>
-          <i ng-class="{ redIcon: admired}" style=" font-size:40px; margin-top:-10px; color:#B3B3B3" class="icon ion-heart"></i>
+          <i ng-class="{ redIcon: admired}" style=" font-size:40px; margin-top:-10px; color:#B3B3B3" class="icon ion-heart" ng-click="like()"></i>
         </div>
       </div>
       <div class="text-center">
