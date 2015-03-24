@@ -37,20 +37,6 @@ app.controller('FloorController', function($scope, $location, authService, $fire
       }
     }
 
-
-    // $scope.floor.$loaded(function(){
-    //   var faves = Object.keys($scope.user.favorites.posts);
-    //   for (var i = 0; i < $scope.floor.length; i++) {
-    //     current = $scope.floor[i].$id;
-    //     for (var j = 0; j < faves.length; j++) {
-    //       var favorite = $scope.user.favorites.posts[faves[j]];
-    //       if(favorite === current){
-    //         $scope.floor[i].admired = true;
-    //       }
-    //     }
-    //   }
-    // });
-
   $scope.postDetails = function(index, admired, shallowAdmired) {
     if (shallowAdmired) {
       var shallow = true;
@@ -108,9 +94,7 @@ app.controller('FloorController', function($scope, $location, authService, $fire
         index = i
       }
     }
-    if($scope.user) {
-      $scope.user.favorites = {};
-      $scope.user.favorites.posts = {};
+    if($scope.user.favorites) {
       var flag = true;
       $scope.floor[index].admired = true;
       for(key in $scope.user.favorites.posts) {
@@ -124,18 +108,13 @@ app.controller('FloorController', function($scope, $location, authService, $fire
       }
     } else {
       $scope.floor[index].likes = $scope.floor[index].likes + 1;
-      firebaseService.addLike($scope.floor[index].$id, $scope.floor[index].likes, id);
+      firebaseService.addLike($scope.floor[index].$id, $scope.floor[index].likes, $scope.user.$id);
     }
     $scope.floor[index].admired = true;
   }
 
   // make it possible to like a comment, only once per user
   $scope.commentLike = function(item, index) {
-    // var likeObj = {
-    //   user: $scope.user,
-    //   post: $scope.currentPost,
-    //   likes: post.
-    // };
     var user = $scope.user;
     var post = $scope.currentPost;
     if(user.favorites) {

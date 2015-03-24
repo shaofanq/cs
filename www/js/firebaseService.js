@@ -35,29 +35,32 @@ app.service('firebaseService', function ($firebase, $ionicScrollDelegate, chatSe
   }
 
   this.addLike = function(postId, newLikes, userId) {
-    var userSync = $firebase(new Firebase(firebaseUrl + 'users/' + userId + '/favorites/posts'));
-    var floorSync = $firebase(new Firebase(firebaseUrl + 'floorPosts/' + postId));
-    var list = $firebase(new Firebase(firebaseUrl + 'floorPosts/' + postId + '/admirers'));
-    userSync.$push(postId);
-    floorSync.$update({likes: newLikes});
-    list.$push(userId);
+    var sync = {
+      user: $firebase(new Firebase(firebaseUrl + 'users/' + userId + '/favorites/posts')),
+      floor: $firebase(new Firebase(firebaseUrl + 'floorPosts/' + postId)),
+      list: $firebase(new Firebase(firebaseUrl + 'floorPosts/' + postId + '/admirers'))
+    }
+    sync.user.$push(postId);
+    sync.floor.$update({likes: newLikes});
+    sync.list.$push(userId);
   }
 
   this.addCommentLike = function(commentId, newLikes, postId, userId) {
-    debugger;
-    var userSync = $firebase(new Firebase(firebaseUrl + 'users/' + userId + '/favorites/comments'));
-    var commentSync = $firebase(new Firebase(firebaseUrl + 'floorPosts/' + postId + '/comments/' + commentId));
-    userSync.$push(commentId);
-    commentSync.$update({likes: newLikes});
+    var sync = {
+      user: $firebase(new Firebase(firebaseUrl + 'users/' + userId + '/favorites/comments')),
+      comment: $firebase(new Firebase(firebaseUrl + 'floorPosts/' + postId + '/comments/' + commentId)),
+      admirers: $firebase(new Firebase(firebaseUrl + 'floorPosts/' + postId + '/comments/' + commentId + '/admirers'))
+    }
+    sync.user.$push(commentId);
+    sync.comment.$update({likes: newLikes});
+    sync.admirers.$push(userId);
   };
 
 // ADD USERS
 
   this.addFriend = function(userId, otherId, theStatus, theName, currentUserName) {
-      var conRef = new Firebase('https://cancer.firebaseio.com/ean/users/' + userId + '/friends/' + otherId);
-      var conSync = $firebase(conRef);
-
-        conSync.$set({
+      var sync = $firebase(new Firebase('https://cancer.firebaseio.com/ean/users/' + userId + '/friends/' + otherId));
+        sync.$set({
           friendId: otherId,
           name: theName,
           status: theStatus

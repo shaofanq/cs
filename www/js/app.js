@@ -128,7 +128,7 @@ app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
     .state('secured.detail', {
       url: "/detail/:id+:admired+:shallow",
       templateUrl: "templates/floor-detail.html",
-      controller: "FloorController"
+      controller: "FloorDetailController"
     });
     $urlRouterProvider.otherwise("/splash");
 });
