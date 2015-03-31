@@ -22,12 +22,14 @@ app.controller('FloorDetailController', function ($scope, $location, authService
         postLiked();
     }
 
-    $scope.checkFavs = function (item) {
-        for (var i = 0; i < $scope.user.favorites.comments.length; i++) {
-            if (item.$id === arr[i].$value) {
-                item.admired = true;
-            }
+    $scope.checkFavs = function (item, i) {
+        if ($scope.user.favorites.comments.hasOwnProperty(item.$id)) {
+            item.admired = true;
         }
+        if ($scope.user.flags.hasOwnProperty(item.$id)) {
+            item.flagedText = item.text;
+            item.text = "Flagged for review";
+        };
     }
 
     /* Turn the comment into an object and pass it
@@ -49,32 +51,41 @@ app.controller('FloorDetailController', function ($scope, $location, authService
         addCommentForm.reset();
     };
 
-    $scope.likePost = function () {
-        $scope.admired = true;
-        return floorService.likePost($scope.user, $scope.currentPost);
-    }
+$scope.likePost = function () {
+    $scope.admired = true;
+    return floorService.likePost($scope.user, $scope.currentPost);
+}
 
-    $scope.likeComment = function (comment) {
-        comment.admired = true;
-        return floorService.likeComment($scope.user, comment, $scope.comments);
-    }
+$scope.likeComment = function (comment) {
+    comment.admired = true;
+    return floorService.likeComment($scope.user, comment, $scope.comments);
+}
+
+$scope.flagPost = function () {
+    floorService.flagItem(user, $scope.post, 'hide');
+}
+
+$scope.flagComment = function (comment, i) {
+    $scope.comments.splice(i, 1);
+    floorService.flagItem($scope.user, comment, 'hide', $scope.comments);
+}
 
 
-    // ionic modal settings
-    $ionicModal.fromTemplateUrl('my-modal.html', {
-        scope: $scope,
-        animation: 'slide-in-up'
-    }).then(function (modal) {
-        $scope.modal = modal;
-    });
-    $scope.openModal = function () {
-        $scope.modal.show();
-    };
-    $scope.closeModal = function () {
-        $scope.modal.hide();
-    }
+// ionic modal settings
+$ionicModal.fromTemplateUrl('my-modal.html', {
+    scope: $scope,
+    animation: 'slide-in-up'
+}).then(function (modal) {
+    $scope.modal = modal;
+});
+$scope.openModal = function () {
+    $scope.modal.show();
+};
+$scope.closeModal = function () {
+    $scope.modal.hide();
+}
 
-    $scope.user.$loaded(function () {
-        ready();
-    });
+$scope.user.$loaded(function () {
+    ready();
+});
 });

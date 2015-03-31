@@ -6,7 +6,7 @@
 
 app.factory('floorService', function () {
     return {
-        likePost: function(user, post, posts) {
+        likePost: function (user, post, posts) {
             if (!user.favorites.posts.hasOwnProperty(post.$id)) {
                 post.likes++;
                 post.admirers[user.$id] = user.$id;
@@ -20,14 +20,27 @@ app.factory('floorService', function () {
             }
             return true;
         },
-        likeComment: function(user, comment, comments) {
+        likeComment: function (user, comment, comments) {
             if (!user.favorites.comments.hasOwnProperty(comment.$id)) {
                 comment.likes++;
                 comment.admirers[user.$id] = user.$id;
                 user.favorites.comments[comment.$id] = comment.$id;
                 user.$save();
                 comments.$save(comment);
-            } 
+            }
+            return true;
+        },
+        flagItem: function (user, item, flag, itemArray) {
+            item.flags = item.flags || {};
+            user.flags = user.flags || {};
+            user.flags[item.$id] = flag;
+            user.$save();
+            item.flags[user.$id] = flag;
+            if (!itemArray) {
+                item.$save();
+            } else {
+                itemArray.$save(item);
+            }
             return true;
         }
     };
