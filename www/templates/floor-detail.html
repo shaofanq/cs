@@ -6,7 +6,7 @@
               <img style="border-radius:100%; height:50px" ng-src="{{currentPost.profilePic}}" alt="" />
             </div>
             <div class="col">
-              <h3 style="display: block; color: #6E6E6E">{{currentPost.user}}</h3<br>
+                <h3 style="display: block; color: #6E6E6E">{{currentPost.user}}</h3>
                 <div style="display:block">
                   <a style="font-size:13px; font-weight: normal; color: #6E6E6E">
                     <i style="color:#48BB48;font-size:13px"  class="icon ion-ios-location"></i>
@@ -27,7 +27,7 @@
           <p style=" font-size:20px; margin-bottom:-10px; color: #6E6E6E">
             {{currentPost.likes}}
           </p><br>
-          <i ng-class="{ redIcon: admired}" style=" font-size:40px; margin-top:-10px; color:#B3B3B3" class="icon ion-heart" ng-click="like()"></i>
+          <i ng-class="{ redIcon: admired}" style=" font-size:40px; margin-top:-10px; color:#B3B3B3" class="icon ion-heart" ng-click="likePost()"></i>
         </div>
       </div>
       <div class="text-center">
@@ -36,7 +36,7 @@
       </div>
 
     </div>
-    <div ng-repeat="comment in comments">
+    <div ng-repeat="comment in comments" ng-init="checkFavs(comment)">
         <div class="container">
           <div class="row">
             <div class="col col-80">
@@ -54,7 +54,7 @@
               <p style=" font-size:20px; margin-bottom:-10px; color: #6E6E6E">
                 {{comment.likes}}
               </p><br>
-              <i ng-class="{ redIcon: comment.admired || commentAdmired}" style=" font-size:40px; margin-top:-10px; color:#B3B3B3" class="icon ion-heart admired" ng-click="commentLike(comment, $index); commentAdmired = true"></i>
+              <i ng-class="{ redIcon: comment.admired || commentAdmired}" style=" font-size:40px; margin-top:-10px; color:#B3B3B3" class="icon ion-heart admired" ng-click="likeComment(comment); commentAdmired = true"></i>
             </div>
           </div>
           <div class="row" style="margin-top:-30px">

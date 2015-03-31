@@ -72,7 +72,7 @@ app.service('firebaseService', function ($firebase, $ionicScrollDelegate, chatSe
             name: theName,
             status: theStatus
         });
-        chatService.createChat(userId, otherId, currentUserName, theName)
+        chatService.createChat(userId, otherId, currentUserName, theName);
     };
 
 // CONNECTIONS & NOTIFICATIONS
