@@ -1,24 +1,24 @@
 <navbar></navbar>
 <ion-content>
-  <div class="container">
-    <div ng-repeat="user in users ">
-      <a href="" ui-sref="secured.user-detail({id: user.auth.uid})">
-        <div class="list">
-          <div class="item item-avatar text-left" href="#">
-            <img ng-if="user.profilePic" class="" ng-src="{{user.profilePic}}">
-            <img ng-if="!user.profilePic" class="" ng-src="img/avatar.png">
-            <h2>{{user.name}}</h2>
-            <div class="middle cancer-sub-div">
-            <div class="typeCircle fightBlue f-row middle"></div>
-            <h4 class="cancerExplore f-row middle">{{user.cancer}}</h4>
-            </div>
-              <span class="item-note exAddButton whiteText">
-                +
-              </span>
-          </div>
-        </a>
-      </div>
+    <div class="container">
+        <div ng-repeat="user in users">
+            <a href="" data-ng-click="getProfile(user)">
+                <div class="list">
+                    <div class="item item-avatar text-left">
+                        <img ng-if="user.profilePic" class="" ng-src="{{user.profilePic}}">
+                        <img ng-if="!user.profilePic" class="" ng-src="img/avatar.png">
+                        <h2>{{user.name}}</h2>
+                        <div class="middle cancer-sub-div">
+                            <div class="typeCircle fightBlue f-row middle"></div>
+                            <h4 class="cancerExplore f-row middle">{{user.cancer}}</h4>
+                        </div>
+                        <span class="item-note exAddButton whiteText">
+                            +
+                        </span>
+                    </div>
+                </div>
+            </a>
+        </div>
     </div>
-  </div>
 </ion-content>
 <tabs></tabs>

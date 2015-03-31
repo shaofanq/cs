@@ -40,7 +40,7 @@ app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
           return {
               auth: auth,
               user: user
-          }
+          };
         }
       }
     })
@@ -106,9 +106,14 @@ app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
     // PROFILES / FRIENDS //
    ////////////////////////
     .state('secured.user-detail', {
-        url: '/userDetail/:id',
+        url: '/userDetail/{userId}',
         templateUrl: 'templates/user-detail.html',
-        controller: 'UserDetailController'
+        controller: 'UserDetailController',
+        resolve: {
+            profileRef: function($stateParams, firebaseService) {
+                return firebaseService.getProfile($stateParams.userId);
+            }
+        }
     })
     .state('secured.edit-user', {
       url: '/edit',
