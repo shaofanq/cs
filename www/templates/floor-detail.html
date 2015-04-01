@@ -50,7 +50,11 @@
                             <i style="color:#5677FC;font-size:13px" class="icon ion-chatbox-working"></i>
                         </div>
                         <div class="col" style="margin-left:-10px; color: #6E6E6E">
-                            <p><span style="color:#5677FC">{{comment.user}}</span> {{comment.text}}</p>
+                            <p>
+                                <span style="color: #5677FC">{{comment.user}}</span>
+                                <div ng-if="!comment.hideFlagged">{{comment.text}}</div>
+                                <div ng-if="comment.flagged" ng-click="toggleFlagged(comment)" class="flagged-text">{{comment.flaggedText}}</div>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -60,19 +64,23 @@
                     </p>
                     <i ng-class="{ redIcon: comment.admired || commentAdmired}" class="icon ion-heart heart-pos" ng-click="likeComment(comment); commentAdmired = true"></i>
                 </div>
-                <div class="flag-comment">
-                    <small ng-click="flagComment(comment, $index)">report</small>
-                </div>
             </div>
-            <div class="row" style="margin-top:-30px">
+            <div class="row" style="margin-top: -30px">
                 <div class="col">
                     <div class="row">
                         <div class="col col-10">
-                            <i style="color:#5677FC;font-size:13px" class="icon ion-clock"></i>
+                            <i style="color: #5677FC; font-size: 13px" class="icon ion-clock"></i>
                         </div>
-                        <div class="col" style="margin-left:-20px; color: #6E6E6E">
+                        <div class="col" style="margin-left: -20px; color: #6E6E6E">
                             <span am-time-ago="comment.timestamp"></span>
                         </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" ng-if="!comment.flagged">
+                <div class="col">
+                    <div class="flag-comment" ng-click="flagComment(comment, $index)">
+                        <i class="icon ion-flag"></i> report as inappropriate
                     </div>
                 </div>
             </div>

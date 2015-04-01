@@ -22,15 +22,22 @@ app.controller('FloorDetailController', function ($scope, $location, authService
         postLiked();
     }
 
+    //called by ng-init on the comments ng-repeat
     $scope.checkFavs = function (item, i) {
         if ($scope.user.favorites.comments.hasOwnProperty(item.$id)) {
             item.admired = true;
         }
         if ($scope.user.flags.hasOwnProperty(item.$id)) {
-            item.flagedText = item.text;
-            item.text = "Flagged for review";
+            item.flaggedText = "Flagged for review";
+            item.flagged = true;
+            item.hideFlagged = true;
         };
     }
+
+    $scope.toggleFlagged = function(item) {
+        item.hideFlagged = !item.hideFlagged;
+    }
+
 
     /* Turn the comment into an object and pass it
     to the firebase service. also hide the modal

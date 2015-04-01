@@ -46,7 +46,7 @@ app.factory('chatService', function ($firebase, $q) {
             }
             var chatNodeId = guid();
 
-            createChatNode(chatNodeId, myId).then(function(data) {
+            createChatNode(chatNodeId, myId).then(function (data) {
                 addChatToUser(myId, friendId, chatNodeId, friendName);
                 addChatToUser(friendId, myId, chatNodeId, myName);
             });

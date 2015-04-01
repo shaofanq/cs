@@ -217,7 +217,7 @@ a.item {
 }
 
 .headerColor {
-    background-color:;
+    
 }
 
 
@@ -782,9 +782,13 @@ span .timestamp .ng-binding {
 }
 
 .flag-comment {
-    position: relative;
-    top: 96px;
-    right: 318px;
+    padding-left: 20px;
+    font-size: 10px;
+    color: #6E6E6E;
+}
+
+.flagged-text {
+    color: #F36C60;
 }
 
 .heart-pos {
@@ -796,7 +800,6 @@ span .timestamp .ng-binding {
 
 .like-count {
     font-size: 20px;
-    /* margin-bottom: 10px; */
     position: relative;
     color: #6E6E6E;
     top: 25px;
