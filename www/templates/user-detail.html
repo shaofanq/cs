@@ -2,9 +2,9 @@
 <ion-content class="container">
   <div class="container">
     <div class="profilePicBox fightBlue text-center coverPhoto">
-      <img ng-if="user.profilePic" class="circle z2" ng-src="{{user.profilePic}}">
+      <img ng-if="user.profilePic" class="circle z2" ng-src="{{profile.profilePic}}">
       <img ng-if="!user.profilePic" class="circle z2" ng-src="img/avatar.png">
-        <h3 class="whiteText z2">{{user.name}}</h3>
+        <h3 class="whiteText z2">{{profile.name}}</h3>
 
          <a class="z2 centerIt buttonRound noBorder addGreen whiteText" ng-class="{used: green}" on-tap="onTap()"  ng-click="addFriend()">
            <span  ng-if="!green">+</span>
@@ -15,7 +15,7 @@
     <div class="locationBox row text-center">
     	<a class="col col-50 item-avatar-left">
             <i class="ion-icecream"></i>
-            {{user.cancer}}
+            {{profile.cancer}}
         </a>
         <a class="col col-50 item-avatar-left">
             <i class="ion-ios-location"></i>
@@ -25,7 +25,7 @@
     <div class="card aboutBox noBorder text-center">
         <div class="item item-text-wrap">
             <h2 class="padBottom"id="boldFont">About</h2>
-            {{user.bio}}
+            {{profile.bio}}
         </div>
     </div>
 

@@ -1,36 +1,36 @@
 var app = angular.module('cs');
 
-app.controller('chatController', function($scope, chatsRef, chatService, firebaseService, $stateParams, $rootScope, $state, $ionicScrollDelegate, authService, $firebase, $timeout){
-	// set me in the controller's scope.
-	var me;
+app.controller('chatController', function ($scope, chatsRef, chatService) {
+    // set me in the controller's scope.
+    var me;
 
-	$scope.messages = chatsRef;
+    $scope.messages = chatsRef;
 
-	// get all of the data
-	var getData = function() {
-		$scope.friend = chatService.getMyChats($scope.user.$id);
-	}();
+    // get all of the data
+    var getData = function () {
+        $scope.friend = chatService.getMyChats($scope.user.$id);
+    }();
 
-	// set a side variable
-  var side = 'left';
+    // set a side variable
+    var side = 'left';
 
-	// define message text
-  $scope.messageText = '';
+    // define message text
+    $scope.messageText = '';
 
-  $scope.reset = function(textMessage) {
-  	form.reset()
-  }
+    $scope.reset = function (textMessage) {
+        form.reset();
+    }
 
- $scope.hideTime = true;
+    $scope.hideTime = true;
 
-  $scope.sendMessage = function(textMessage) {
-      if(textMessage){
-          $scope.messages.$add({
-              text: textMessage,
-              senderId: $scope.user.$id,
-              timestamp: Firebase.ServerValue.TIMESTAMP
-              });
-          $scope.messageText = "";
-      }
-  };
+    $scope.sendMessage = function (textMessage) {
+        if (textMessage) {
+            $scope.messages.$add({
+                text: textMessage,
+                senderId: $scope.user.$id,
+                timestamp: Firebase.ServerValue.TIMESTAMP
+            });
+            $scope.messageText = "";
+        }
+    };
 });
