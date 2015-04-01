@@ -1,5 +1,12 @@
 ﻿'use strict';
 
+/*
+ * Use like ng-click anywhwere 
+ * you want to call a function
+ * by pressing the enter key
+ * <form ng-enter="somefunction(args)>"
+ * */
+
 
 var app = angular.module('cs');
 
