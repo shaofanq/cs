@@ -42,6 +42,18 @@ app.factory('floorService', function () {
                 itemArray.$save(item);
             }
             return true;
+        },
+        removeFlag: function(user, item, itemArray) {
+            delete item.flags[user.$id];
+            delete user.flags[item.$id];
+            user.$save();
+            if (!itemArray) {
+                item.$save();
+            } else {
+                itemArray.$save(item);
+            }
+            return true;
         }
+
     };
 });

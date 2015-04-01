@@ -34,7 +34,7 @@ app.controller('FloorDetailController', function ($scope, $location, authService
         };
     }
 
-    $scope.toggleFlagged = function(item) {
+    $scope.toggleFlagged = function (item) {
         item.hideFlagged = !item.hideFlagged;
     }
 
@@ -58,41 +58,49 @@ app.controller('FloorDetailController', function ($scope, $location, authService
         addCommentForm.reset();
     };
 
-$scope.likePost = function () {
-    $scope.admired = true;
-    return floorService.likePost($scope.user, $scope.currentPost);
-}
+    $scope.likePost = function () {
+        $scope.admired = true;
+        return floorService.likePost($scope.user, $scope.currentPost);
+    }
 
-$scope.likeComment = function (comment) {
-    comment.admired = true;
-    return floorService.likeComment($scope.user, comment, $scope.comments);
-}
+    $scope.likeComment = function (comment) {
+        comment.admired = true;
+        return floorService.likeComment($scope.user, comment, $scope.comments);
+    }
 
-$scope.flagPost = function () {
-    floorService.flagItem(user, $scope.post, 'hide');
-}
+    $scope.flagPost = function () {
+        floorService.flagItem(user, $scope.post, 'hide');
+    }
 
-$scope.flagComment = function (comment, i) {
-    $scope.comments.splice(i, 1);
-    floorService.flagItem($scope.user, comment, 'hide', $scope.comments);
-}
+    $scope.flagComment = function (comment, i) {
+        comment.flaggedText = 'Flagged for review';
+        comment.flagged = true;
+        comment.hideFlagged = true;
+        floorService.flagItem($scope.user, comment, 'hide', $scope.comments);
+    }
+    $scope.removeFlag = function (comment) {
+        comment.flaggedText = '';
+        comment.flagged = false;
+        comment.hideFlagged = false;
+        floorService.removeFlag($scope.user, comment, $scope.comments);
+    }
 
 
-// ionic modal settings
-$ionicModal.fromTemplateUrl('my-modal.html', {
-    scope: $scope,
-    animation: 'slide-in-up'
-}).then(function (modal) {
-    $scope.modal = modal;
-});
-$scope.openModal = function () {
-    $scope.modal.show();
-};
-$scope.closeModal = function () {
-    $scope.modal.hide();
-}
+    // ionic modal settings
+    $ionicModal.fromTemplateUrl('my-modal.html', {
+        scope: $scope,
+        animation: 'slide-in-up'
+    }).then(function (modal) {
+        $scope.modal = modal;
+    });
+    $scope.openModal = function () {
+        $scope.modal.show();
+    };
+    $scope.closeModal = function () {
+        $scope.modal.hide();
+    }
 
-$scope.user.$loaded(function () {
-    ready();
-});
+    $scope.user.$loaded(function () {
+        ready();
+    });
 });

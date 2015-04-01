@@ -52,7 +52,12 @@
                         <div class="col" style="margin-left:-10px; color: #6E6E6E">
                             <p>
                                 <span style="color: #5677FC">{{comment.user}}</span>
-                                <div ng-if="!comment.hideFlagged">{{comment.text}}</div>
+                                <div ng-if="!comment.hideFlagged">
+                                    {{comment.text}}
+                                    <div ng-if="comment.flagged" class="flagged-text" ng-click="removeFlag(comment)">
+                                        Remove Flag
+                                    </div>
+                                </div>
                                 <div ng-if="comment.flagged" ng-click="toggleFlagged(comment)" class="flagged-text">{{comment.flaggedText}}</div>
                             </p>
                         </div>
