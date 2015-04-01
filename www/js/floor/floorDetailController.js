@@ -25,7 +25,7 @@ app.controller('FloorDetailController', function($scope, $location, authService,
   id is the id of the post, and shallow is a boolean
   which determines whether or not the post was admired
   directly before it was clicked on. */
-  $scope.getFloorPost = function() {
+  var isAdmired = function() {
     $scope.currentPost.$loaded().then(function() {
       if($stateParams.admired === "true" || $stateParams.shallow === "true") {
         $scope.admired = true;
