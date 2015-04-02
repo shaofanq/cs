@@ -1,5 +1,5 @@
 <navbar></navbar>
-<ion-content>
+<ion-content >
   <div class="container">
     <div ng-repeat="item in floor" ng-init="checkFavs(item)" >
       <div style="border-bottom: 1px solid #d6d6d6; background: #fff">
@@ -39,19 +39,15 @@
 <tabs></tabs>
 <script id="my-modal.html" type="text/ng-template">
   <ion-modal-view>
-    <h1>Make a Post</h1>
-    <ion-content>
+    <ion-header-bar class="bar bar-header csRed">
+      <button class="button button-icon icon whiteText ion-ios-close-empty" ng-click="closeModal()"></button>
+      <button class="button button-icon icon whiteText" ng-click="addPost()"><p>Send</p></button>
+    </ion-header-bar>    
+    <ion-content style="padding-top:10px">
     <div class="container">
       <label class="item item-input">
-        <span class="input-label">Post</span>
-        <input type="text" ng-model="post.text">
+        <textarea class="new-post-textarea" type="text" ng-model="post.text" placeholder="Type your floor post"></textarea>
       </label>
-      <button class="button button-block button-positive" ng-click="addPost()">
-        New Post
-      </button>
-      <button class="button button-block button-default" ng-click="closeModal()">
-        Cancel
-      </button>
     </div>
     </ion-content>
   </ion-modal-view>

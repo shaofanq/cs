@@ -3,6 +3,27 @@ body {
     background-color: #FAFAFA;
     font-family: "Roboto";
 }
+.new-post-textarea {
+    overflow-y: scroll;
+    height: 300px;
+    resize: none;
+}
+
+::-webkit-input-placeholder {
+   font-size:20px;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   font-size:20px;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   font-size:20px;  
+}
+
+:-ms-input-placeholder {  
+   font-size:20px;  
+}
 
 .scroll-content {
     padding-top: 50px;
