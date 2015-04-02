@@ -3,41 +3,41 @@
 
     <label class="item item-input">
       <span class="input-label">Your Name</span>
-      <input type="text" ng-model="userData.name" placeholder="{{userData.name}}">
+      <input type="text" ng-model="user.name" placeholder="{{user.name}}">
     </label>
     <label class="item item-input">
       <span class="input-label">Bio</span>
-      <textarea type="text" ng-model="userData.bio"></textarea>
+      <textarea type="text" ng-model="user.bio"></textarea>
     </label>
     <label class="item item-input">
       <span class="input-label">Cancer</span>
-      <input type="text" ng-model="userData.cancer">
+      <input type="text" ng-model="user.cancer">
     </label>
     <h3>You're a different type of user now? No problem.</h3>
     <div class="list">
       <label class="item item-radio">
-        <input type="radio" value="fighter" ng-model="userData.level" name="group">
+        <input type="radio" value="fighter" ng-model="user.level" name="group">
         <div class="item-content">
           Fighter
         </div>
         <i class="radio-icon ion-checkmark"></i>
       </label>
       <label class="item item-radio">
-        <input type="radio" value="survivor" ng-model="userData.level" name="group">
+        <input type="radio" value="survivor" ng-model="user.level" name="group">
         <div class="item-content">
           Survivor
         </div>
         <i class="radio-icon ion-checkmark"></i>
       </label>
       <label class="item item-radio">
-        <input type="radio" value="supporter" ng-model="userData.level" name="group">
+        <input type="radio" value="supporter" ng-model="user.level" name="group">
         <div class="item-content">
           Supporter
         </div>
         <i class="radio-icon ion-checkmark"></i>
       </label>
     </div>
-    <button class="button button-block button-positive" ng-click="addData(userData)">Update Info!</button>
+    <button class="button button-block button-positive" ng-click="addData(user)">Update Info!</button>
     <div class="jumbotron">
       <div>Select an image file: <input type="file" id="fileInput" /></div>
       <div class="cropArea">

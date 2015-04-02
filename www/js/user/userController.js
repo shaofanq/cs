@@ -1,9 +1,9 @@
 var app = angular.module('cs');
 
 app.controller('UserController', function($scope, firebaseService, authService, ipCookie, $firebase, $location, $state) {
-
+    var sync = $scope.user;
     $scope.addData = function(user) {
-      sync.$update({
+      sync.$save({
         cancer: user.cancer,
         name: user.name,
         level: user.level
@@ -12,39 +12,39 @@ app.controller('UserController', function($scope, firebaseService, authService, 
     };
 
     $scope.fss = function(item, link){
-        sync.$update({
-          level: item,
+        sync.$save({
+          level: item
         });
-        $state.go('secure.bio-info');
+        $state.go('secured.bio-info');
     };
 
     $scope.addSurvivor = function(user) {
-      sync.$update({
+      sync.$save({
         cancer: user.cancer,
         name: user.name,
         level: user.level,
         yot: user.yot
       });
-        $state.go('secure.bio-info');
+        $state.go('secured.bio-info');
     };
 
     $scope.addSupporter = function(user) {
-      sync.$update({
+      sync.$save({
         cancer: user.cancer,
         name: user.name,
         level: user.level,
         supType: user.supType
       });
-        $state.go('secure.bio-info');
+        $state.go('secured.bio-info');
     };
 
     $scope.addBioInfo = function(user) {
-      sync.$update({
+      sync.$save({
         bio: user.bio,
         age: user.age,
         local: user.local
       });
-        $state.go(link);
+        $state.go('secured.explore');
     };
 
     $scope.myImage='';
