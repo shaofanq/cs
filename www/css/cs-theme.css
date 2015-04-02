@@ -825,3 +825,10 @@ span .timestamp .ng-binding {
     color: #6E6E6E;
     top: 25px;
 }
+
+.profile-avatar {
+    padding: 10px;
+    height: 70px;
+    -ms-border-radius: 100px;
+    border-radius: 100px;
+}

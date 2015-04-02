@@ -55,10 +55,10 @@
                                 <div ng-if="!comment.hideFlagged">
                                     {{comment.text}}
                                     <div ng-if="comment.flagged" class="flagged-text" ng-click="removeFlag(comment)">
-                                        Remove Flag
+                                        <i class="icon ion-ios-color-wand"></i> Remove Flag
                                     </div>
                                 </div>
-                                <div ng-if="comment.flagged" ng-click="toggleFlagged(comment)" class="flagged-text">{{comment.flaggedText}}</div>
+                                <div ng-if="comment.flagged" ng-click="toggleFlagged(comment)" class="flagged-text"><i class="icon ion-flag"></i> {{comment.flaggedText}}</div>
                             </p>
                         </div>
                     </div>
