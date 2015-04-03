@@ -57,11 +57,11 @@ app.controller('FloorDetailController', function ($scope, $location, authService
     /* Turn the comment into an object and pass it
     to the firebase service. also hide the modal
     and reset the form. */
-    $scope.addComment = function (comment) {
+    $scope.addComment = function () {
         var count = 0;
         var id = $stateParams.id;
-        comment = {
-            text: comment,
+        var comment = {
+            text: $scope.currentPost.commentText,
             timestamp: Date.now(),
             likes: 0,
             user: $scope.user.name,
