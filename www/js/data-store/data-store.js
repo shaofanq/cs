@@ -9,25 +9,21 @@ app.factory('db', function () {
     }
 
     db.users.on('child_added', function (snapshot) {
-        console.log(snapshot.val());
     }, function (errorObject) {
         console.log("The read failed: " + errorObject.code);
     });
 
     db.users.once("value", function (snapshot) {
-        console.log(snapshot.val());
     }, function (errorObject) {
         console.log("The read failed: " + errorObject.code);
     });
 
     db.posts.on('child_added', function (snapshot) {
-        console.log(snapshot.val());
     }, function (errorObject) {
         console.log("The read failed: " + errorObject.code);
     });
 
     db.posts.once("value", function (snapshot) {
-        console.log(snapshot.val());
     }, function (errorObject) {
         console.log("The read failed: " + errorObject.code);
     });

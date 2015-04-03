@@ -10,7 +10,12 @@ app.controller('FloorDetailController', function ($scope, $location, authService
     //get comments as separate resource for increased control
     $scope.comments = firebaseService.getComments($stateParams.id);
     $scope.currentPost = firebaseService.getFloorPost($stateParams.id);
-
+    $scope.isActive = function (a, b, c, d, e ,f) {
+        if (a === $location.path() || b === $location.path() || c === $location.path() || d === $location.path() || e === $location.path() || f === $location.path()[1]) {
+            return true;
+        }
+        return false;
+    };
     function ready() {
         var favoritePosts = $scope.user.favorites.posts;
 

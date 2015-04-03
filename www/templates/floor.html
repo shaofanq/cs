@@ -1,5 +1,4 @@
 <navbar></navbar>
-<<<<<<< HEAD
 <ion-content>
     <div class="container" id="container">
         <div ng-repeat="item in floor" ng-init="checkFavs(item)">
@@ -36,19 +35,6 @@
                         <span ng-if="item.commentsCount !== 1">Replies</span>
                     </a>
                 </div>
-=======
-<ion-content >
-  <div class="container">
-    <div ng-repeat="item in floor" ng-init="checkFavs(item)" >
-      <div style="border-bottom: 1px solid #d6d6d6; background: #fff">
-        <div class="row">
-          <div class="col col-80">
-            <br>
-            <div class="well" style="padding:0 18px;">
-              <p ng-click="postDetails($index, item.admired, admired)">
-                  {{item.text | characters:125 }}
-              </p>
->>>>>>> 18cbf57eeecb3be8f74d4756a42072a80a0f79d0
             </div>
         </div>
     </div>

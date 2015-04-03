@@ -9,7 +9,8 @@
     <ion-nav-buttons side="right">
       <button class="button button-icon icon whiteText top-nav-icon addPostButton ion-edit" ng-click="openModal()" ng-if="isActive('/floor')"></button>
       <button class="button button-icon icon whiteText top-nav-icon ion-ios-search" ng-click="toggleSearch()" ng-if="isActive('/explore')"></button>
-      <button class="button button-icon icon whiteText top-nav-icon ion-android-more-vertical" ui-sref="secured.edit-user" ng-hide="isActive('/floor')"></button>
+      <button class="button button-icon icon whiteText top-nav-icon ion-android-more-vertical" ui-sref="secured.edit-user" ng-hide="isActive('/floor') || isActive('a','b','c','f','e','d')"></button>
+      <button class="button button-icon icon whiteText top-nav-icon ion-ios-flag" ui-sref="secured.edit-user" ng-if="isActive('a','b','c','f','e','d')"></button>
     </ion-nav-buttons>
 </ion-nav-bar>
 <div ng-if="search" class="bar bar-header item-input-inset">
