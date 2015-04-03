@@ -2,7 +2,6 @@ var app = angular.module('cs');
 
 app.controller('NavbarController', function ($scope, $ionicHistory, $state, authService) {
     if ($state.current.name) {
-        debugger;
         var title = $state.current.name.replace('secured.', '');
         var body = title.slice(1);
         var head = title[0].toUpperCase();
