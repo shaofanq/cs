@@ -3,7 +3,9 @@ var app = angular.module('cs');
 app.controller('NavbarController', function ($scope, $ionicHistory, $state, authService) {
     if ($state.current.name) {
         var title = $state.current.name.replace('secured.', '');
-        $scope.title = title.toUpperCase();
+        var body = title.slice(1);
+        var head = title[0].toUpperCase();
+        $scope.title = head + body;
     }
     $scope.goBack = function () {
         if ($ionicHistory.backView.name) {
