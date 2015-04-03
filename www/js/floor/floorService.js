@@ -7,6 +7,7 @@
 app.factory('floorService', function () {
     return {
         likePost: function (user, post, posts) {
+            user.favorites = user.favorites || {posts: { }, comments : {}}
             if (!user.favorites.posts.hasOwnProperty(post.$id)) {
                 post.likes++;
                 post.admirers[user.$id] = user.$id;
@@ -21,6 +22,7 @@ app.factory('floorService', function () {
             return true;
         },
         likeComment: function (user, comment, comments) {
+            user.favorites = user.favorites || { posts: {}, comments : {} }
             if (!user.favorites.comments.hasOwnProperty(comment.$id)) {
                 comment.likes++;
                 comment.admirers[user.$id] = user.$id;

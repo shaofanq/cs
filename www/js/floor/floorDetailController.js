@@ -22,21 +22,6 @@ app.controller('FloorDetailController', function ($scope, $location, authService
         postLiked();
     }
 
-// <<<<<<< HEAD
-//   /*For getting the current post
-//   id is the id of the post, and shallow is a boolean
-//   which determines whether or not the post was admired
-//   directly before it was clicked on. */
-//   var isAdmired = function() {
-//     $scope.currentPost.$loaded().then(function() {
-//       if($stateParams.admired === "true" || $stateParams.shallow === "true") {
-//         $scope.admired = true;
-//       } else if($stateParams.admired === "false") {
-//         $scope.admired = false;
-//       }
-//     })
-//   }();
-// =======
     //called by ng-init on the comments ng-repeat
     $scope.checkFavs = function (item, i) {
         if ($scope.user.favorites.comments.hasOwnProperty(item.$id)) {

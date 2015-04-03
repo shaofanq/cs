@@ -6,7 +6,12 @@ app.controller('FloorController', function ($scope, $location, authService, $fir
     var floorRef = new Firebase('https://cancer.firebaseio.com/ean/floorPosts');
     var sync = $firebase(floorRef);
 
+    var scroll = function() {
+        var objDiv = document.getElementById('container');
+        objDiv.scrollTop = objDiv.scrollHeight;
+    };
     $scope.addPost = function () {
+        $scope.user.myPosts = $scope.user.myPosts || {};
         $scope.post.timestamp = Date.now();
         $scope.post.user = $scope.user.name;
         $scope.post.profilePic = $scope.user.profilePic;
@@ -14,9 +19,13 @@ app.controller('FloorController', function ($scope, $location, authService, $fir
         $scope.post.comments = [];
         $scope.post.commentsCount = 0;
         $scope.post.admirers = ['1'];
-        sync.$push($scope.post);
+        sync.$push($scope.post).then(function(post) {
+            $scope.user.myPosts[post.key()] = post.key();
+            $scope.user.$save();
+        });
         $scope.post = {};
         $scope.modal.hide();
+        scroll();
     }
     $scope.isActive = function (a, b, c) {
         if (a === $location.path() || b === $location.path() || c === $location.path()) {

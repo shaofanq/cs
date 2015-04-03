@@ -832,3 +832,6 @@ span .timestamp .ng-binding {
     -ms-border-radius: 100px;
     border-radius: 100px;
 }
+.floor-user-name {
+    float: right;
+}
